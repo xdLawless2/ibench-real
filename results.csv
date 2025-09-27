@@ -1,0 +1,21 @@
+index,truth,pred,correct,latency_s,error
+1,2,2,1,27.170804,
+2,3,3,1,35.801185,
+3,4,3,0,10.640512,
+4,3,2,0,7.105481,
+5,4,4,1,24.714948,
+6,5,5,1,9.652087,
+7,6,5,0,88.279636,
+8,3,3,1,11.579738,
+9,1,1,1,6.955871,
+10,6,5,0,35.223734,
+11,4,6,0,129.510888,
+12,2,3,0,10.217737,
+13,3,4,0,34.801003,
+14,5,6,0,124.617356,
+15,3,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
+16,5,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
+17,1,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
+18,2,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
+19,5,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
+20,6,,0,0.000000,'RateLimitError: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error";"code":429;"metadata":{"raw":"qwen/qwen3-vl-235b-a22b-thinking is temporarily rate-limited upstream. Please retry shortly; or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations";"provider_name":"Alibaba"}};"user_id":"user_2Zj0Cwqt7XZO3fuqmRUNlmojy74"}'
