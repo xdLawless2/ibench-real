@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 """
-LiteLLM Vision Benchmark (lean + parallel)
+OpenRouter Vision Benchmark (lean + parallel)
 
 - Reads images: ./imgs/1.png ... ./imgs/20.png  (configurable)
 - Reads truths: ./truth.txt  (one integer per line; line i => image i.png)
 - Asks each image the same question:
     "How many distinct intersections of different line segments are in this image?"
-- Sends vision prompts to the given LiteLLM model (default: "openai/gpt-4o-mini")
+- Sends vision prompts to the given OpenRouter model alias (default: "openrouter/qwen/qwen3-vl-235b-a22b-instruct")
 - Runs asynchronously with bounded concurrency
 - Reports exact-match accuracy, MAE, latency stats, throughput
 - Optionally writes a CSV of per-item results
 
 Requirements:
-    pip install litellm
+    pip install aiohttp
 
 Env:
-    Set your provider API key(s), e.g. OPENAI_API_KEY, or point to a LiteLLM Proxy
-    with --base-url and provide its key via OPENAI_API_KEY.
+    Set OPENROUTER_API_KEY (and optionally OPENROUTER_SITE_URL / OPENROUTER_APP_TITLE for headers)
 
 Note:
     Use a vision-capable model (e.g., openai/gpt-4o, openai/gpt-4o-mini, anthropic/claude-3-5-sonnet-20240620,
@@ -38,12 +37,10 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from litellm import acompletion  # async OpenAI-style API across providers
-from litellm import RateLimitError
-import litellm
+import aiohttp
 
 
-QUESTION = "How many distinct intersections of different line segments are in this image?"
+QUESTION = "How many distinct intersections of different line segments are in this image? Reply with ONLY a number and nothing else. Do not preamble or give any other information."
 
 SYSTEM_MSG = (
     "You are a precise vision assistant. For the given image, return ONLY a single "
@@ -53,8 +50,18 @@ SYSTEM_MSG = (
 
 INT_RE = re.compile(r"\d+")
 
+OPENROUTER_DEFAULT_BASE = "https://openrouter.ai/api/v1"
+
 
 logger = logging.getLogger("ibench")
+
+
+class OpenRouterError(RuntimeError):
+    """Raised when the OpenRouter API returns an error."""
+
+
+class RateLimitError(OpenRouterError):
+    """Raised when OpenRouter signals a rate-limit (HTTP 429)."""
 
 
 def safe_preview(obj: Any, limit: int = 2000) -> str:
@@ -107,6 +114,17 @@ def load_truths(truth_path: Path, n: int) -> Dict[int, int]:
     return {i + 1: vals[i] for i in range(n)}
 
 
+def detect_num_images(imgs_dir: Path) -> int:
+    count = 0
+    while True:
+        candidate = imgs_dir / f"{count + 1}.png"
+        if candidate.exists():
+            count += 1
+        else:
+            break
+    return count
+
+
 def to_data_uri(img_path: Path) -> str:
     mime, _ = mimetypes.guess_type(str(img_path))
     if mime is None:
@@ -128,6 +146,54 @@ def build_messages(data_uri: str) -> List[dict]:
             ],
         },
     ]
+
+
+def build_api_url(base_url: Optional[str]) -> str:
+    base = (base_url or OPENROUTER_DEFAULT_BASE).rstrip("/")
+    if base.endswith("/chat/completions"):
+        return base
+    return f"{base}/chat/completions"
+
+
+def build_openrouter_headers(api_key: str) -> Dict[str, str]:
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    referer = os.environ.get("OPENROUTER_SITE_URL")
+    if referer:
+        headers["HTTP-Referer"] = referer
+    title = os.environ.get("OPENROUTER_APP_TITLE")
+    if title:
+        headers["X-Title"] = title
+    return headers
+
+
+async def openrouter_completion(
+    session: aiohttp.ClientSession,
+    api_url: str,
+    headers: Dict[str, str],
+    payload: Dict[str, Any],
+    timeout_s: float,
+) -> Dict[str, Any]:
+    timeout = aiohttp.ClientTimeout(total=timeout_s) if timeout_s and timeout_s > 0 else aiohttp.ClientTimeout(total=None)
+    try:
+        async with session.post(api_url, json=payload, headers=headers, timeout=timeout) as resp:
+            text_body = await resp.text()
+            if resp.status == 429:
+                raise RateLimitError(f"429 rate limit: {text_body[:200]}")
+            if resp.status >= 400:
+                raise OpenRouterError(f"HTTP {resp.status}: {text_body[:200]}")
+            if not text_body:
+                raise OpenRouterError("Empty response body")
+            try:
+                return json.loads(text_body)
+            except json.JSONDecodeError as exc:
+                raise OpenRouterError(f"Invalid JSON response: {text_body[:200]}") from exc
+    except asyncio.TimeoutError as exc:
+        raise OpenRouterError(f"Request timed out after {timeout_s}s") from exc
+    except aiohttp.ClientError as exc:
+        raise OpenRouterError(f"HTTP client error: {exc}") from exc
 
 
 def parse_first_int(text: str) -> Optional[int]:
@@ -185,14 +251,14 @@ def extract_text(resp: Any) -> str:
                         if isinstance(val, str) and val:
                             texts.append(val)
 
-        # 2) LiteLLM standardized reasoning content
+        # 2) Gateway-standardized reasoning content (OpenRouter style)
         reasoning_content = getattr(msg, "reasoning_content", None)
         if reasoning_content is None and isinstance(msg, dict):
             reasoning_content = msg.get("reasoning_content")
         if isinstance(reasoning_content, str) and reasoning_content:
             texts.append(reasoning_content)
 
-        # 3) Anthropic-style thinking blocks (standardized by LiteLLM)
+        # 3) Anthropic-style thinking blocks (standardized by common gateways)
         thinking_blocks = getattr(msg, "thinking_blocks", None)
         if thinking_blocks is None and isinstance(msg, dict):
             thinking_blocks = msg.get("thinking_blocks")
@@ -212,9 +278,11 @@ async def eval_one(
     data_uri: str,
     truth: Optional[int],
     semaphore: asyncio.Semaphore,
+    session: aiohttp.ClientSession,
+    api_url: str,
+    headers: Dict[str, str],
     request_timeout_s: float,
     max_retries: int,
-    api_base: Optional[str],
     max_tokens: int,
     rate_limit_backoff: float,
 ) -> ItemResult:
@@ -226,33 +294,17 @@ async def eval_one(
             async with semaphore:
                 t0 = time.perf_counter()
 
-                kwargs = {}
-                if api_base:
-                    kwargs["api_base"] = api_base
-                # If the model supports reasoning, request low effort by default
-                try:
-                    if hasattr(litellm, "supports_reasoning") and litellm.supports_reasoning(model=model):
-                        kwargs["reasoning_effort"] = "low"
-                except Exception:
-                    pass
-                # Optional reasoning effort for reasoning models
-                try:
-                    import math  # noqa: F401 (ensure stdlib only)
-                    from argparse import Namespace  # noqa: F401
-                except Exception:
-                    pass
-                # Attach reasoning_effort if present on the outer args via closure isn't available,
-                # so we rely on eval_one receiving only primitives; instead, we can't access args here.
-                # We'll let the caller pass via kwargs injection on creation.
-
-                resp = await asyncio.wait_for(
-                    acompletion(
-                        model=model,
-                        messages=build_messages(data_uri),
-                        max_tokens=max_tokens,
-                        **kwargs,
-                    ),
-                    timeout=request_timeout_s,
+                payload = {
+                    "model": model,
+                    "messages": build_messages(data_uri),
+                    "max_tokens": max_tokens,
+                }
+                resp = await openrouter_completion(
+                    session=session,
+                    api_url=api_url,
+                    headers=headers,
+                    payload=payload,
+                    timeout_s=request_timeout_s,
                 )
                 t1 = time.perf_counter()
                 if logger.isEnabledFor(logging.DEBUG):
@@ -397,13 +449,26 @@ def summarize(results: List[ItemResult]) -> Tuple[float, float, float, float, fl
 
 
 def write_csv(path: Path, results: List[ItemResult]) -> None:
-    lines = ["index,truth,pred,correct,latency_s,error"]
+    total = len(results)
+    correct_count = sum(1 for r in results if r.correct)
+    percent_correct = (
+        f"{(correct_count / total) * 100.0:.2f}%"
+        if total
+        else "N/A"
+    )
+    lines = ["index,truth,pred,correct,latency_s,error,percent_correct"]
     for r in sorted(results, key=lambda x: x.index):
-        lines.append(
-            f"{r.index},{'' if r.truth is None else r.truth},"
-            f"{'' if r.pred is None else r.pred},{int(r.correct)},{r.latency_s:.6f},"
-            f"{'' if r.error is None else repr(r.error).replace(',', ';')}"
-        )
+        row = [
+            str(r.index),
+            "" if r.truth is None else str(r.truth),
+            "" if r.pred is None else str(r.pred),
+            str(int(r.correct)),
+            f"{r.latency_s:.6f}",
+            "" if r.error is None else repr(r.error).replace(",", ";"),
+            "",
+        ]
+        lines.append(",".join(row))
+    lines.append(",".join(["summary", "", "", "", "", "", percent_correct]))
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -431,10 +496,25 @@ async def main_async(args):
         raise FileNotFoundError(f"Image directory not found: {imgs_dir}")
 
     truth_path = Path(args.truth).resolve()
-    truths = load_truths(truth_path, args.n)
+    if args.n is None:
+        detected = detect_num_images(imgs_dir)
+        if detected <= 0:
+            raise FileNotFoundError(f"No sequential PNG images found in {imgs_dir}")
+        n = detected
+    else:
+        n = args.n
+        if n <= 0:
+            raise ValueError("--n must be a positive integer")
+    truths = load_truths(truth_path, n)
+
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter access")
+    api_url = build_api_url(args.base_url)
+    headers = build_openrouter_headers(api_key)
 
     # Pre-encode images to data URIs (fast local CPU; avoids repeated disk I/O in tasks)
-    img_indices = list(range(1, args.n + 1))
+    img_indices = list(range(1, n + 1))
     data_uris: Dict[int, str] = {}
     for i in img_indices:
         p = imgs_dir / f"{i}.png"
@@ -445,22 +525,25 @@ async def main_async(args):
     sem = asyncio.Semaphore(args.concurrency)
 
     t_start = time.perf_counter()
-    tasks = [
-        eval_one(
-            idx=i,
-            model=args.model,
-            data_uri=data_uris[i],
-            truth=truths.get(i),
-            semaphore=sem,
-            request_timeout_s=args.request_timeout,
-            max_retries=args.max_retries,
-            api_base=args.base_url,
-            max_tokens=args.max_tokens,
-            rate_limit_backoff=args.rate_limit_backoff,
-        )
-        for i in img_indices
-    ]
-    results = await asyncio.gather(*tasks)
+    async with aiohttp.ClientSession() as session:
+        tasks = [
+            eval_one(
+                idx=i,
+                model=args.model,
+                data_uri=data_uris[i],
+                truth=truths.get(i),
+                semaphore=sem,
+                session=session,
+                api_url=api_url,
+                headers=headers,
+                request_timeout_s=args.request_timeout,
+                max_retries=args.max_retries,
+                max_tokens=args.max_tokens,
+                rate_limit_backoff=args.rate_limit_backoff,
+            )
+            for i in img_indices
+        ]
+        results = await asyncio.gather(*tasks)
     t_end = time.perf_counter()
 
     # Per-item lines
@@ -502,11 +585,21 @@ async def main_async(args):
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="LiteLLM vision intersection-count benchmark")
-    p.add_argument("--model", type=str, default="openrouter/qwen/qwen3-vl-235b-a22b-thinking", help="LiteLLM model name/alias (default: openai/gpt-5)")
+    p = argparse.ArgumentParser(description="OpenRouter vision intersection-count benchmark")
+    p.add_argument(
+        "--model",
+        type=str,
+        default="openrouter/qwen/qwen3-vl-235b-a22b-instruct",
+        help="OpenRouter model name/alias (default: openrouter/qwen/qwen3-vl-235b-a22b-instruct)",
+    )
     p.add_argument("--imgs", type=str, default="imgs", help="Directory containing images named 1.png..N.png (default: ./imgs)")
     p.add_argument("--truth", type=str, default="truth.txt", help="Path to truth.txt (one integer per line)")
-    p.add_argument("--n", type=int, default=20, help="Number of images to evaluate (default: 20)")
+    p.add_argument(
+        "--n",
+        type=int,
+        default=None,
+        help="Number of images to evaluate (default: auto-detect count in --imgs)",
+    )
     p.add_argument("--concurrency", type=int, default=4, help="Max in-flight requests (default: 4)")
     p.add_argument("--request-timeout", type=float, default=1200.0, help="Per-request timeout seconds (default: 1200)")
     p.add_argument("--max-retries", type=int, default=5, help="Retries per item (default: 5)")
@@ -516,7 +609,12 @@ def parse_args() -> argparse.Namespace:
         default=5.0,
         help="Seconds to wait (multiplied per retry) when a rate limit error occurs (default: 5.0)",
     )
-    p.add_argument("--base-url", type=str, default=None, help="Optional LiteLLM/OpenAI-compatible base URL (Proxy)")
+    p.add_argument(
+        "--base-url",
+        type=str,
+        default=OPENROUTER_DEFAULT_BASE,
+        help="OpenRouter-compatible base URL (default: https://openrouter.ai/api/v1)",
+    )
     p.add_argument(
         "--max-tokens",
         type=int,
