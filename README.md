@@ -1,12 +1,13 @@
 # ibench-real
 
-OpenRouter-powered micro-benchmark for counting line-intersection points in 20 synthetic images.
+OpenRouter-powered micro-benchmark for counting line-intersection points in 100 synthetic images.
 
 ## Features
-- Async evaluation of a numbered image set (`./imgs/1.png` … `./imgs/20.png`).
+- Async evaluation of a numbered image set (`./imgs/1.png` … `./imgs/100.png`; auto-detects `N`).
 - Ground-truth comparison via `truth.txt` with accuracy, MAE, latency, and throughput metrics.
 - Automatic per-model run archives under `./runs/<model_slug>/summary.json` containing per-item outcomes, token usage, and estimated costs.
 - Optional structured logging (console + file) capturing raw model outputs and reasoning metadata.
+- Queue multiple models sequentially with `--models`, separated by a configurable delay, and optionally give per-model reasoning overrides.
 
 ## Requirements
 - Python 3.9+
@@ -22,6 +23,15 @@ python main.py --model openrouter/qwen/qwen3-vl-235b-a22b-instruct
 
 To exercise models that expose OpenRouter's reasoning feature, add `--reasoning-effort high` (or `minimal|low|medium`). The runner will surface a clear `reasoning_not_supported` error if the chosen model does not accept reasoning requests.
 
+To queue multiple models in one go (with a 60s gap between runs by default), and mix reasoning/no-reasoning per model:
+```bash
+python main.py --models \
+  openai/o3 \                           # inherits --reasoning-effort if provided
+  openai/o4-mini:reasoning=high \       # force reasoning
+  anthropic/claude-sonnet-4.5:reasoning=none  # disable reasoning for this model
+```
+If you also pass `--reasoning-effort medium`, that effort is the default for entries without an explicit override.
+
 The script will:
 1. Load ground-truth answers from `truth.txt` (one integer per line).
 2. Convert the corresponding image files to base64 data URIs.
@@ -33,6 +43,7 @@ The script will:
 | Flag | Description | Default |
 |------|-------------|---------|
 | `--model` | OpenRouter model alias (must support vision) | `openrouter/qwen/qwen3-vl-235b-a22b-instruct` |
+| `--models` | Queue multiple models to run sequentially (overrides `--model`) | `None` |
 | `--imgs` | Directory containing `1.png..N.png` | `imgs` |
 | `--truth` | Path to truth labels file | `truth.txt` |
 | `--n` | Number of images to evaluate (defaults to auto-detecting how many `*.png` images exist in `--imgs`) | auto |
@@ -41,7 +52,8 @@ The script will:
 | `--max-retries` | Retry attempts per image | `5` |
 | `--rate-limit-backoff` | Base seconds to wait on rate limits | `5.0` |
 | `--base-url` | OpenRouter-compatible base URL (default resolves to `https://openrouter.ai/api/v1`) | `https://openrouter.ai/api/v1` |
-| `--reasoning-effort` | Enable OpenRouter reasoning (one of `minimal`, `low`, `medium`, `high`); fails gracefully if the model doesn't support reasoning | `None` |
+| `--model-delay` | Seconds to wait between sequential models when `--models` is used | `60` |
+| `--reasoning-effort` | Default reasoning effort for all models (one of `minimal`, `low`, `medium`, `high`); can be overridden per model via `model:reasoning=<effort>` or disabled with `reasoning=none` | `None` |
 | `--max-tokens` | Response token budget | `8192` |
 | `--log-level` | Logging verbosity (`DEBUG`, `INFO`, etc.) | `INFO` |
 | `--log-file` | Optional log output path | `None` |
@@ -88,7 +100,7 @@ Output excerpt:
 
 --- summary ---
 model=openrouter/qwen/qwen3-vl-235b-a22b-instruct
-n=20 concurrency=8 total_time_s=130.433 throughput_ips=0.15
+n=100 concurrency=8 total_time_s=650.000 throughput_ips=0.15
 accuracy_exact=0.5000  mae=1.0000
 ```
 

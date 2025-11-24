@@ -250,7 +250,7 @@ def generate_benchmark(n, output_dir='benchmark_output'):
             print(f"  Warning: Got {actual_intersections} intersections instead of {target}")
         
         # Save image
-        filename = os.path.join(output_dir, f'image_{i+1:04d}.png')
+        filename = os.path.join(output_dir, f'{i+1}.png')
         draw_segments(segments, filename)
         
         truths.append(actual_intersections)
@@ -259,8 +259,8 @@ def generate_benchmark(n, output_dir='benchmark_output'):
     # Save truth file
     truth_file = os.path.join(output_dir, 'truth.txt')
     with open(truth_file, 'w') as f:
-        for i, count in enumerate(truths):
-            f.write(f"image_{i+1:04d}.png: {count}\n")
+        for count in truths:
+            f.write(f"{count}\n")
     
     print(f"\nGenerated {n} images in '{output_dir}/'")
     print(f"Ground truth saved to '{truth_file}'")

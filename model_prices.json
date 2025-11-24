@@ -8,5 +8,7 @@
   "openai/o3": { "input": 2.0, "output": 8.0 },
   "qwen/qwen3-vl-235b-a22b-instruct": { "input": 0.21, "output": 1.9 },
   "qwen/qwen3-vl-30b-a3b-instruct": { "input": 0.15, "output": 0.6 },
-  "x-ai/grok-4": { "input": 3.0, "output": 15.0 }
+  "x-ai/grok-4": { "input": 3.0, "output": 15.0 },
+  "anthropic/claude-opus-4.5": { "input": 5.0, "output": 25.0},
+  "x-ai/grok-4.1-fast": {"input": 0.20, "output": 0.5}
 }

@@ -2,8 +2,8 @@
 """
 OpenRouter Vision Benchmark (lean + parallel)
 
-- Reads images: ./imgs/1.png ... ./imgs/20.png  (configurable)
-- Reads truths: ./truth.txt  (one integer per line; line i => image i.png)
+- Reads images: ./imgs/1.png ... ./imgs/100.png  (configurable; auto-detects count)
+- Reads truths: ./truth.txt  (one integer per line; line i => image i.png; needs at least N lines)
 - Asks each image the same question:
     "How many distinct intersections of different line segments are in this image?"
 - Sends vision prompts to the given OpenRouter model alias (default: "qwen/qwen3-vl-235b-a22b-instruct")
@@ -376,6 +376,28 @@ def build_model_label(model: str, reasoning_effort: Optional[str]) -> str:
     return model
 
 
+def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, Optional[str]]:
+    """Parse model string with optional reasoning override, e.g., 'openai/o3' or 'openai/o4:reasoning=high'."""
+    model = raw
+    reasoning = default_reasoning
+
+    if ":" in raw:
+        model_part, suffix = raw.split(":", 1)
+        model = model_part.strip()
+        suffix = suffix.strip()
+        lower = suffix.lower()
+        if lower.startswith("reasoning="):
+            val = suffix.split("=", 1)[1].strip().lower()
+            if val in {"none", "off", "false", "0", "no"}:
+                reasoning = None
+            elif val in {"minimal", "low", "medium", "high"}:
+                reasoning = val
+            else:
+                raise ValueError(f"Invalid reasoning effort '{val}' in model entry '{raw}' (expected minimal|low|medium|high|none)")
+    model = model or "model"
+    return model, reasoning
+
+
 def aggregate_token_usage(results: List[ItemResult]) -> Dict[str, int]:
     prompt = sum(r.prompt_tokens for r in results)
     completion = sum(r.completion_tokens for r in results)
@@ -472,6 +494,7 @@ def write_model_summary(
     model: str,
     model_label: str,
     run_slug: str,
+    reasoning_effort: Optional[str],
     args: argparse.Namespace,
     results: List[ItemResult],
     metrics: Dict[str, Any],
@@ -493,7 +516,7 @@ def write_model_summary(
             "concurrency": args.concurrency,
             "max_tokens": args.max_tokens,
             "max_retries": args.max_retries,
-            "reasoning_effort": args.reasoning_effort,
+            "reasoning_effort": reasoning_effort,
         },
         "summary": metrics,
         "token_usage": token_usage,
@@ -738,40 +761,18 @@ def setup_logging(log_level: str, log_file: Optional[str]) -> None:
     )
 
 
-async def main_async(args):
-    imgs_dir = Path(args.imgs).resolve()
-    if not imgs_dir.exists():
-        raise FileNotFoundError(f"Image directory not found: {imgs_dir}")
-
-    truth_path = Path(args.truth).resolve()
-    if args.n is None:
-        detected = detect_num_images(imgs_dir)
-        if detected <= 0:
-            raise FileNotFoundError(f"No sequential PNG images found in {imgs_dir}")
-        n = detected
-    else:
-        n = args.n
-        if n <= 0:
-            raise ValueError("--n must be a positive integer")
-    truths = load_truths(truth_path, n)
-
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter access")
-    api_url = build_api_url(args.base_url)
-    headers = build_openrouter_headers(api_key)
-    run_slug = build_run_slug(args.model, args.reasoning_effort)
-    model_label = build_model_label(args.model, args.reasoning_effort)
-
-    # Pre-encode images to data URIs (fast local CPU; avoids repeated disk I/O in tasks)
-    img_indices = list(range(1, n + 1))
-    data_uris: Dict[int, str] = {}
-    for i in img_indices:
-        p = imgs_dir / f"{i}.png"
-        if not p.exists():
-            raise FileNotFoundError(f"Missing image: {p}")
-        data_uris[i] = to_data_uri(p)
-
+async def run_model_once(
+    model: str,
+    reasoning_effort: Optional[str],
+    args: argparse.Namespace,
+    truths: Dict[int, int],
+    img_indices: List[int],
+    data_uris: Dict[int, str],
+    api_url: str,
+    headers: Dict[str, str],
+) -> None:
+    run_slug = build_run_slug(model, reasoning_effort)
+    model_label = build_model_label(model, reasoning_effort)
     sem = asyncio.Semaphore(args.concurrency)
 
     t_start = time.perf_counter()
@@ -780,7 +781,7 @@ async def main_async(args):
             asyncio.create_task(
                 eval_one(
                     idx=i,
-                    model=args.model,
+                    model=model,
                     data_uri=data_uris[i],
                     truth=truths.get(i),
                     semaphore=sem,
@@ -791,7 +792,7 @@ async def main_async(args):
                     max_retries=args.max_retries,
                     max_tokens=args.max_tokens,
                     rate_limit_backoff=args.rate_limit_backoff,
-                    reasoning_effort=args.reasoning_effort,
+                    reasoning_effort=reasoning_effort,
                 )
             )
             for i in img_indices
@@ -821,7 +822,6 @@ async def main_async(args):
             f"correct={int(r.correct)} latency_s={r.latency_s:.3f}"
             + (f" error={r.error}" if r.error else "")
         )
-        # Lean debug by default: only print when we fail to parse a usable number
         if (r.pred is None) or (r.error is not None) or (not r.correct):
             if r.debug:
                 print(f"    debug: {r.debug}")
@@ -835,7 +835,7 @@ async def main_async(args):
     total_time = t_end - t_start
     throughput = len(results) / total_time if total_time > 0 else float("nan")
     token_usage = aggregate_token_usage(results)
-    price_info = load_price_info(args.model, run_slug=run_slug)
+    price_info = load_price_info(model, run_slug=run_slug)
     input_price, output_price = price_info
     estimated_cost = (
         (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
@@ -856,17 +856,16 @@ async def main_async(args):
         "estimated_cost": estimated_cost,
     }
     print("\n--- summary ---")
-    print(f"model={args.model}")
+    print(f"model={model}")
     if args.base_url:
         print(f"base_url={args.base_url}")
-    if args.reasoning_effort:
-        print(f"model_label={model_label}")
-        print(f"reasoning_effort={args.reasoning_effort}")
+    print(f"model_label={model_label}")
+    if reasoning_effort:
+        print(f"reasoning_effort={reasoning_effort}")
     print(f"n={len(results)} concurrency={args.concurrency} total_time_s={total_time:.3f} throughput_ips={throughput:.2f}")
     print(f"accuracy_exact={acc:.4f}  mae={mae:.4f}")
     print(f"latency_avg_s={avg_lat:.3f}  p50_s={p50:.3f}  p95_s={p95:.3f}")
     print(f"failures={failures}")
-    # End with a simple percent-correct summary
     if total > 0:
         print(f"percent_correct={acc * 100:.1f}% ({num_correct}/{total})")
     print(
@@ -883,9 +882,10 @@ async def main_async(args):
         )
 
     summary_path = write_model_summary(
-        model=args.model,
+        model=model,
         model_label=model_label,
         run_slug=run_slug,
+        reasoning_effort=reasoning_effort,
         args=args,
         results=results,
         metrics=metrics,
@@ -896,13 +896,87 @@ async def main_async(args):
     print(f"summary_saved={summary_path}")
 
 
+async def main_async(args):
+    imgs_dir = Path(args.imgs).resolve()
+    if not imgs_dir.exists():
+        raise FileNotFoundError(f"Image directory not found: {imgs_dir}")
+
+    truth_path = Path(args.truth).resolve()
+    if args.n is None:
+        detected = detect_num_images(imgs_dir)
+        if detected <= 0:
+            raise FileNotFoundError(f"No sequential PNG images found in {imgs_dir}")
+        n = detected
+    else:
+        n = args.n
+        if n <= 0:
+            raise ValueError("--n must be a positive integer")
+    truths = load_truths(truth_path, n)
+
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter access")
+    api_url = build_api_url(args.base_url)
+    headers = build_openrouter_headers(api_key)
+
+    img_indices = list(range(1, n + 1))
+    data_uris: Dict[int, str] = {}
+    for i in img_indices:
+        p = imgs_dir / f"{i}.png"
+        if not p.exists():
+            raise FileNotFoundError(f"Missing image: {p}")
+        data_uris[i] = to_data_uri(p)
+
+    default_reasoning = args.reasoning_effort
+    raw_models = args.models if args.models else [args.model]
+    model_specs: List[Tuple[str, Optional[str]]] = []
+    try:
+        for raw in raw_models:
+            model_name, reasoning_override = parse_model_entry(raw, default_reasoning)
+            model_specs.append((model_name, reasoning_override))
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+
+    if args.models:
+        def fmt(m: str, r: Optional[str]) -> str:
+            return f"{m} (reasoning +{r})" if r else f"{m} (no reasoning)"
+
+        desc = ", ".join([fmt(m, r) for m, r in model_specs])
+        print(f"Queued models ({len(model_specs)}): {desc}")
+
+    for idx, (model, reasoning_effort) in enumerate(model_specs):
+        if idx > 0 and args.model_delay > 0:
+            delay = args.model_delay
+            print(f"Waiting {delay:.0f}s before next model...", flush=True)
+            await asyncio.sleep(delay)
+
+        run_label = f"{model} (reasoning +{reasoning_effort})" if reasoning_effort else f"{model} (no reasoning)"
+        print(f"\n=== Running model {run_label} ({idx + 1}/{len(model_specs)}) ===")
+        await run_model_once(
+            model=model,
+            reasoning_effort=reasoning_effort,
+            args=args,
+            truths=truths,
+            img_indices=img_indices,
+            data_uris=data_uris,
+            api_url=api_url,
+            headers=headers,
+        )
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="OpenRouter vision intersection-count benchmark")
     p.add_argument(
         "--model",
         type=str,
         default="qwen/qwen3-vl-235b-a22b-instruct",
-        help="OpenRouter model name/alias (default: qwen/qwen3-vl-235b-a22b-instruct)",
+        help="OpenRouter model name/alias (default: qwen/qwen3-vl-235b-a22b-instruct); ignored if --models is provided",
+    )
+    p.add_argument(
+        "--models",
+        nargs="+",
+        default=None,
+        help="Queue multiple models to run sequentially (e.g., --models openai/o3 openai/o4-mini anthropic/claude-sonnet-4.5)",
     )
     p.add_argument("--imgs", type=str, default="imgs", help="Directory containing images named 1.png..N.png (default: ./imgs)")
     p.add_argument("--truth", type=str, default="truth.txt", help="Path to truth.txt (one integer per line)")
@@ -920,6 +994,12 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=5.0,
         help="Seconds to wait (multiplied per retry) when a rate limit error occurs (default: 5.0)",
+    )
+    p.add_argument(
+        "--model-delay",
+        type=float,
+        default=60.0,
+        help="Seconds to wait between sequential models when --models is used (default: 60)",
     )
     p.add_argument(
         "--base-url",
