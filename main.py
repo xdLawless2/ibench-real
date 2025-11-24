@@ -90,6 +90,10 @@ class RateLimitError(OpenRouterError):
     """Raised when OpenRouter signals a rate-limit (HTTP 429)."""
 
 
+class UnsupportedReasoningModelError(OpenRouterError):
+    """Raised when reasoning was requested on a model that does not support it."""
+
+
 def safe_preview(obj: Any, limit: int = 2000) -> str:
     try:
         text = json.dumps(obj, default=lambda o: getattr(o, "__dict__", str(o)), ensure_ascii=False)
@@ -198,12 +202,41 @@ def build_openrouter_headers(api_key: str) -> Dict[str, str]:
     return headers
 
 
+def detect_reasoning_unsupported(text_body: str) -> Optional[str]:
+    """Return a user-friendly message when the API says reasoning is unsupported."""
+    candidates: List[str] = []
+    try:
+        parsed = json.loads(text_body)
+        if isinstance(parsed, dict):
+            err_obj = parsed.get("error")
+            if isinstance(err_obj, dict):
+                msg = err_obj.get("message") or err_obj.get("error")
+                if isinstance(msg, str):
+                    candidates.append(msg)
+            # Some providers return {"message": "..."}
+            if isinstance(parsed.get("message"), str):
+                candidates.append(parsed["message"])
+    except json.JSONDecodeError:
+        pass
+
+    candidates.append(text_body)
+
+    for msg in candidates:
+        if not isinstance(msg, str):
+            continue
+        lower = msg.lower()
+        if "reasoning" in lower and any(key in lower for key in ("not support", "unsupported", "disabled", "unavailable")):
+            return msg.strip() or None
+    return None
+
+
 async def openrouter_completion(
     session: aiohttp.ClientSession,
     api_url: str,
     headers: Dict[str, str],
     payload: Dict[str, Any],
     timeout_s: float,
+    reasoning_requested: bool = False,
 ) -> Dict[str, Any]:
     timeout = aiohttp.ClientTimeout(total=timeout_s) if timeout_s and timeout_s > 0 else aiohttp.ClientTimeout(total=None)
     try:
@@ -211,7 +244,10 @@ async def openrouter_completion(
             text_body = await resp.text()
             if resp.status == 429:
                 raise RateLimitError(f"429 rate limit: {text_body[:200]}")
+            reasoning_hint = detect_reasoning_unsupported(text_body) if reasoning_requested else None
             if resp.status >= 400:
+                if reasoning_requested and reasoning_hint:
+                    raise UnsupportedReasoningModelError(reasoning_hint)
                 raise OpenRouterError(f"HTTP {resp.status}: {text_body[:200]}")
             if not text_body:
                 raise OpenRouterError("Empty response body")
@@ -327,6 +363,19 @@ def sanitize_model_slug(model: str) -> str:
     return slug
 
 
+def build_run_slug(model: str, reasoning_effort: Optional[str]) -> str:
+    base = sanitize_model_slug(model)
+    if reasoning_effort:
+        return f"{base}__reasoning+{reasoning_effort}"
+    return base
+
+
+def build_model_label(model: str, reasoning_effort: Optional[str]) -> str:
+    if reasoning_effort:
+        return f"{model} (reasoning +{reasoning_effort})"
+    return model
+
+
 def aggregate_token_usage(results: List[ItemResult]) -> Dict[str, int]:
     prompt = sum(r.prompt_tokens for r in results)
     completion = sum(r.completion_tokens for r in results)
@@ -384,37 +433,45 @@ def lookup_price_override(model: str, slug: str) -> Optional[Tuple[float, float]
     return None
 
 
-def load_price_info(model: str) -> Tuple[float, float]:
-    slug = sanitize_model_slug(model)
+def load_price_info(model: str, run_slug: Optional[str] = None) -> Tuple[float, float]:
+    base_slug = sanitize_model_slug(model)
 
-    override = lookup_price_override(model, slug)
+    override = lookup_price_override(model, base_slug)
     if override is not None:
         return override
 
-    prev_summary = RUNS_DIR / slug / "summary.json"
-    if prev_summary.exists():
-        try:
-            doc = json.loads(prev_summary.read_text(encoding="utf-8"))
-            price_obj = doc.get("price", {}) if isinstance(doc, dict) else {}
-            prompt_val = price_obj.get("input_per_million")
-            completion_val = price_obj.get("output_per_million")
-            if isinstance(prompt_val, (int, float)) or isinstance(completion_val, (int, float)):
-                return (
-                    float(prompt_val) if isinstance(prompt_val, (int, float)) else 0.0,
-                    float(completion_val) if isinstance(completion_val, (int, float)) else 0.0,
-                )
-            legacy = price_obj.get("per_million")
-            if isinstance(legacy, (int, float)):
-                val = float(legacy)
-                return val, val
-        except Exception as exc:
-            logger.debug("Unable to parse previous summary for price: %s", exc)
+    slug_candidates = []
+    if run_slug and run_slug != base_slug:
+        slug_candidates.append(run_slug)
+    slug_candidates.append(base_slug)
+
+    for slug in slug_candidates:
+        prev_summary = RUNS_DIR / slug / "summary.json"
+        if prev_summary.exists():
+            try:
+                doc = json.loads(prev_summary.read_text(encoding="utf-8"))
+                price_obj = doc.get("price", {}) if isinstance(doc, dict) else {}
+                prompt_val = price_obj.get("input_per_million")
+                completion_val = price_obj.get("output_per_million")
+                if isinstance(prompt_val, (int, float)) or isinstance(completion_val, (int, float)):
+                    return (
+                        float(prompt_val) if isinstance(prompt_val, (int, float)) else 0.0,
+                        float(completion_val) if isinstance(completion_val, (int, float)) else 0.0,
+                    )
+                legacy = price_obj.get("per_million")
+                if isinstance(legacy, (int, float)):
+                    val = float(legacy)
+                    return val, val
+            except Exception as exc:
+                logger.debug("Unable to parse previous summary for price: %s", exc)
 
     return DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE
 
 
 def write_model_summary(
     model: str,
+    model_label: str,
+    run_slug: str,
     args: argparse.Namespace,
     results: List[ItemResult],
     metrics: Dict[str, Any],
@@ -422,12 +479,13 @@ def write_model_summary(
     price_info: Tuple[float, float],
     estimated_cost: float,
 ) -> Path:
-    slug = sanitize_model_slug(model)
-    out_dir = RUNS_DIR / slug
+    out_dir = RUNS_DIR / run_slug
     out_dir.mkdir(parents=True, exist_ok=True)
     prompt_price, completion_price = price_info
     payload = {
         "model": model,
+        "model_label": model_label,
+        "run_slug": run_slug,
         "base_url": args.base_url,
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "params": {
@@ -435,6 +493,7 @@ def write_model_summary(
             "concurrency": args.concurrency,
             "max_tokens": args.max_tokens,
             "max_retries": args.max_retries,
+            "reasoning_effort": args.reasoning_effort,
         },
         "summary": metrics,
         "token_usage": token_usage,
@@ -476,6 +535,7 @@ async def eval_one(
     max_retries: int,
     max_tokens: int,
     rate_limit_backoff: float,
+    reasoning_effort: Optional[str],
 ) -> ItemResult:
     last_err: Optional[str] = None
     for attempt in range(max_retries):
@@ -491,12 +551,15 @@ async def eval_one(
                     "max_tokens": max_tokens,
                     "temperature": 0,
                 }
+                if reasoning_effort:
+                    payload["reasoning"] = {"effort": reasoning_effort}
                 resp = await openrouter_completion(
                     session=session,
                     api_url=api_url,
                     headers=headers,
                     payload=payload,
                     timeout_s=request_timeout_s,
+                    reasoning_requested=bool(reasoning_effort),
                 )
                 t1 = time.perf_counter()
                 if logger.isEnabledFor(logging.DEBUG):
@@ -614,6 +677,15 @@ async def eval_one(
                         logger.debug("Item %02d choice0 preview: %s", idx, safe_preview(choice0))
 
                 return item
+        except UnsupportedReasoningModelError as e:
+            last_err = f"reasoning_not_supported: {e}"
+            logger.error(
+                "Item %02d reasoning unsupported by model '%s': %s (disable --reasoning-effort or choose a reasoning-capable model)",
+                idx,
+                model,
+                e,
+            )
+            return ItemResult(index=idx, truth=truth, pred=None, correct=False, latency_s=0.0, error=last_err)
         except Exception as e:
             last_err = f"{type(e).__name__}: {e}"
             delay: float
@@ -688,6 +760,8 @@ async def main_async(args):
         raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter access")
     api_url = build_api_url(args.base_url)
     headers = build_openrouter_headers(api_key)
+    run_slug = build_run_slug(args.model, args.reasoning_effort)
+    model_label = build_model_label(args.model, args.reasoning_effort)
 
     # Pre-encode images to data URIs (fast local CPU; avoids repeated disk I/O in tasks)
     img_indices = list(range(1, n + 1))
@@ -717,6 +791,7 @@ async def main_async(args):
                     max_retries=args.max_retries,
                     max_tokens=args.max_tokens,
                     rate_limit_backoff=args.rate_limit_backoff,
+                    reasoning_effort=args.reasoning_effort,
                 )
             )
             for i in img_indices
@@ -760,7 +835,7 @@ async def main_async(args):
     total_time = t_end - t_start
     throughput = len(results) / total_time if total_time > 0 else float("nan")
     token_usage = aggregate_token_usage(results)
-    price_info = load_price_info(args.model)
+    price_info = load_price_info(args.model, run_slug=run_slug)
     input_price, output_price = price_info
     estimated_cost = (
         (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
@@ -784,6 +859,9 @@ async def main_async(args):
     print(f"model={args.model}")
     if args.base_url:
         print(f"base_url={args.base_url}")
+    if args.reasoning_effort:
+        print(f"model_label={model_label}")
+        print(f"reasoning_effort={args.reasoning_effort}")
     print(f"n={len(results)} concurrency={args.concurrency} total_time_s={total_time:.3f} throughput_ips={throughput:.2f}")
     print(f"accuracy_exact={acc:.4f}  mae={mae:.4f}")
     print(f"latency_avg_s={avg_lat:.3f}  p50_s={p50:.3f}  p95_s={p95:.3f}")
@@ -806,6 +884,8 @@ async def main_async(args):
 
     summary_path = write_model_summary(
         model=args.model,
+        model_label=model_label,
+        run_slug=run_slug,
         args=args,
         results=results,
         metrics=metrics,
@@ -846,6 +926,13 @@ def parse_args() -> argparse.Namespace:
         type=str,
         default=OPENROUTER_DEFAULT_BASE,
         help="OpenRouter-compatible base URL (default: https://openrouter.ai/api/v1)",
+    )
+    p.add_argument(
+        "--reasoning-effort",
+        type=str,
+        choices=["minimal", "low", "medium", "high"],
+        default=None,
+        help="Enable OpenRouter reasoning for supported models (one of: minimal, low, medium, high)",
     )
     p.add_argument(
         "--max-tokens",

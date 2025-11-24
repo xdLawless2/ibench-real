@@ -20,12 +20,14 @@ export OPENROUTER_API_KEY=sk-or-...
 python main.py --model openrouter/qwen/qwen3-vl-235b-a22b-instruct
 ```
 
+To exercise models that expose OpenRouter's reasoning feature, add `--reasoning-effort high` (or `minimal|low|medium`). The runner will surface a clear `reasoning_not_supported` error if the chosen model does not accept reasoning requests.
+
 The script will:
 1. Load ground-truth answers from `truth.txt` (one integer per line).
 2. Convert the corresponding image files to base64 data URIs.
 3. Query the specified vision-capable model with a fixed question.
 4. Parse the first integer in the model response and compare against ground truth.
-5. Print per-image results, a summary block, and persist a JSON summary under `runs/<model_slug>/summary.json` (overwriting the previous run for that model slug).
+5. Print per-image results, a summary block, and persist a JSON summary under `runs/<model_slug>/summary.json` (or `runs/<model_slug>__reasoning+<effort>/summary.json` when reasoning is enabled) so reasoning and non-reasoning runs are kept separately.
 
 ## CLI Options
 | Flag | Description | Default |
@@ -39,11 +41,11 @@ The script will:
 | `--max-retries` | Retry attempts per image | `5` |
 | `--rate-limit-backoff` | Base seconds to wait on rate limits | `5.0` |
 | `--base-url` | OpenRouter-compatible base URL (default resolves to `https://openrouter.ai/api/v1`) | `https://openrouter.ai/api/v1` |
+| `--reasoning-effort` | Enable OpenRouter reasoning (one of `minimal`, `low`, `medium`, `high`); fails gracefully if the model doesn't support reasoning | `None` |
 | `--max-tokens` | Response token budget | `8192` |
 | `--log-level` | Logging verbosity (`DEBUG`, `INFO`, etc.) | `INFO` |
 | `--log-file` | Optional log output path | `None` |
 | `--progress` | Print `[progress]` lines as items finish | `False` |
-| `--progress` | Print streaming progress updates as items finish | `False` |
 
 ## Logging
 Structured logging is provided via Python's `logging` module.
@@ -53,8 +55,8 @@ Structured logging is provided via Python's `logging` module.
 - Pass `--progress` to print a running `[progress] completed/total` line whenever an item finishes.
 
 ## Run Records
-- Every run writes (and overwrites) `runs/<model_slug>/summary.json`, where `model_slug` is a filesystem-safe version of the `--model` name (slashes replaced with underscores).
-- The summary captures per-item predictions, correctness, errors, token usage, aggregate latency/accuracy stats, and an estimated dollar cost driven by `model_prices.json` (or default environment variables).
+- Every run writes (and overwrites) `runs/<model_slug>/summary.json`, where `model_slug` is a filesystem-safe version of the `--model` name (slashes replaced with underscores). If `--reasoning-effort` is set, the run folder becomes `runs/<model_slug>__reasoning+<effort>` so reasoning runs do not overwrite non-reasoning runs (or other reasoning levels).
+- The summary captures per-item predictions, correctness, errors, token usage, aggregate latency/accuracy stats, and an estimated dollar cost driven by `model_prices.json` (or default environment variables). A `model_label` field records the display name used in charts (e.g., `openai/gpt-4o (reasoning +high)`).
 - Delete the corresponding folder under `runs/` if you want to reset a model's history.
 
 ### Pricing data

@@ -1,0 +1,260 @@
+{
+  "model": "qwen/qwen3-vl-30b-a3b-instruct",
+  "model_label": "qwen/qwen3-vl-30b-a3b-instruct",
+  "run_slug": "qwen_qwen3-vl-30b-a3b-instruct",
+  "base_url": "https://openrouter.ai/api/v1",
+  "timestamp": "2025-11-24T21:00:23.715096Z",
+  "params": {
+    "n": 20,
+    "concurrency": 4,
+    "max_tokens": 8192,
+    "max_retries": 5,
+    "reasoning_effort": null
+  },
+  "summary": {
+    "n": 20,
+    "total_time_s": 18.474419999998645,
+    "throughput_ips": 1.082577964558642,
+    "accuracy_exact": 0.35,
+    "mae": 0.95,
+    "latency_avg_s": 2.8921035350003876,
+    "latency_p50_s": 2.216045600000143,
+    "latency_p95_s": 10.034875100001955,
+    "failures": 0,
+    "percent_correct": 35.0,
+    "num_correct": 7,
+    "estimated_cost": 0.017614499999999998
+  },
+  "token_usage": {
+    "prompt_tokens": 117270,
+    "completion_tokens": 40,
+    "total_tokens": 117310
+  },
+  "price": {
+    "input_per_million": 0.15,
+    "output_per_million": 0.6,
+    "estimated_cost": 0.017614499999999998
+  },
+  "items": [
+    {
+      "index": 1,
+      "truth": 2,
+      "pred": 2,
+      "correct": true,
+      "latency_s": 1.9379481000032683,
+      "error": null,
+      "prompt_tokens": 4590,
+      "completion_tokens": 2,
+      "total_tokens": 4592
+    },
+    {
+      "index": 2,
+      "truth": 3,
+      "pred": 2,
+      "correct": false,
+      "latency_s": 2.257590400000481,
+      "error": null,
+      "prompt_tokens": 4590,
+      "completion_tokens": 2,
+      "total_tokens": 4592
+    },
+    {
+      "index": 3,
+      "truth": 4,
+      "pred": 2,
+      "correct": false,
+      "latency_s": 1.954847900000459,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 4,
+      "truth": 3,
+      "pred": 2,
+      "correct": false,
+      "latency_s": 2.317300599999726,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 5,
+      "truth": 4,
+      "pred": 1,
+      "correct": false,
+      "latency_s": 2.3712975999987975,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 6,
+      "truth": 5,
+      "pred": 3,
+      "correct": false,
+      "latency_s": 2.0114544999996724,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 7,
+      "truth": 6,
+      "pred": 6,
+      "correct": true,
+      "latency_s": 1.6359083000024839,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 8,
+      "truth": 3,
+      "pred": 1,
+      "correct": false,
+      "latency_s": 2.999014299999544,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 9,
+      "truth": 1,
+      "pred": 1,
+      "correct": true,
+      "latency_s": 1.7494637000017974,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 10,
+      "truth": 6,
+      "pred": 4,
+      "correct": false,
+      "latency_s": 3.8205223999975715,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 11,
+      "truth": 4,
+      "pred": 4,
+      "correct": true,
+      "latency_s": 2.952696399999695,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 12,
+      "truth": 2,
+      "pred": 3,
+      "correct": false,
+      "latency_s": 1.8005472000004374,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 13,
+      "truth": 3,
+      "pred": 3,
+      "correct": true,
+      "latency_s": 2.4264690000018163,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 14,
+      "truth": 5,
+      "pred": 4,
+      "correct": false,
+      "latency_s": 2.174500799999805,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 15,
+      "truth": 3,
+      "pred": 2,
+      "correct": false,
+      "latency_s": 1.8051964000005682,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 16,
+      "truth": 5,
+      "pred": 4,
+      "correct": false,
+      "latency_s": 10.144720700001926,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 17,
+      "truth": 1,
+      "pred": 1,
+      "correct": true,
+      "latency_s": 2.53863629999978,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 18,
+      "truth": 2,
+      "pred": 1,
+      "correct": false,
+      "latency_s": 1.7683823999977903,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 19,
+      "truth": 5,
+      "pred": 6,
+      "correct": false,
+      "latency_s": 1.2277649999996356,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    },
+    {
+      "index": 20,
+      "truth": 6,
+      "pred": 6,
+      "correct": true,
+      "latency_s": 7.947808700002497,
+      "error": null,
+      "prompt_tokens": 6005,
+      "completion_tokens": 2,
+      "total_tokens": 6007
+    }
+  ]
+}

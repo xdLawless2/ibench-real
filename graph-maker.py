@@ -42,8 +42,20 @@ def load_run_summaries(runs_dir: Path) -> List[Tuple[str, float]]:
             percent = acc * 100 if isinstance(acc, (int, float)) else None
         if percent is None:
             continue
-        model = doc.get("model") or summary_file.parent.name
-        items.append((model, float(percent)))
+        params = doc.get("params", {}) if isinstance(doc, dict) else {}
+        reasoning_effort = params.get("reasoning_effort")
+        base_model = doc.get("model")
+        label = doc.get("model_label")
+        if not label:
+            if base_model and reasoning_effort:
+                label = f"{base_model} (reasoning +{reasoning_effort})"
+            elif base_model:
+                label = base_model
+            elif reasoning_effort:
+                label = f"{summary_file.parent.name} (reasoning +{reasoning_effort})"
+            else:
+                label = summary_file.parent.name
+        items.append((label, float(percent)))
     return items
 
 
