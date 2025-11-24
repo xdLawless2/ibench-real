@@ -6,7 +6,7 @@ OpenRouter Vision Benchmark (lean + parallel)
 - Reads truths: ./truth.txt  (one integer per line; line i => image i.png)
 - Asks each image the same question:
     "How many distinct intersections of different line segments are in this image?"
-- Sends vision prompts to the given OpenRouter model alias (default: "openrouter/qwen/qwen3-vl-235b-a22b-instruct")
+- Sends vision prompts to the given OpenRouter model alias (default: "qwen/qwen3-vl-235b-a22b-instruct")
 - Runs asynchronously with bounded concurrency
 - Reports exact-match accuracy, MAE, latency stats, throughput
 - Optionally writes a CSV of per-item results
@@ -36,6 +36,7 @@ from dataclasses import dataclass
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from datetime import datetime
 
 import aiohttp
 
@@ -54,6 +55,31 @@ OPENROUTER_DEFAULT_BASE = "https://openrouter.ai/api/v1"
 
 
 logger = logging.getLogger("ibench")
+
+RUNS_DIR = Path("runs")
+MODEL_PRICE_FILE = Path("model_prices.json")
+
+
+def _read_env_price(var_name: str) -> Optional[float]:
+    raw = os.environ.get(var_name)
+    if not raw:
+        return None
+    try:
+        return float(raw)
+    except ValueError:
+        return None
+
+
+def _read_default_price_pair() -> Tuple[float, float]:
+    base = _read_env_price("OPENROUTER_DEFAULT_PRICE_PER_MILLION")
+    prompt = _read_env_price("OPENROUTER_DEFAULT_INPUT_PRICE_PER_MILLION")
+    completion = _read_env_price("OPENROUTER_DEFAULT_OUTPUT_PRICE_PER_MILLION")
+    prompt_val = prompt if prompt is not None else (base if base is not None else 0.0)
+    completion_val = completion if completion is not None else (base if base is not None else 0.0)
+    return prompt_val, completion_val
+
+
+DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE = _read_default_price_pair()
 
 
 class OpenRouterError(RuntimeError):
@@ -96,6 +122,9 @@ class ItemResult:
     # Debug-only fields (not written to CSV)
     debug: Optional[str] = None
     raw_text_preview: Optional[str] = None
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
 
 
 def load_truths(truth_path: Path, n: int) -> Dict[int, int]:
@@ -272,6 +301,168 @@ def extract_text(resp: Any) -> str:
         return ""
 
 
+def extract_usage_counts(usage: Any) -> Tuple[int, int, int]:
+    def _get_first(d: Dict[str, Any], keys: List[str]) -> int:
+        for key in keys:
+            val = d.get(key)
+            if isinstance(val, int) and val >= 0:
+                return val
+            if isinstance(val, str) and val.isdigit():
+                return int(val)
+        return 0
+
+    if isinstance(usage, dict):
+        prompt = _get_first(usage, ["prompt_tokens", "input_tokens", "input_token_count"])
+        completion = _get_first(usage, ["completion_tokens", "output_tokens", "output_token_count"])
+        total = _get_first(usage, ["total_tokens", "token_count"])
+        if total == 0 and (prompt or completion):
+            total = prompt + completion
+        return prompt, completion, total
+    return 0, 0, 0
+
+
+def sanitize_model_slug(model: str) -> str:
+    slug = re.sub(r"[^a-zA-Z0-9._-]+", "_", model.strip())
+    slug = slug.strip("_.") or "model"
+    return slug
+
+
+def aggregate_token_usage(results: List[ItemResult]) -> Dict[str, int]:
+    prompt = sum(r.prompt_tokens for r in results)
+    completion = sum(r.completion_tokens for r in results)
+    total = sum(r.total_tokens for r in results)
+    return {
+        "prompt_tokens": prompt,
+        "completion_tokens": completion,
+        "total_tokens": total,
+    }
+
+
+def lookup_price_override(model: str, slug: str) -> Optional[Tuple[float, float]]:
+    if not MODEL_PRICE_FILE.exists():
+        return None
+    try:
+        data = json.loads(MODEL_PRICE_FILE.read_text(encoding="utf-8"))
+    except Exception as exc:
+        logger.warning("Failed to read %s: %s", MODEL_PRICE_FILE, exc)
+        return None
+
+    def _coerce_number(val: Any) -> Optional[float]:
+        if isinstance(val, (int, float)):
+            return float(val)
+        if isinstance(val, str):
+            try:
+                return float(val)
+            except ValueError:
+                return None
+        return None
+
+    def _coerce_price_entry(entry: Any) -> Optional[Tuple[float, float]]:
+        if isinstance(entry, dict):
+            prompt = _coerce_number(entry.get("input") or entry.get("prompt") or entry.get("prompt_per_million"))
+            completion = _coerce_number(entry.get("output") or entry.get("completion") or entry.get("completion_per_million"))
+            if prompt is None and completion is None:
+                return None
+            prompt_val = prompt if prompt is not None else 0.0
+            completion_val = completion if completion is not None else 0.0
+            return prompt_val, completion_val
+        coerced = _coerce_number(entry)
+        if coerced is not None:
+            return coerced, coerced
+        if isinstance(entry, (list, tuple)) and len(entry) >= 2:
+            first = _coerce_number(entry[0])
+            second = _coerce_number(entry[1])
+            if first is not None or second is not None:
+                return first or 0.0, second or 0.0
+        return None
+
+    for key in (model, slug):
+        if key in data:
+            coerced_pair = _coerce_price_entry(data[key])
+            if coerced_pair is not None:
+                return coerced_pair
+    return None
+
+
+def load_price_info(model: str) -> Tuple[float, float]:
+    slug = sanitize_model_slug(model)
+
+    override = lookup_price_override(model, slug)
+    if override is not None:
+        return override
+
+    prev_summary = RUNS_DIR / slug / "summary.json"
+    if prev_summary.exists():
+        try:
+            doc = json.loads(prev_summary.read_text(encoding="utf-8"))
+            price_obj = doc.get("price", {}) if isinstance(doc, dict) else {}
+            prompt_val = price_obj.get("input_per_million")
+            completion_val = price_obj.get("output_per_million")
+            if isinstance(prompt_val, (int, float)) or isinstance(completion_val, (int, float)):
+                return (
+                    float(prompt_val) if isinstance(prompt_val, (int, float)) else 0.0,
+                    float(completion_val) if isinstance(completion_val, (int, float)) else 0.0,
+                )
+            legacy = price_obj.get("per_million")
+            if isinstance(legacy, (int, float)):
+                val = float(legacy)
+                return val, val
+        except Exception as exc:
+            logger.debug("Unable to parse previous summary for price: %s", exc)
+
+    return DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE
+
+
+def write_model_summary(
+    model: str,
+    args: argparse.Namespace,
+    results: List[ItemResult],
+    metrics: Dict[str, Any],
+    token_usage: Dict[str, int],
+    price_info: Tuple[float, float],
+    estimated_cost: float,
+) -> Path:
+    slug = sanitize_model_slug(model)
+    out_dir = RUNS_DIR / slug
+    out_dir.mkdir(parents=True, exist_ok=True)
+    prompt_price, completion_price = price_info
+    payload = {
+        "model": model,
+        "base_url": args.base_url,
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "params": {
+            "n": metrics["n"],
+            "concurrency": args.concurrency,
+            "max_tokens": args.max_tokens,
+            "max_retries": args.max_retries,
+        },
+        "summary": metrics,
+        "token_usage": token_usage,
+        "price": {
+            "input_per_million": prompt_price,
+            "output_per_million": completion_price,
+            "estimated_cost": estimated_cost,
+        },
+        "items": [
+            {
+                "index": r.index,
+                "truth": r.truth,
+                "pred": r.pred,
+                "correct": r.correct,
+                "latency_s": r.latency_s,
+                "error": r.error,
+                "prompt_tokens": r.prompt_tokens,
+                "completion_tokens": r.completion_tokens,
+                "total_tokens": r.total_tokens,
+            }
+            for r in sorted(results, key=lambda x: x.index)
+        ],
+    }
+    out_path = out_dir / "summary.json"
+    out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return out_path
+
+
 async def eval_one(
     idx: int,
     model: str,
@@ -298,6 +489,7 @@ async def eval_one(
                     "model": model,
                     "messages": build_messages(data_uri),
                     "max_tokens": max_tokens,
+                    "temperature": 0,
                 }
                 resp = await openrouter_completion(
                     session=session,
@@ -323,6 +515,9 @@ async def eval_one(
                 # Build lean debug summary (printed on failure only)
                 debug_str = None
                 text_preview = None
+                prompt_tokens = 0
+                completion_tokens = 0
+                total_tokens = 0
                 try:
                     # Basic fields from response
                     choices = getattr(resp, "choices", None)
@@ -346,6 +541,8 @@ async def eval_one(
                         usage = resp.get("usage")
                     if hasattr(usage, "__dict__"):
                         usage = usage.__dict__
+                    if isinstance(usage, dict):
+                        prompt_tokens, completion_tokens, total_tokens = extract_usage_counts(usage)
                     # content shape
                     msg_content = None
                     if msg is not None:
@@ -395,6 +592,9 @@ async def eval_one(
                     error=err,
                     debug=debug_str,
                     raw_text_preview=text_preview,
+                    prompt_tokens=prompt_tokens,
+                    completion_tokens=completion_tokens,
+                    total_tokens=total_tokens,
                 )
 
                 if logger.isEnabledFor(logging.INFO):
@@ -446,30 +646,6 @@ def summarize(results: List[ItemResult]) -> Tuple[float, float, float, float, fl
     p95 = (statistics.quantiles(lats, n=20)[18] if len(lats) >= 20 else (max(lats) if lats else float("nan")))
     failures = sum(1 for r in results if r.pred is None)
     return acc, mae, (sum(lats) / len(lats) if lats else float("nan")), p50, p95, failures
-
-
-def write_csv(path: Path, results: List[ItemResult]) -> None:
-    total = len(results)
-    correct_count = sum(1 for r in results if r.correct)
-    percent_correct = (
-        f"{(correct_count / total) * 100.0:.2f}%"
-        if total
-        else "N/A"
-    )
-    lines = ["index,truth,pred,correct,latency_s,error,percent_correct"]
-    for r in sorted(results, key=lambda x: x.index):
-        row = [
-            str(r.index),
-            "" if r.truth is None else str(r.truth),
-            "" if r.pred is None else str(r.pred),
-            str(int(r.correct)),
-            f"{r.latency_s:.6f}",
-            "" if r.error is None else repr(r.error).replace(",", ";"),
-            "",
-        ]
-        lines.append(",".join(row))
-    lines.append(",".join(["summary", "", "", "", "", "", percent_correct]))
-    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def setup_logging(log_level: str, log_file: Optional[str]) -> None:
@@ -527,23 +703,40 @@ async def main_async(args):
     t_start = time.perf_counter()
     async with aiohttp.ClientSession() as session:
         tasks = [
-            eval_one(
-                idx=i,
-                model=args.model,
-                data_uri=data_uris[i],
-                truth=truths.get(i),
-                semaphore=sem,
-                session=session,
-                api_url=api_url,
-                headers=headers,
-                request_timeout_s=args.request_timeout,
-                max_retries=args.max_retries,
-                max_tokens=args.max_tokens,
-                rate_limit_backoff=args.rate_limit_backoff,
+            asyncio.create_task(
+                eval_one(
+                    idx=i,
+                    model=args.model,
+                    data_uri=data_uris[i],
+                    truth=truths.get(i),
+                    semaphore=sem,
+                    session=session,
+                    api_url=api_url,
+                    headers=headers,
+                    request_timeout_s=args.request_timeout,
+                    max_retries=args.max_retries,
+                    max_tokens=args.max_tokens,
+                    rate_limit_backoff=args.rate_limit_backoff,
+                )
             )
             for i in img_indices
         ]
-        results = await asyncio.gather(*tasks)
+
+        results: List[ItemResult] = []
+        completed = 0
+        total = len(tasks)
+        if args.progress:
+            print(f"[progress] {completed}/{total} completed", flush=True)
+
+        for finished in asyncio.as_completed(tasks):
+            res = await finished
+            results.append(res)
+            completed += 1
+            if args.progress:
+                print(
+                    f"[progress] {completed}/{total} completed (last={res.index:02d})",
+                    flush=True,
+                )
     t_end = time.perf_counter()
 
     # Per-item lines
@@ -566,6 +759,27 @@ async def main_async(args):
     total = len(results)
     total_time = t_end - t_start
     throughput = len(results) / total_time if total_time > 0 else float("nan")
+    token_usage = aggregate_token_usage(results)
+    price_info = load_price_info(args.model)
+    input_price, output_price = price_info
+    estimated_cost = (
+        (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
+        + (token_usage["completion_tokens"] / 1_000_000.0) * output_price
+    ) if (input_price or output_price) else 0.0
+    metrics = {
+        "n": total,
+        "total_time_s": total_time,
+        "throughput_ips": throughput,
+        "accuracy_exact": acc,
+        "mae": mae,
+        "latency_avg_s": avg_lat,
+        "latency_p50_s": p50,
+        "latency_p95_s": p95,
+        "failures": failures,
+        "percent_correct": acc * 100.0,
+        "num_correct": num_correct,
+        "estimated_cost": estimated_cost,
+    }
     print("\n--- summary ---")
     print(f"model={args.model}")
     if args.base_url:
@@ -577,11 +791,29 @@ async def main_async(args):
     # End with a simple percent-correct summary
     if total > 0:
         print(f"percent_correct={acc * 100:.1f}% ({num_correct}/{total})")
+    print(
+        "token_usage="
+        f"prompt={token_usage['prompt_tokens']} completion={token_usage['completion_tokens']} total={token_usage['total_tokens']}"
+    )
+    if input_price or output_price:
+        print(
+            "estimated_cost=${:.4f} (input_per_million={} output_per_million={})".format(
+                estimated_cost,
+                input_price,
+                output_price,
+            )
+        )
 
-    if args.csv:
-        out_path = Path(args.csv).resolve()
-        write_csv(out_path, results)
-        print(f"csv={out_path}")
+    summary_path = write_model_summary(
+        model=args.model,
+        args=args,
+        results=results,
+        metrics=metrics,
+        token_usage=token_usage,
+        price_info=price_info,
+        estimated_cost=estimated_cost,
+    )
+    print(f"summary_saved={summary_path}")
 
 
 def parse_args() -> argparse.Namespace:
@@ -589,8 +821,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--model",
         type=str,
-        default="openrouter/qwen/qwen3-vl-235b-a22b-instruct",
-        help="OpenRouter model name/alias (default: openrouter/qwen/qwen3-vl-235b-a22b-instruct)",
+        default="qwen/qwen3-vl-235b-a22b-instruct",
+        help="OpenRouter model name/alias (default: qwen/qwen3-vl-235b-a22b-instruct)",
     )
     p.add_argument("--imgs", type=str, default="imgs", help="Directory containing images named 1.png..N.png (default: ./imgs)")
     p.add_argument("--truth", type=str, default="truth.txt", help="Path to truth.txt (one integer per line)")
@@ -633,7 +865,17 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional path to write detailed logs",
     )
-    p.add_argument("--csv", type=str, default="results.csv", help="Write per-item results CSV (default: results.csv)")
+    p.add_argument(
+        "--progress",
+        action="store_true",
+        help="Print streaming progress updates as items complete",
+    )
+    p.add_argument(
+        "--price-per-million",
+        type=float,
+        default=0.0,
+        help="USD price per 1M tokens for cost estimates",
+    )
     return p.parse_args()
 
 

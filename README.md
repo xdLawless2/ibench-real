@@ -5,7 +5,7 @@ OpenRouter-powered micro-benchmark for counting line-intersection points in 20 s
 ## Features
 - Async evaluation of a numbered image set (`./imgs/1.png` … `./imgs/20.png`).
 - Ground-truth comparison via `truth.txt` with accuracy, MAE, latency, and throughput metrics.
-- CSV export summarizing predictions, errors, and latencies per item.
+- Automatic per-model run archives under `./runs/<model_slug>/summary.json` containing per-item outcomes, token usage, and estimated costs.
 - Optional structured logging (console + file) capturing raw model outputs and reasoning metadata.
 
 ## Requirements
@@ -25,7 +25,7 @@ The script will:
 2. Convert the corresponding image files to base64 data URIs.
 3. Query the specified vision-capable model with a fixed question.
 4. Parse the first integer in the model response and compare against ground truth.
-5. Print per-image results, a summary block, and write `results.csv` (unless overridden).
+5. Print per-image results, a summary block, and persist a JSON summary under `runs/<model_slug>/summary.json` (overwriting the previous run for that model slug).
 
 ## CLI Options
 | Flag | Description | Default |
@@ -42,13 +42,33 @@ The script will:
 | `--max-tokens` | Response token budget | `8192` |
 | `--log-level` | Logging verbosity (`DEBUG`, `INFO`, etc.) | `INFO` |
 | `--log-file` | Optional log output path | `None` |
-| `--csv` | Per-item results CSV path | `results.csv` |
+| `--progress` | Print `[progress]` lines as items finish | `False` |
+| `--progress` | Print streaming progress updates as items finish | `False` |
 
 ## Logging
 Structured logging is provided via Python's `logging` module.
 - Console logs respect `--log-level`.
 - Supply `--log-file myrun.log` to capture the same output to disk.
 - `DEBUG` level includes raw OpenRouter responses, text extraction previews, and reasoning metadata (e.g., `reasoning_len`, `thinking_blocks`).
+- Pass `--progress` to print a running `[progress] completed/total` line whenever an item finishes.
+
+## Run Records
+- Every run writes (and overwrites) `runs/<model_slug>/summary.json`, where `model_slug` is a filesystem-safe version of the `--model` name (slashes replaced with underscores).
+- The summary captures per-item predictions, correctness, errors, token usage, aggregate latency/accuracy stats, and an estimated dollar cost driven by `model_prices.json` (or default environment variables).
+- Delete the corresponding folder under `runs/` if you want to reset a model's history.
+
+### Pricing data
+- Edit `model_prices.json` to assign USD prices per 1M input/prompt tokens **and** per 1M output/completion tokens. Keys can be either the literal `--model` string or its filesystem-safe slug. Example:
+  ```json
+  {
+    "openai/gpt-5-pro": { "input": 10.0, "output": 30.0 },
+    "openrouter_qwen_qwen3-vl-235b-a22b-instruct": { "input": 1.2, "output": 4.8 }
+  }
+  ```
+- If the file lacks an entry for a model, the runner reuses prices stored in that model's previous `summary.json` (if present) or falls back to environment defaults:
+  - `OPENROUTER_DEFAULT_INPUT_PRICE_PER_MILLION`
+  - `OPENROUTER_DEFAULT_OUTPUT_PRICE_PER_MILLION`
+  - (legacy) `OPENROUTER_DEFAULT_PRICE_PER_MILLION` applies to both directions if the others are unset.
 
 ## Example
 ```bash
@@ -75,7 +95,7 @@ accuracy_exact=0.5000  mae=1.0000
 - Increase `--max-tokens` for reasoning models if truncation occurs (watch for `finish=length`).
 - When using shared gateways (OpenRouter, etc.), keep `--concurrency` low (1–3) and tweak `--rate-limit-backoff` if you see 429s.
 - For quick smoke tests use smaller subsets: `python main.py --n 5 --concurrency 2`.
-- Inspect the generated CSV for downstream analysis or visualisation.
+- Review `runs/<model_slug>/summary.json` for downstream analysis or visualization.
 
 ## Troubleshooting
 - **All predictions empty**: Verify API key access and that the model supports images. Consider increasing `--max-tokens` or checking network proxies.
