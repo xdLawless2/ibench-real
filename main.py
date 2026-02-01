@@ -57,7 +57,7 @@ OPENROUTER_DEFAULT_BASE = "https://openrouter.ai/api/v1"
 logger = logging.getLogger("ibench")
 
 RUNS_DIR = Path("runs")
-MODEL_PRICE_FILE = Path("model_prices.json")
+MODEL_PRICE_FILE = Path("config/model_prices.json")
 
 
 def _read_env_price(var_name: str) -> Optional[float]:
@@ -129,6 +129,9 @@ class ItemResult:
     prompt_tokens: int = 0
     completion_tokens: int = 0
     total_tokens: int = 0
+    reasoning_tokens: int = 0
+    reasoning_len: int = 0
+    thinking_blocks: int = 0
 
 
 def load_truths(truth_path: Path, n: int) -> Dict[int, int]:
@@ -188,6 +191,14 @@ def build_api_url(base_url: Optional[str]) -> str:
     return f"{base}/chat/completions"
 
 
+def build_models_url(base_url: Optional[str]) -> str:
+    """Return the OpenRouter-style models listing endpoint for a given base URL."""
+    base = (base_url or OPENROUTER_DEFAULT_BASE).rstrip("/")
+    if base.endswith("/chat/completions"):
+        base = base[: -len("/chat/completions")]
+    return f"{base}/models"
+
+
 def build_openrouter_headers(api_key: str) -> Dict[str, str]:
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -227,6 +238,88 @@ def detect_reasoning_unsupported(text_body: str) -> Optional[str]:
         lower = msg.lower()
         if "reasoning" in lower and any(key in lower for key in ("not support", "unsupported", "disabled", "unavailable")):
             return msg.strip() or None
+    return None
+
+
+def _coerce_float(val: Any) -> Optional[float]:
+    if isinstance(val, (int, float)):
+        return float(val)
+    if isinstance(val, str):
+        try:
+            return float(val)
+        except ValueError:
+            return None
+    return None
+
+
+def _normalize_model_id(model: str) -> str:
+    """OpenRouter sometimes omits a leading 'openrouter/' prefix in model IDs."""
+    m = (model or "").strip()
+    if m.lower().startswith("openrouter/"):
+        return m[len("openrouter/") :]
+    return m
+
+
+async def fetch_openrouter_price_pair(
+    session: aiohttp.ClientSession,
+    models_url: str,
+    headers: Dict[str, str],
+    model: str,
+) -> Optional[Tuple[float, float]]:
+    """Fetch (prompt, completion) USD-per-million prices for a model from /models.
+
+    Returns None if the endpoint is unavailable or the model/pricing is missing.
+    """
+    try:
+        timeout = aiohttp.ClientTimeout(total=30)
+        async with session.get(models_url, headers=headers, timeout=timeout) as resp:
+            body = await resp.text()
+            if resp.status >= 400:
+                logger.debug("Price fetch failed HTTP %s: %s", resp.status, body[:200])
+                return None
+            doc = json.loads(body)
+    except Exception as exc:
+        logger.debug("Price fetch exception: %s", exc)
+        return None
+
+    data = doc.get("data") if isinstance(doc, dict) else None
+    if not isinstance(data, list):
+        return None
+
+    target_ids = {
+        (model or "").strip().lower(),
+        _normalize_model_id(model).lower(),
+    }
+
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        item_id_raw = item.get("id") or item.get("model") or item.get("name")
+        if not isinstance(item_id_raw, str):
+            continue
+        item_id = item_id_raw.strip().lower()
+        if item_id not in target_ids and _normalize_model_id(item_id).lower() not in target_ids:
+            continue
+
+        pricing = item.get("pricing") or {}
+        if not isinstance(pricing, dict):
+            return None
+        prompt_val = _coerce_float(
+            pricing.get("prompt")
+            or pricing.get("input")
+            or pricing.get("prompt_per_million")
+            or pricing.get("input_per_million")
+        )
+        completion_val = _coerce_float(
+            pricing.get("completion")
+            or pricing.get("output")
+            or pricing.get("completion_per_million")
+            or pricing.get("output_per_million")
+        )
+        if prompt_val is None and completion_val is None:
+            return None
+        return (prompt_val or 0.0, completion_val or 0.0)
+
     return None
 
 
@@ -357,6 +450,46 @@ def extract_usage_counts(usage: Any) -> Tuple[int, int, int]:
     return 0, 0, 0
 
 
+def extract_reasoning_tokens(usage: Any) -> int:
+    """Best-effort extraction of reasoning-token counts across providers.
+
+    OpenRouter may surface reasoning usage as a top-level field (e.g., reasoning_tokens)
+    or nested under completion/output token details.
+    """
+    if not isinstance(usage, dict):
+        return 0
+
+    def _coerce_int(val: Any) -> Optional[int]:
+        if isinstance(val, int) and val >= 0:
+            return val
+        if isinstance(val, str) and val.isdigit():
+            return int(val)
+        return None
+
+    for key in ("reasoning_tokens", "reasoning_token_count"):
+        v = _coerce_int(usage.get(key))
+        if v is not None:
+            return v
+
+    # OpenAI-style details blocks
+    for detail_key in (
+        "completion_tokens_details",
+        "output_tokens_details",
+        "completion_details",
+        "output_details",
+        "token_details",
+        "details",
+    ):
+        detail = usage.get(detail_key)
+        if isinstance(detail, dict):
+            for key in ("reasoning_tokens", "reasoning_token_count"):
+                v = _coerce_int(detail.get(key))
+                if v is not None:
+                    return v
+
+    return 0
+
+
 def sanitize_model_slug(model: str) -> str:
     slug = re.sub(r"[^a-zA-Z0-9._-]+", "_", model.strip())
     slug = slug.strip("_.") or "model"
@@ -372,30 +505,65 @@ def build_run_slug(model: str, reasoning_effort: Optional[str]) -> str:
 
 def build_model_label(model: str, reasoning_effort: Optional[str]) -> str:
     if reasoning_effort:
-        return f"{model} (reasoning +{reasoning_effort})"
+        return f"{model} ({reasoning_effort} reasoning)"
     return model
 
 
-def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, Optional[str]]:
-    """Parse model string with optional reasoning override, e.g., 'openai/o3' or 'openai/o4:reasoning=high'."""
+KNOWN_PROVIDERS = {"openrouter", "google"}
+DEFAULT_PROVIDER = "openrouter"
+
+
+def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, str, Optional[str]]:
+    """Parse model string with optional provider and reasoning override.
+
+    Supported formats:
+        - 'openai/o3' -> (openrouter, openai/o3, default_reasoning)
+        - 'google:gemini-2.5-flash' -> (google, gemini-2.5-flash, default_reasoning)
+        - 'openrouter:openai/o4-mini:reasoning=high' -> (openrouter, openai/o4-mini, high)
+        - 'google:gemini-3-pro:reasoning=low' -> (google, gemini-3-pro, low)
+
+    Returns:
+        Tuple of (provider, model, reasoning_effort)
+    """
+    provider = DEFAULT_PROVIDER
     model = raw
     reasoning = default_reasoning
 
-    if ":" in raw:
-        model_part, suffix = raw.split(":", 1)
-        model = model_part.strip()
-        suffix = suffix.strip()
-        lower = suffix.lower()
-        if lower.startswith("reasoning="):
-            val = suffix.split("=", 1)[1].strip().lower()
+    parts = raw.split(":")
+    remaining_parts = parts
+
+    # Check if first part is a known provider
+    if len(parts) >= 2 and parts[0].lower() in KNOWN_PROVIDERS:
+        provider = parts[0].lower()
+        remaining_parts = parts[1:]
+
+    # Rejoin remaining parts and look for reasoning= suffix
+    rejoined = ":".join(remaining_parts)
+
+    # Check for reasoning= in the last part
+    if remaining_parts and "=" in remaining_parts[-1]:
+        last_part = remaining_parts[-1]
+        if last_part.lower().startswith("reasoning="):
+            # Extract reasoning value
+            val = last_part.split("=", 1)[1].strip().lower()
             if val in {"none", "off", "false", "0", "no"}:
                 reasoning = None
             elif val in {"minimal", "low", "medium", "high"}:
                 reasoning = val
             else:
-                raise ValueError(f"Invalid reasoning effort '{val}' in model entry '{raw}' (expected minimal|low|medium|high|none)")
-    model = model or "model"
-    return model, reasoning
+                raise ValueError(
+                    f"Invalid reasoning effort '{val}' in model entry '{raw}' "
+                    f"(expected minimal|low|medium|high|none)"
+                )
+            # Model is everything except the last part
+            model = ":".join(remaining_parts[:-1])
+        else:
+            model = rejoined
+    else:
+        model = rejoined
+
+    model = model.strip() or "model"
+    return provider, model, reasoning
 
 
 def aggregate_token_usage(results: List[ItemResult]) -> Dict[str, int]:
@@ -455,7 +623,8 @@ def lookup_price_override(model: str, slug: str) -> Optional[Tuple[float, float]
     return None
 
 
-def load_price_info(model: str, run_slug: Optional[str] = None) -> Tuple[float, float]:
+def load_price_info_local(model: str, run_slug: Optional[str] = None) -> Optional[Tuple[float, float]]:
+    """Load price info from local sources (model_prices.json or previous summaries)."""
     base_slug = sanitize_model_slug(model)
 
     override = lookup_price_override(model, base_slug)
@@ -487,6 +656,36 @@ def load_price_info(model: str, run_slug: Optional[str] = None) -> Tuple[float, 
             except Exception as exc:
                 logger.debug("Unable to parse previous summary for price: %s", exc)
 
+    return None
+
+
+def load_price_info(model: str, run_slug: Optional[str] = None) -> Tuple[float, float]:
+    local = load_price_info_local(model, run_slug=run_slug)
+    if local is not None:
+        return local
+    return DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE
+
+
+async def load_price_info_async(
+    model: str,
+    run_slug: Optional[str],
+    session: aiohttp.ClientSession,
+    models_url: str,
+    headers: Dict[str, str],
+) -> Tuple[float, float]:
+    """Load price info, falling back to OpenRouter /models when needed."""
+    local = load_price_info_local(model, run_slug=run_slug)
+    if local is not None:
+        return local
+
+    fetched = await fetch_openrouter_price_pair(
+        session=session,
+        models_url=models_url,
+        headers=headers,
+        model=model,
+    )
+    if fetched is not None:
+        return fetched
     return DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE
 
 
@@ -514,9 +713,9 @@ def write_model_summary(
         "params": {
             "n": metrics["n"],
             "concurrency": args.concurrency,
-            "max_tokens": args.max_tokens,
             "max_retries": args.max_retries,
             "reasoning_effort": reasoning_effort,
+            "model_delay": args.model_delay,
         },
         "summary": metrics,
         "token_usage": token_usage,
@@ -536,6 +735,9 @@ def write_model_summary(
                 "prompt_tokens": r.prompt_tokens,
                 "completion_tokens": r.completion_tokens,
                 "total_tokens": r.total_tokens,
+                "reasoning_tokens": r.reasoning_tokens,
+                "reasoning_len": r.reasoning_len,
+                "thinking_blocks": r.thinking_blocks,
             }
             for r in sorted(results, key=lambda x: x.index)
         ],
@@ -556,7 +758,6 @@ async def eval_one(
     headers: Dict[str, str],
     request_timeout_s: float,
     max_retries: int,
-    max_tokens: int,
     rate_limit_backoff: float,
     reasoning_effort: Optional[str],
 ) -> ItemResult:
@@ -571,7 +772,6 @@ async def eval_one(
                 payload = {
                     "model": model,
                     "messages": build_messages(data_uri),
-                    "max_tokens": max_tokens,
                     "temperature": 0,
                 }
                 if reasoning_effort:
@@ -604,6 +804,9 @@ async def eval_one(
                 prompt_tokens = 0
                 completion_tokens = 0
                 total_tokens = 0
+                reasoning_tokens = 0
+                reasoning_len = 0
+                thinking_count = 0
                 try:
                     # Basic fields from response
                     choices = getattr(resp, "choices", None)
@@ -629,6 +832,7 @@ async def eval_one(
                         usage = usage.__dict__
                     if isinstance(usage, dict):
                         prompt_tokens, completion_tokens, total_tokens = extract_usage_counts(usage)
+                        reasoning_tokens = extract_reasoning_tokens(usage)
                     # content shape
                     msg_content = None
                     if msg is not None:
@@ -681,6 +885,9 @@ async def eval_one(
                     prompt_tokens=prompt_tokens,
                     completion_tokens=completion_tokens,
                     total_tokens=total_tokens,
+                    reasoning_tokens=reasoning_tokens,
+                    reasoning_len=reasoning_len,
+                    thinking_blocks=thinking_count,
                 )
 
                 if logger.isEnabledFor(logging.INFO):
@@ -761,7 +968,7 @@ def setup_logging(log_level: str, log_file: Optional[str]) -> None:
     )
 
 
-async def run_model_once(
+async def run_model_once_openrouter(
     model: str,
     reasoning_effort: Optional[str],
     args: argparse.Namespace,
@@ -771,12 +978,22 @@ async def run_model_once(
     api_url: str,
     headers: Dict[str, str],
 ) -> None:
+    """Run benchmark for a single model using OpenRouter API."""
     run_slug = build_run_slug(model, reasoning_effort)
     model_label = build_model_label(model, reasoning_effort)
     sem = asyncio.Semaphore(args.concurrency)
+    models_url = build_models_url(args.base_url)
+    price_info: Tuple[float, float]
 
     t_start = time.perf_counter()
     async with aiohttp.ClientSession() as session:
+        price_info = await load_price_info_async(
+            model=model,
+            run_slug=run_slug,
+            session=session,
+            models_url=models_url,
+            headers=headers,
+        )
         tasks = [
             asyncio.create_task(
                 eval_one(
@@ -790,7 +1007,6 @@ async def run_model_once(
                     headers=headers,
                     request_timeout_s=args.request_timeout,
                     max_retries=args.max_retries,
-                    max_tokens=args.max_tokens,
                     rate_limit_backoff=args.rate_limit_backoff,
                     reasoning_effort=reasoning_effort,
                 )
@@ -835,8 +1051,12 @@ async def run_model_once(
     total_time = t_end - t_start
     throughput = len(results) / total_time if total_time > 0 else float("nan")
     token_usage = aggregate_token_usage(results)
-    price_info = load_price_info(model, run_slug=run_slug)
     input_price, output_price = price_info
+    reasoning_tokens_total = sum(r.reasoning_tokens for r in results)
+    reasoning_observed = any(
+        (r.reasoning_tokens > 0 or r.reasoning_len > 0 or r.thinking_blocks > 0) for r in results
+    )
+    effective_reasoning_effort = reasoning_effort or ("medium" if reasoning_observed else None)
     estimated_cost = (
         (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
         + (token_usage["completion_tokens"] / 1_000_000.0) * output_price
@@ -854,6 +1074,9 @@ async def run_model_once(
         "percent_correct": acc * 100.0,
         "num_correct": num_correct,
         "estimated_cost": estimated_cost,
+        "reasoning_observed": reasoning_observed,
+        "reasoning_tokens_total": reasoning_tokens_total,
+        "effective_reasoning_effort": effective_reasoning_effort,
     }
     print("\n--- summary ---")
     print(f"model={model}")
@@ -862,6 +1085,155 @@ async def run_model_once(
     print(f"model_label={model_label}")
     if reasoning_effort:
         print(f"reasoning_effort={reasoning_effort}")
+    elif effective_reasoning_effort:
+        print(f"reasoning_effort={effective_reasoning_effort} (implicit)")
+    print(f"n={len(results)} concurrency={args.concurrency} total_time_s={total_time:.3f} throughput_ips={throughput:.2f}")
+    print(f"accuracy_exact={acc:.4f}  mae={mae:.4f}")
+    print(f"latency_avg_s={avg_lat:.3f}  p50_s={p50:.3f}  p95_s={p95:.3f}")
+    print(f"failures={failures}")
+    if total > 0:
+        print(f"percent_correct={acc * 100:.1f}% ({num_correct}/{total})")
+    print(
+        "token_usage="
+        f"prompt={token_usage['prompt_tokens']} completion={token_usage['completion_tokens']} total={token_usage['total_tokens']}"
+    )
+    if input_price or output_price:
+        print(
+            "estimated_cost=${:.4f} (input_per_million={} output_per_million={})".format(
+                estimated_cost,
+                input_price,
+                output_price,
+            )
+        )
+
+    summary_path = write_model_summary(
+        model=model,
+        model_label=model_label,
+        run_slug=run_slug,
+        reasoning_effort=reasoning_effort,
+        args=args,
+        results=results,
+        metrics=metrics,
+        token_usage=token_usage,
+        price_info=price_info,
+        estimated_cost=estimated_cost,
+    )
+    print(f"summary_saved={summary_path}")
+
+
+async def run_model_once_google(
+    model: str,
+    reasoning_effort: Optional[str],
+    args: argparse.Namespace,
+    truths: Dict[int, int],
+    img_indices: List[int],
+    data_uris: Dict[int, str],
+    google_api_key: str,
+) -> None:
+    """Run benchmark for a single model using Google Gemini API."""
+    # Import here to avoid requiring google-genai when using only OpenRouter
+    from src.providers.google import GoogleProvider, get_google_model_price
+
+    run_slug = build_run_slug(model, reasoning_effort)
+    model_label = build_model_label(model, reasoning_effort)
+    sem = asyncio.Semaphore(args.concurrency)
+
+    # Try to get price from local sources first, then fall back to Google defaults
+    price_info = load_price_info_local(model, run_slug=run_slug)
+    if price_info is None:
+        price_info = get_google_model_price(model)
+
+    provider = GoogleProvider(api_key=google_api_key)
+
+    t_start = time.perf_counter()
+
+    async def eval_with_semaphore(i: int) -> ItemResult:
+        async with sem:
+            return await provider.eval_one(
+                idx=i,
+                model=model,
+                data_uri=data_uris[i],
+                truth=truths.get(i),
+                reasoning_effort=reasoning_effort,
+                max_retries=args.max_retries,
+                rate_limit_backoff=args.rate_limit_backoff,
+            )
+
+    tasks = [asyncio.create_task(eval_with_semaphore(i)) for i in img_indices]
+
+    results: List[ItemResult] = []
+    completed = 0
+    total = len(tasks)
+    if args.progress:
+        print(f"[progress] {completed}/{total} completed", flush=True)
+
+    for finished in asyncio.as_completed(tasks):
+        res = await finished
+        results.append(res)
+        completed += 1
+        if args.progress:
+            print(
+                f"[progress] {completed}/{total} completed (last={res.index:02d})",
+                flush=True,
+            )
+
+    t_end = time.perf_counter()
+
+    # Per-item lines
+    for r in sorted(results, key=lambda x: x.index):
+        print(
+            f"{r.index:02d}.png -> pred={r.pred} truth={r.truth} "
+            f"correct={int(r.correct)} latency_s={r.latency_s:.3f}"
+            + (f" error={r.error}" if r.error else "")
+        )
+        if (r.pred is None) or (r.error is not None) or (not r.correct):
+            if r.debug:
+                print(f"    debug: {r.debug}")
+            if r.raw_text_preview:
+                print(f"    text: {r.raw_text_preview!r}")
+
+    # Summary
+    acc, mae, avg_lat, p50, p95, failures = summarize(results)
+    num_correct = sum(1 for r in results if r.correct)
+    total = len(results)
+    total_time = t_end - t_start
+    throughput = len(results) / total_time if total_time > 0 else float("nan")
+    token_usage = aggregate_token_usage(results)
+    input_price, output_price = price_info
+    reasoning_tokens_total = sum(r.reasoning_tokens for r in results)
+    reasoning_observed = any(
+        (r.reasoning_tokens > 0 or r.reasoning_len > 0 or r.thinking_blocks > 0) for r in results
+    )
+    effective_reasoning_effort = reasoning_effort or ("medium" if reasoning_observed else None)
+    estimated_cost = (
+        (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
+        + (token_usage["completion_tokens"] / 1_000_000.0) * output_price
+    ) if (input_price or output_price) else 0.0
+    metrics = {
+        "n": total,
+        "total_time_s": total_time,
+        "throughput_ips": throughput,
+        "accuracy_exact": acc,
+        "mae": mae,
+        "latency_avg_s": avg_lat,
+        "latency_p50_s": p50,
+        "latency_p95_s": p95,
+        "failures": failures,
+        "percent_correct": acc * 100.0,
+        "num_correct": num_correct,
+        "estimated_cost": estimated_cost,
+        "reasoning_observed": reasoning_observed,
+        "reasoning_tokens_total": reasoning_tokens_total,
+        "effective_reasoning_effort": effective_reasoning_effort,
+    }
+    print("\n--- summary ---")
+    print(f"model={model}")
+    print(f"provider=google")
+    print(f"model_label={model_label}")
+    if reasoning_effort:
+        print(f"reasoning_effort={reasoning_effort}")
+    elif effective_reasoning_effort:
+        print(f"reasoning_effort={effective_reasoning_effort} (implicit)")
     print(f"n={len(results)} concurrency={args.concurrency} total_time_s={total_time:.3f} throughput_ips={throughput:.2f}")
     print(f"accuracy_exact={acc:.4f}  mae={mae:.4f}")
     print(f"latency_avg_s={avg_lat:.3f}  p50_s={p50:.3f}  p95_s={p95:.3f}")
@@ -913,12 +1285,6 @@ async def main_async(args):
             raise ValueError("--n must be a positive integer")
     truths = load_truths(truth_path, n)
 
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter access")
-    api_url = build_api_url(args.base_url)
-    headers = build_openrouter_headers(api_key)
-
     img_indices = list(range(1, n + 1))
     data_uris: Dict[int, str] = {}
     for i in img_indices:
@@ -929,56 +1295,100 @@ async def main_async(args):
 
     default_reasoning = args.reasoning_effort
     raw_models = args.models if args.models else [args.model]
-    model_specs: List[Tuple[str, Optional[str]]] = []
+    # model_specs: List of (provider, model, reasoning_effort)
+    model_specs: List[Tuple[str, str, Optional[str]]] = []
     try:
         for raw in raw_models:
-            model_name, reasoning_override = parse_model_entry(raw, default_reasoning)
-            model_specs.append((model_name, reasoning_override))
+            provider, model_name, reasoning_override = parse_model_entry(raw, default_reasoning)
+            model_specs.append((provider, model_name, reasoning_override))
     except ValueError as exc:
         raise SystemExit(str(exc)) from exc
 
-    if args.models:
-        def fmt(m: str, r: Optional[str]) -> str:
-            return f"{m} (reasoning +{r})" if r else f"{m} (no reasoning)"
+    # Determine which providers are needed
+    providers_needed = set(spec[0] for spec in model_specs)
 
-        desc = ", ".join([fmt(m, r) for m, r in model_specs])
+    # Check API keys for required providers
+    openrouter_api_key: Optional[str] = None
+    google_api_key: Optional[str] = None
+
+    if "openrouter" in providers_needed:
+        openrouter_api_key = os.environ.get("OPENROUTER_API_KEY")
+        if not openrouter_api_key:
+            raise RuntimeError("OPENROUTER_API_KEY must be set for OpenRouter models")
+
+    if "google" in providers_needed:
+        google_api_key = os.environ.get("GEMINI_API_KEY")
+        if not google_api_key:
+            raise RuntimeError("GEMINI_API_KEY must be set for Google Gemini models")
+
+    # Build OpenRouter-specific resources if needed
+    api_url: Optional[str] = None
+    headers: Optional[Dict[str, str]] = None
+    if openrouter_api_key:
+        api_url = build_api_url(args.base_url)
+        headers = build_openrouter_headers(openrouter_api_key)
+
+    if args.models:
+        def fmt(p: str, m: str, r: Optional[str]) -> str:
+            reasoning_str = f" ({r} reasoning)" if r else ""
+            return f"{p}:{m}{reasoning_str}"
+
+        desc = ", ".join([fmt(p, m, r) for p, m, r in model_specs])
         print(f"Queued models ({len(model_specs)}): {desc}")
 
-    for idx, (model, reasoning_effort) in enumerate(model_specs):
+    for idx, (provider, model, reasoning_effort) in enumerate(model_specs):
         if idx > 0 and args.model_delay > 0:
             delay = args.model_delay
             print(f"Waiting {delay:.0f}s before next model...", flush=True)
             await asyncio.sleep(delay)
 
-        run_label = f"{model} (reasoning +{reasoning_effort})" if reasoning_effort else f"{model} (no reasoning)"
+        run_label = f"{provider}:{model}"
+        if reasoning_effort:
+            run_label += f" ({reasoning_effort} reasoning)"
         print(f"\n=== Running model {run_label} ({idx + 1}/{len(model_specs)}) ===")
-        await run_model_once(
-            model=model,
-            reasoning_effort=reasoning_effort,
-            args=args,
-            truths=truths,
-            img_indices=img_indices,
-            data_uris=data_uris,
-            api_url=api_url,
-            headers=headers,
-        )
+
+        if provider == "google":
+            await run_model_once_google(
+                model=model,
+                reasoning_effort=reasoning_effort,
+                args=args,
+                truths=truths,
+                img_indices=img_indices,
+                data_uris=data_uris,
+                google_api_key=google_api_key,
+            )
+        else:
+            # Default to OpenRouter
+            await run_model_once_openrouter(
+                model=model,
+                reasoning_effort=reasoning_effort,
+                args=args,
+                truths=truths,
+                img_indices=img_indices,
+                data_uris=data_uris,
+                api_url=api_url,
+                headers=headers,
+            )
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="OpenRouter vision intersection-count benchmark")
+    p = argparse.ArgumentParser(description="Vision model benchmark for counting line intersections")
     p.add_argument(
         "--model",
         type=str,
         default="qwen/qwen3-vl-235b-a22b-instruct",
-        help="OpenRouter model name/alias (default: qwen/qwen3-vl-235b-a22b-instruct); ignored if --models is provided",
+        help="Model name with optional provider prefix (default: qwen/qwen3-vl-235b-a22b-instruct). "
+             "Format: [provider:]model[:reasoning=LEVEL]. Examples: 'google:gemini-2.5-flash', "
+             "'openai/gpt-4o', 'google:gemini-3-pro:reasoning=high'. Providers: openrouter (default), google.",
     )
     p.add_argument(
         "--models",
         nargs="+",
         default=None,
-        help="Queue multiple models to run sequentially (e.g., --models openai/o3 openai/o4-mini anthropic/claude-sonnet-4.5)",
+        help="Queue multiple models to run sequentially. Supports mixed providers. "
+             "Examples: --models google:gemini-2.5-flash openai/gpt-4o google:gemini-3-pro:reasoning=high",
     )
-    p.add_argument("--imgs", type=str, default="imgs", help="Directory containing images named 1.png..N.png (default: ./imgs)")
+    p.add_argument("--imgs", type=str, default="public/imgs", help="Directory containing images named 1.png..N.png (default: ./public/imgs)")
     p.add_argument("--truth", type=str, default="truth.txt", help="Path to truth.txt (one integer per line)")
     p.add_argument(
         "--n",
@@ -1013,12 +1423,6 @@ def parse_args() -> argparse.Namespace:
         choices=["minimal", "low", "medium", "high"],
         default=None,
         help="Enable OpenRouter reasoning for supported models (one of: minimal, low, medium, high)",
-    )
-    p.add_argument(
-        "--max-tokens",
-        type=int,
-        default=8192,
-        help="Max tokens for response (default: 8192; reasoning models often need >32)",
     )
     p.add_argument(
         "--log-level",

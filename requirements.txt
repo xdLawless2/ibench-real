@@ -1,0 +1,11 @@
+# Core dependencies
+aiohttp>=3.8.0
+
+# Image generation
+Pillow>=9.0.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# Google Gemini API (optional - only needed for google: provider)
+google-genai>=1.0.0
