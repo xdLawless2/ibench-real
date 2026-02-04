@@ -1397,7 +1397,7 @@ def parse_args() -> argparse.Namespace:
         help="Number of images to evaluate (default: auto-detect count in --imgs)",
     )
     p.add_argument("--concurrency", type=int, default=4, help="Max in-flight requests (default: 4)")
-    p.add_argument("--request-timeout", type=float, default=1200.0, help="Per-request timeout seconds (default: 1200)")
+    p.add_argument("--request-timeout", type=float, default=2400.0, help="Per-request timeout seconds (default: 1200)")
     p.add_argument("--max-retries", type=int, default=5, help="Retries per item (default: 5)")
     p.add_argument(
         "--rate-limit-backoff",

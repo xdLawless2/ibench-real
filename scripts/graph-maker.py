@@ -16,6 +16,8 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional, Set
 
 import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+from statistics import median
 
 
 # Single color per provider for consistent visual grouping
@@ -283,6 +285,54 @@ def render_scatter(
 
     fig, ax = plt.subplots(figsize=(10, 6))
 
+    xs_all = [getattr(m, x_attr) for m in points if getattr(m, x_attr) is not None]
+    ys_all = [m.accuracy for m in points]
+    x_mid = median(xs_all)
+    y_mid = median(ys_all)
+    y_min, y_max = 0.0, 105.0
+    y_mid = 50.0
+
+    if log_x:
+        ax.set_xscale("log")
+
+    x_min = min(xs_all)
+    x_max = max(xs_all)
+    if x_min == x_max:
+        if log_x:
+            x_min = max(x_min * 0.9, 1e-9)
+            x_max = x_max * 1.5
+        else:
+            x_min -= 1.0
+            x_max += 1.0
+    else:
+        if log_x:
+            x_min = max(x_min * 0.9, 1e-9)
+            x_max = x_max * 1.5
+        else:
+            pad = (x_max - x_min) * 0.05
+            x_min -= pad
+            x_max += pad
+
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
+
+    # Subtle quadrant background
+    quad_alpha = 0.08
+    quad_specs = [
+        (x_min, y_mid, x_mid - x_min, y_max - y_mid, "#d1fae5"),  # low cost, high perf
+        (x_min, y_min, x_mid - x_min, y_mid - y_min, "#fef3c7"),  # low cost, low perf
+        (x_mid, y_min, x_max - x_mid, y_mid - y_min, "#fee2e2"),  # high cost, low perf
+        (x_mid, y_mid, x_max - x_mid, y_max - y_mid, "#dbeafe"),  # high cost, high perf
+    ]
+    for x0, y0, w, h, color in quad_specs:
+        if w > 0 and h > 0:
+            ax.add_patch(
+                Rectangle((x0, y0), w, h, facecolor=color, edgecolor="none", alpha=quad_alpha, zorder=0)
+            )
+
+    ax.axvline(x_mid, color="#666666", linewidth=0.8, alpha=0.4, zorder=1)
+    ax.axhline(y_mid, color="#666666", linewidth=0.8, alpha=0.4, zorder=1)
+
     # Draw points first
     if normal:
         xs = [getattr(m, x_attr) for m in normal]
@@ -308,14 +358,11 @@ def render_scatter(
             fontweight = "bold" if is_new else "normal"
             ax.text(x_val, y_val, label_text, fontsize=7, color=color, fontweight=fontweight)
 
-    if log_x:
-        ax.set_xscale("log")
-
     ax.set_title(title, fontsize=14, fontweight="bold")
     ax.set_xlabel(x_label)
     ax.set_ylabel("Percent Correct (%)")
     ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.4)
-    ax.set_ylim(0, 105)
+    ax.set_yticks(list(range(0, 101, 10)))
 
     fig.tight_layout()
     place_labels(points)

@@ -23,7 +23,7 @@
     "failures": 0,
     "percent_correct": 63.0,
     "num_correct": 63,
-    "estimated_cost": 3.208284,
+    "estimated_cost": 0.05877,
     "reasoning_observed": true,
     "reasoning_tokens_total": 1049838,
     "effective_reasoning_effort": "medium"
@@ -36,7 +36,8 @@
   "price": {
     "input_per_million": 0.5,
     "output_per_million": 3.0,
-    "estimated_cost": 3.208284
+    "estimated_cost": 0.05877,
+    "price_source": "gemini-3-flash-preview"
   },
   "items": [
     {

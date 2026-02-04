@@ -23,7 +23,7 @@
     "failures": 0,
     "percent_correct": 37.0,
     "num_correct": 37,
-    "estimated_cost": 0.0
+    "estimated_cost": 0.018862800000000002
   },
   "token_usage": {
     "prompt_tokens": 188200,
@@ -31,9 +31,10 @@
     "total_tokens": 188307
   },
   "price": {
-    "input_per_million": 0.0,
-    "output_per_million": 0.0,
-    "estimated_cost": 0.0
+    "input_per_million": 0.1,
+    "output_per_million": 0.4,
+    "estimated_cost": 0.018862800000000002,
+    "price_source": "google/gemini-2.0-flash-001"
   },
   "items": [
     {

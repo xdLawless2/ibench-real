@@ -19,6 +19,11 @@
   "mistralai/ministral-8b-2512": { "input": 0.15, "output": 0.15 },
   "mistralai/ministral-14b-2512": { "input": 0.2, "output": 0.2 },
   "openai/gpt-5.2": {"input": 1.75, "output":14},
+  "google/gemini-2.0-flash-001": { "input": 0.10, "output": 0.40 },
+  "google/gemini-2.0-flash-lite-001": { "input": 0.075, "output": 0.30 },
+  "google/gemini-2.5-flash": { "input": 0.30, "output": 2.50 },
+  "google/gemini-2.5-flash-lite": { "input": 0.10, "output": 0.40 },
+  "gemini-3-flash-preview": { "input": 0.50, "output": 3 },
   "z-ai/glm-4.6v": {"input": 0.30, "output": 0.90},
   "moonshotai/kimi-k2.5": {"input": 0.50, "output": 2.80},
   "openai/gpt-5.2-codex": {"input": 1.75, "output": 14}
