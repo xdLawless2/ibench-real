@@ -1136,5 +1136,6 @@
       "completion_tokens": 37191,
       "total_tokens": 38188
     }
-  ]
+  ],
+  "benchmark_label": "gpt-5.1-codex-max"
 }

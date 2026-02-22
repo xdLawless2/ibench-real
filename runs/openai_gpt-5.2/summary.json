@@ -1136,5 +1136,6 @@
       "completion_tokens": 299,
       "total_tokens": 2208
     }
-  ]
+  ],
+  "benchmark_label": "gpt-5.2"
 }

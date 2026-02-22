@@ -509,6 +509,27 @@ def build_model_label(model: str, reasoning_effort: Optional[str]) -> str:
     return model
 
 
+def short_model_name(model_id: str) -> str:
+    """Strip provider prefixes and return the bare model name."""
+    raw = (model_id or "").strip()
+    if not raw:
+        return raw
+    raw = raw.split(" (", 1)[0]
+    lowered = raw.lower()
+    if lowered.startswith("openrouter/"):
+        raw = raw[len("openrouter/") :]
+    parts = [p for p in raw.replace("\\", "/").split("/") if p]
+    return parts[-1] if parts else raw
+
+
+def build_benchmark_label(model: str, reasoning_effort: Optional[str]) -> str:
+    """Build the display label used by graph rendering."""
+    display = short_model_name(model)
+    if reasoning_effort:
+        display = f"{display} ({reasoning_effort} reasoning)"
+    return display
+
+
 KNOWN_PROVIDERS = {"openrouter", "google"}
 DEFAULT_PROVIDER = "openrouter"
 
@@ -704,9 +725,13 @@ def write_model_summary(
     out_dir = RUNS_DIR / run_slug
     out_dir.mkdir(parents=True, exist_ok=True)
     prompt_price, completion_price = price_info
+    summary_effort_raw = metrics.get("effective_reasoning_effort")
+    summary_effort = summary_effort_raw if isinstance(summary_effort_raw, str) and summary_effort_raw else None
+    benchmark_label = build_benchmark_label(model, summary_effort)
     payload = {
         "model": model,
         "model_label": model_label,
+        "benchmark_label": benchmark_label,
         "run_slug": run_slug,
         "base_url": args.base_url,
         "timestamp": datetime.utcnow().isoformat() + "Z",

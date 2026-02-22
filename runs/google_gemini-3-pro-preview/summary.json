@@ -1136,5 +1136,6 @@
       "completion_tokens": 1866,
       "total_tokens": 3034
     }
-  ]
+  ],
+  "benchmark_label": "gemini-3-pro-preview"
 }

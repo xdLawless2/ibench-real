@@ -91,9 +91,13 @@ def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
         reasoning_effort = params.get("reasoning_effort") or summary_effort
         base_model = doc.get("model") or doc.get("model_label") or summary_file.parent.name
 
-        display = short_model_name(str(base_model))
-        if isinstance(reasoning_effort, str) and reasoning_effort:
-            display = f"{display} ({reasoning_effort} reasoning)"
+        label_override = doc.get("benchmark_label") if isinstance(doc, dict) else None
+        if isinstance(label_override, str) and label_override.strip():
+            display = label_override.strip()
+        else:
+            display = short_model_name(str(base_model))
+            if isinstance(reasoning_effort, str) and reasoning_effort:
+                display = f"{display} ({reasoning_effort} reasoning)"
 
         provider_hint = str(doc.get("model") or doc.get("model_label") or base_model)
 

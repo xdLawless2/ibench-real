@@ -1136,5 +1136,6 @@
       "completion_tokens": 6663,
       "total_tokens": 9362
     }
-  ]
+  ],
+  "benchmark_label": "o4-mini"
 }

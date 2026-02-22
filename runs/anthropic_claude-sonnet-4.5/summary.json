@@ -1136,5 +1136,6 @@
       "completion_tokens": 5,
       "total_tokens": 1651
     }
-  ]
+  ],
+  "benchmark_label": "claude-sonnet-4.5"
 }

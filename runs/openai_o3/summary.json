@@ -1136,5 +1136,6 @@
       "completion_tokens": 12423,
       "total_tokens": 13485
     }
-  ]
+  ],
+  "benchmark_label": "o3"
 }

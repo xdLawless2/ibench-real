@@ -1136,5 +1136,6 @@
       "completion_tokens": 580,
       "total_tokens": 2462
     }
-  ]
+  ],
+  "benchmark_label": "gemini-2.5-pro"
 }

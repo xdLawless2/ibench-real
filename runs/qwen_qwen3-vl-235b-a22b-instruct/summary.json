@@ -1136,5 +1136,6 @@
       "completion_tokens": 2,
       "total_tokens": 2820
     }
-  ]
+  ],
+  "benchmark_label": "qwen3-vl-235b-a22b-instruct"
 }

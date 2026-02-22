@@ -1136,5 +1136,6 @@
       "completion_tokens": 2,
       "total_tokens": 2267
     }
-  ]
+  ],
+  "benchmark_label": "mistral-large-2512"
 }

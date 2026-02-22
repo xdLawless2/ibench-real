@@ -1136,5 +1136,6 @@
       "completion_tokens": 2375,
       "total_tokens": 4284
     }
-  ]
+  ],
+  "benchmark_label": "gpt-5-mini"
 }

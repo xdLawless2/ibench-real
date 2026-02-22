@@ -1439,5 +1439,6 @@
       "reasoning_len": 0,
       "thinking_blocks": 0
     }
-  ]
+  ],
+  "benchmark_label": "glm-4.6v"
 }

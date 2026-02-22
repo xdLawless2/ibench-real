@@ -1137,5 +1137,6 @@
       "completion_tokens": 1,
       "total_tokens": 1883
     }
-  ]
+  ],
+  "benchmark_label": "gemini-2.5-flash-lite"
 }

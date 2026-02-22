@@ -1136,5 +1136,6 @@
       "completion_tokens": 2112,
       "total_tokens": 2600
     }
-  ]
+  ],
+  "benchmark_label": "grok-4.1-fast"
 }

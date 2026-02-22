@@ -1136,5 +1136,6 @@
       "completion_tokens": 3015,
       "total_tokens": 4012
     }
-  ]
+  ],
+  "benchmark_label": "gpt-5"
 }

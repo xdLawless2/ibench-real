@@ -132,7 +132,10 @@ Structured logging is provided via Python's `logging` module.
 
 ## Run Records
 - Every run writes (and overwrites) `runs/<model_slug>/summary.json`, where `model_slug` is a filesystem-safe version of the `--model` name (slashes replaced with underscores). If `--reasoning-effort` is set, the run folder becomes `runs/<model_slug>__reasoning+<effort>` so reasoning runs do not overwrite non-reasoning runs (or other reasoning levels).
-- The summary captures per-item predictions, correctness, errors, token usage, aggregate latency/accuracy stats, and an estimated dollar cost driven by `model_prices.json` (or default environment variables). A `model_label` field records the display name used in charts (e.g., `openai/gpt-4o (high reasoning)`).
+- The summary captures per-item predictions, correctness, errors, token usage, aggregate latency/accuracy stats, and an estimated dollar cost driven by `model_prices.json` (or default environment variables). It includes:
+  - `model_label`: full run label (provider/model, plus reasoning when requested)
+  - `benchmark_label`: chart label used by `scripts/graph-maker.py` (e.g., `gpt-4o (high reasoning)`)
+- To rename a model in `benchmark.jpg`/`cost_vs_accuracy.jpg` without rerunning benchmarks, edit `runs/<run_slug>/summary.json` and change `benchmark_label`, then regenerate graphs.
 - The summary also records `reasoning_observed`/`reasoning_tokens_total` and an `effective_reasoning_effort`. If you did not pass `--reasoning-effort` but the API returns reasoning tokens/content, the runner treats the effective effort as `medium` (implicit default).
 - Delete the corresponding folder under `runs/` if you want to reset a model's history.
 

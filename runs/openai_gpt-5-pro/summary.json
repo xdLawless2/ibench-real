@@ -1136,5 +1136,6 @@
       "completion_tokens": 5895,
       "total_tokens": 6892
     }
-  ]
+  ],
+  "benchmark_label": "gpt-5-pro"
 }
