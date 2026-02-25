@@ -569,12 +569,12 @@ def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, 
             val = last_part.split("=", 1)[1].strip().lower()
             if val in {"none", "off", "false", "0", "no"}:
                 reasoning = None
-            elif val in {"minimal", "low", "medium", "high"}:
+            elif val in {"minimal", "low", "medium", "high", "xhigh"}:
                 reasoning = val
             else:
                 raise ValueError(
                     f"Invalid reasoning effort '{val}' in model entry '{raw}' "
-                    f"(expected minimal|low|medium|high|none)"
+                    f"(expected minimal|low|medium|high|xhigh|none)"
                 )
             # Model is everything except the last part
             model = ":".join(remaining_parts[:-1])
@@ -1445,9 +1445,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--reasoning-effort",
         type=str,
-        choices=["minimal", "low", "medium", "high"],
+        choices=["minimal", "low", "medium", "high", "xhigh"],
         default=None,
-        help="Enable OpenRouter reasoning for supported models (one of: minimal, low, medium, high)",
+        help="Enable OpenRouter reasoning for supported models (one of: minimal, low, medium, high, xhigh)",
     )
     p.add_argument(
         "--log-level",

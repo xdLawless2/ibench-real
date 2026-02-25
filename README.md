@@ -58,7 +58,7 @@ python main.py --models \
   google:gemini-3-pro:reasoning=high
 ```
 
-To exercise models that expose OpenRouter's reasoning feature, add `--reasoning-effort high` (or `minimal|low|medium`). The runner will surface a clear `reasoning_not_supported` error if the chosen model does not accept reasoning requests.
+To exercise models that expose OpenRouter's reasoning feature, add `--reasoning-effort high` (or `minimal|low|medium|xhigh`). The runner will surface a clear `reasoning_not_supported` error if the chosen model does not accept reasoning requests.
 
 To queue multiple models in one go (with a 60s gap between runs by default), and mix reasoning/no-reasoning per model:
 ```bash
@@ -90,7 +90,7 @@ The script will:
 | `--rate-limit-backoff` | Base seconds to wait on rate limits | `5.0` |
 | `--base-url` | OpenRouter-compatible base URL (default resolves to `https://openrouter.ai/api/v1`) | `https://openrouter.ai/api/v1` |
 | `--model-delay` | Seconds to wait between sequential models when `--models` is used | `60` |
-| `--reasoning-effort` | Default reasoning effort for all models (one of `minimal`, `low`, `medium`, `high`); can be overridden per model via `model:reasoning=<effort>` or disabled with `reasoning=none` | `None` |
+| `--reasoning-effort` | Default reasoning effort for all models (one of `minimal`, `low`, `medium`, `high`, `xhigh`); can be overridden per model via `model:reasoning=<effort>` or disabled with `reasoning=none` | `None` |
 | `--log-level` | Logging verbosity (`DEBUG`, `INFO`, etc.) | `INFO` |
 | `--log-file` | Optional log output path | `None` |
 | `--progress` | Print `[progress]` lines as items finish | `False` |
