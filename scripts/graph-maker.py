@@ -150,7 +150,7 @@ def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
             RunMetric(
                 slug="__baseline_random__",
                 label="Random Guess",
-                accuracy=16.7,
+                accuracy=10.0,
                 avg_cost=None,
                 provider_hint="Random Guess",
                 is_baseline=True,

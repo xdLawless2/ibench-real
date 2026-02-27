@@ -7,6 +7,7 @@ Supports direct calls to Google's Gemini API using the google-genai SDK.
 
 import asyncio
 import base64
+import json
 import logging
 import re
 import time
@@ -24,11 +25,11 @@ logger = logging.getLogger("ibench.google")
 
 INT_RE = re.compile(r"\d+")
 
-QUESTION = "How many distinct intersections of different line segments are in this image? Reply with ONLY a number and nothing else. Do not preamble or give any other information."
+QUESTION = "How many distinct intersections between different shapes are in this image? Count each distinct crossing point once. Reply with ONLY a number and nothing else."
 
 SYSTEM_MSG = (
     "You are a precise vision assistant. For the given image, return ONLY a single "
-    "non-negative INTEGER: the count of distinct intersections formed by different line segments. "
+    "non-negative INTEGER: the count of distinct intersections formed by different shapes. "
     "No words, no punctuation, no preamble, just the number."
 )
 
@@ -58,6 +59,7 @@ class ItemResult:
     reasoning_tokens: int = 0
     reasoning_len: int = 0
     thinking_blocks: int = 0
+    raw_response: Optional[str] = None
 
 
 def check_google_genai_available() -> None:
@@ -180,6 +182,24 @@ def extract_usage_from_response(response: Any) -> Tuple[int, int, int, int]:
         logger.debug("Error extracting usage from response: %s", e)
 
     return prompt_tokens, completion_tokens, total_tokens, thinking_tokens
+
+
+def serialize_raw_response(response: Any) -> str:
+    """Best-effort full raw response serialization for run summaries."""
+    try:
+        if isinstance(response, (dict, list)):
+            return json.dumps(response, ensure_ascii=False)
+        if hasattr(response, "model_dump_json"):
+            return response.model_dump_json(exclude_none=False)
+        if hasattr(response, "to_json"):
+            as_json = response.to_json()
+            if isinstance(as_json, str):
+                return as_json
+        if hasattr(response, "__dict__"):
+            return json.dumps(response.__dict__, default=str, ensure_ascii=False)
+    except Exception:
+        pass
+    return repr(response)
 
 
 def base64_data_uri_to_bytes(data_uri: str) -> Tuple[bytes, str]:
@@ -339,6 +359,7 @@ class GoogleProvider:
                 # Extract text and usage
                 content = extract_text_from_response(response)
                 prompt_tokens, completion_tokens, total_tokens, thinking_tokens = extract_usage_from_response(response)
+                raw_response = serialize_raw_response(response)
 
                 logger.debug("Item %02d extracted text: %s", idx, content[:200] if content else "(empty)")
 
@@ -376,6 +397,7 @@ class GoogleProvider:
                     reasoning_tokens=thinking_tokens,
                     reasoning_len=0,
                     thinking_blocks=0,
+                    raw_response=raw_response,
                 )
 
                 if logger.isEnabledFor(logging.INFO):

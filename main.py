@@ -5,7 +5,7 @@ OpenRouter Vision Benchmark (lean + parallel)
 - Reads images: ./imgs/1.png ... ./imgs/100.png  (configurable; auto-detects count)
 - Reads truths: ./truth.txt  (one integer per line; line i => image i.png; needs at least N lines)
 - Asks each image the same question:
-    "How many distinct intersections of different line segments are in this image?"
+    "How many distinct intersections between different shapes are in this image?"
 - Sends vision prompts to the given OpenRouter model alias (default: "qwen/qwen3-vl-235b-a22b-instruct")
 - Runs asynchronously with bounded concurrency
 - Reports exact-match accuracy, MAE, latency stats, throughput
@@ -41,12 +41,16 @@ from datetime import datetime
 import aiohttp
 
 
-QUESTION = "How many distinct intersections of different line segments are in this image? Reply with ONLY a number and nothing else. Do not preamble or give any other information."
+QUESTION = (
+    "How many distinct intersections between different shapes are in this image? "
+    "Count each distinct crossing point once. "
+    "Return ONLY the final integer answer with no reasoning or explanation."
+)
 
 SYSTEM_MSG = (
     "You are a precise vision assistant. For the given image, return ONLY a single "
-    "non-negative INTEGER: the count of distinct intersections formed by different line segments. "
-    "No words, no punctuation, no preamble, just the number."
+    "non-negative INTEGER: the count of distinct intersections formed by different shapes. "
+    "Do not include reasoning traces. No words, no punctuation, no preamble, just the number."
 )
 
 INT_RE = re.compile(r"\d+")
@@ -132,6 +136,7 @@ class ItemResult:
     reasoning_tokens: int = 0
     reasoning_len: int = 0
     thinking_blocks: int = 0
+    raw_response: Optional[str] = None
 
 
 def load_truths(truth_path: Path, n: int) -> Dict[int, int]:
@@ -357,8 +362,38 @@ async def openrouter_completion(
 def parse_first_int(text: str) -> Optional[int]:
     if not text:
         return None
-    m = INT_RE.search(text)
-    return int(m.group()) if m else None
+    raw = text.strip()
+
+    # Best case: clean numeric output.
+    if re.fullmatch(r"-?\d+", raw):
+        return int(raw)
+
+    # Accept simple JSON wrappers.
+    try:
+        parsed = json.loads(raw)
+        if isinstance(parsed, dict):
+            candidate = parsed.get("answer")
+            if isinstance(candidate, int):
+                return candidate
+            if isinstance(candidate, str) and re.fullmatch(r"-?\d+", candidate.strip()):
+                return int(candidate.strip())
+        if isinstance(parsed, int):
+            return parsed
+    except Exception:
+        pass
+
+    # Prefer final answer-like line near end.
+    lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
+    for ln in reversed(lines[-12:]):
+        m = re.search(r"(?i)(?:final\\s*answer|answer|total)\\D*(-?\\d+)", ln)
+        if m:
+            return int(m.group(1))
+        if re.fullmatch(r"-?\\d+", ln):
+            return int(ln)
+
+    # Fallback: choose the last integer, not the first.
+    all_nums = INT_RE.findall(raw)
+    return int(all_nums[-1]) if all_nums else None
 
 
 def extract_text(resp: Any) -> str:
@@ -534,6 +569,21 @@ KNOWN_PROVIDERS = {"openrouter", "google"}
 DEFAULT_PROVIDER = "openrouter"
 
 
+def normalize_reasoning_effort(value: Optional[str]) -> Optional[str]:
+    """Normalize reasoning effort value."""
+    if value is None:
+        return None
+    v = value.strip().lower()
+    if v in {"none", "off", "false", "0", "no"}:
+        return "none"
+    if v in {"minimal", "low", "medium", "high", "xhigh"}:
+        return v
+    raise ValueError(
+        f"Invalid reasoning effort '{value}' "
+        f"(expected minimal|low|medium|high|xhigh|none)"
+    )
+
+
 def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, str, Optional[str]]:
     """Parse model string with optional provider and reasoning override.
 
@@ -548,7 +598,7 @@ def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, 
     """
     provider = DEFAULT_PROVIDER
     model = raw
-    reasoning = default_reasoning
+    reasoning = normalize_reasoning_effort(default_reasoning)
 
     parts = raw.split(":")
     remaining_parts = parts
@@ -567,15 +617,7 @@ def parse_model_entry(raw: str, default_reasoning: Optional[str]) -> Tuple[str, 
         if last_part.lower().startswith("reasoning="):
             # Extract reasoning value
             val = last_part.split("=", 1)[1].strip().lower()
-            if val in {"none", "off", "false", "0", "no"}:
-                reasoning = None
-            elif val in {"minimal", "low", "medium", "high", "xhigh"}:
-                reasoning = val
-            else:
-                raise ValueError(
-                    f"Invalid reasoning effort '{val}' in model entry '{raw}' "
-                    f"(expected minimal|low|medium|high|xhigh|none)"
-                )
+            reasoning = normalize_reasoning_effort(val)
             # Model is everything except the last part
             model = ":".join(remaining_parts[:-1])
         else:
@@ -763,6 +805,7 @@ def write_model_summary(
                 "reasoning_tokens": r.reasoning_tokens,
                 "reasoning_len": r.reasoning_len,
                 "thinking_blocks": r.thinking_blocks,
+                "raw_response": r.raw_response,
             }
             for r in sorted(results, key=lambda x: x.index)
         ],
@@ -799,20 +842,27 @@ async def eval_one(
                     "messages": build_messages(data_uri),
                     "temperature": 0,
                 }
-                if reasoning_effort:
-                    payload["reasoning"] = {"effort": reasoning_effort}
+                if reasoning_effort is not None:
+                    payload["reasoning"] = {"effort": reasoning_effort, "exclude": True}
+                    # Legacy flag retained for broader provider compatibility.
+                    payload["include_reasoning"] = False
                 resp = await openrouter_completion(
                     session=session,
                     api_url=api_url,
                     headers=headers,
                     payload=payload,
                     timeout_s=request_timeout_s,
-                    reasoning_requested=bool(reasoning_effort),
+                    reasoning_requested=bool(reasoning_effort and reasoning_effort != "none"),
                 )
                 t1 = time.perf_counter()
                 if logger.isEnabledFor(logging.DEBUG):
                     logger.debug("Item %02d raw response: %s", idx, safe_preview(resp))
                 content = extract_text(resp)
+                raw_response = None
+                try:
+                    raw_response = json.dumps(resp, ensure_ascii=False)
+                except Exception:
+                    raw_response = safe_preview(resp, limit=500000)
                 if logger.isEnabledFor(logging.DEBUG):
                     logger.debug("Item %02d extracted text: %s", idx, preview_text(content))
                 pred = parse_first_int(content)
@@ -913,6 +963,7 @@ async def eval_one(
                     reasoning_tokens=reasoning_tokens,
                     reasoning_len=reasoning_len,
                     thinking_blocks=thinking_count,
+                    raw_response=raw_response,
                 )
 
                 if logger.isEnabledFor(logging.INFO):
@@ -1161,6 +1212,7 @@ async def run_model_once_google(
 
     run_slug = build_run_slug(model, reasoning_effort)
     model_label = build_model_label(model, reasoning_effort)
+    provider_reasoning = None if reasoning_effort == "none" else reasoning_effort
     sem = asyncio.Semaphore(args.concurrency)
 
     # Try to get price from local sources first, then fall back to Google defaults
@@ -1179,7 +1231,7 @@ async def run_model_once_google(
                 model=model,
                 data_uri=data_uris[i],
                 truth=truths.get(i),
-                reasoning_effort=reasoning_effort,
+                reasoning_effort=provider_reasoning,
                 max_retries=args.max_retries,
                 rate_limit_backoff=args.rate_limit_backoff,
             )
@@ -1318,7 +1370,7 @@ async def main_async(args):
             raise FileNotFoundError(f"Missing image: {p}")
         data_uris[i] = to_data_uri(p)
 
-    default_reasoning = args.reasoning_effort
+    default_reasoning = normalize_reasoning_effort(args.reasoning_effort)
     raw_models = args.models if args.models else [args.model]
     # model_specs: List of (provider, model, reasoning_effort)
     model_specs: List[Tuple[str, str, Optional[str]]] = []
@@ -1445,9 +1497,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--reasoning-effort",
         type=str,
-        choices=["minimal", "low", "medium", "high", "xhigh"],
+        choices=["minimal", "low", "medium", "high", "xhigh", "none"],
         default=None,
-        help="Enable OpenRouter reasoning for supported models (one of: minimal, low, medium, high, xhigh)",
+        help="Default reasoning effort for all models (minimal|low|medium|high|xhigh|none). Use none to disable.",
     )
     p.add_argument(
         "--log-level",
