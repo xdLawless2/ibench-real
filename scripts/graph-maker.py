@@ -11,6 +11,7 @@ slugs are stored in a small state file next to the output directory (override wi
 
 import argparse
 import json
+import re
 from pathlib import Path
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Set
@@ -41,6 +42,7 @@ class RunMetric:
     label: str
     accuracy: float
     avg_cost: Optional[float]
+    total_time_s: Optional[float]
     provider_hint: str
     is_baseline: bool = False
 
@@ -112,6 +114,7 @@ def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
 
         # Average cost per image
         cost_total = _coerce_float(summary.get("estimated_cost")) if isinstance(summary, dict) else None
+        total_time_s = _coerce_float(summary.get("total_time_s")) if isinstance(summary, dict) else None
         if cost_total is None and isinstance(doc, dict):
             price_obj = doc.get("price", {})
             if isinstance(price_obj, dict):
@@ -126,6 +129,7 @@ def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
                 label=display,
                 accuracy=float(percent),
                 avg_cost=avg_cost,
+                total_time_s=total_time_s,
                 provider_hint=provider_hint,
             )
         )
@@ -141,6 +145,7 @@ def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
                 label="Human",
                 accuracy=100.0,
                 avg_cost=None,
+                total_time_s=None,
                 provider_hint="Human",
                 is_baseline=True,
             )
@@ -152,6 +157,7 @@ def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
                 label="Random Guess",
                 accuracy=10.0,
                 avg_cost=None,
+                total_time_s=None,
                 provider_hint="Random Guess",
                 is_baseline=True,
             )
@@ -216,7 +222,7 @@ def render_accuracy_bar(data: List[RunMetric], output: Path, new_slugs: Set[str]
     # More horizontal layout: wider figure, reduced bar height
     fig, ax = plt.subplots(figsize=(14, max(4, len(labels) * 0.35)))
     bars = ax.barh(labels, values, color=colors, height=0.7)
-    ax.set_title("IBench", fontsize=14, fontweight="bold")
+    ax.set_title("EyeBench-V2", fontsize=14, fontweight="bold")
     ax.set_xlabel("Percent Correct (%)")
     ax.set_xlim(0, 110)  # Extra space for value labels
 
@@ -375,6 +381,40 @@ def render_scatter(
     fig.savefig(output, dpi=300)
 
 
+def render_reasoning_time_vs_performance(data: List[RunMetric], output: Path) -> None:
+    """Render time vs accuracy for all runs with explicit reasoning enabled."""
+    points = [
+        m for m in data
+        if (not m.is_baseline)
+        and ("__reasoning+" in m.slug)
+        and ("__reasoning+none" not in m.slug)
+        and (m.total_time_s is not None)
+    ]
+    if not points:
+        print("No reasoning-enabled runs found; skipping time vs performance chart.")
+        return
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    xs = [(m.total_time_s or 0.0) / 60.0 for m in points]  # minutes
+    ys = [m.accuracy for m in points]
+    cs = [pick_color(m.provider_hint) for m in points]
+
+    ax.scatter(xs, ys, c=cs, s=90, edgecolors="#111111", linewidths=0.6)
+    for m, x, y in zip(points, xs, ys):
+        clean_label = re.sub(r"\s+\([^)]*reasoning\)$", "", m.label, flags=re.IGNORECASE)
+        ax.text(x, y, clean_label, fontsize=8)
+
+    ax.set_title("EyeBench-V2: Run time vs Performance", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Total run time (minutes)")
+    ax.set_ylabel("Percent Correct (%)")
+    ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.4)
+    ax.set_yticks(list(range(0, 101, 10)))
+    fig.tight_layout()
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output, dpi=300)
+
+
 def load_seen_slugs(state_path: Path) -> Set[str]:
     if not state_path.exists():
         return set()
@@ -426,6 +466,7 @@ def main() -> None:
 
     base_dir = bar_output.parent
     cost_output = base_dir / "cost_vs_accuracy.jpg"
+    time_output = base_dir / "reasoning_time_vs_performance.jpg"
 
     data = load_run_metrics(runs_dir)
     current_slugs = {m.slug for m in data}
@@ -437,11 +478,12 @@ def main() -> None:
         data,
         x_attr="avg_cost",
         x_label="Average cost per image (USD)",
-        title="IBench: Cost vs Accuracy",
+        title="EyeBench-V2: Cost vs Accuracy",
         output=cost_output,
         new_slugs=new_slugs,
         log_x=True,
     )
+    render_reasoning_time_vs_performance(data, time_output)
     save_seen_slugs(state_path, current_slugs)
 
 

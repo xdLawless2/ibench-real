@@ -343,7 +343,7 @@ class RunDashboard:
         active_idx = self._active_model_idx()
         overall_bar = self._bar(total_items_done, max(1, total_items), width=32)
         lines.append(
-            f"{self._c('1')}ibench live{self._c('0')}  "
+            f"{self._c('1')}EyeBench-V2 live{self._c('0')}  "
             f"models {done_models}/{len(self.states)}  "
             f"items {total_items_done}/{total_items}  "
             f"active {active_models}  elapsed {elapsed}"
