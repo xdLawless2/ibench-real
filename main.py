@@ -136,9 +136,7 @@ class ItemResult:
     completion_tokens: int = 0
     total_tokens: int = 0
     reasoning_tokens: int = 0
-    reasoning_len: int = 0
-    thinking_blocks: int = 0
-    raw_response: Optional[str] = None
+    llm_output: Optional[str] = None
 
 
 @dataclass
@@ -1068,13 +1066,6 @@ def load_price_info_local(model: str, run_slug: Optional[str] = None) -> Optiona
     return None
 
 
-def load_price_info(model: str, run_slug: Optional[str] = None) -> Tuple[float, float]:
-    local = load_price_info_local(model, run_slug=run_slug)
-    if local is not None:
-        return local
-    return DEFAULT_PROMPT_PRICE, DEFAULT_COMPLETION_PRICE
-
-
 async def load_price_info_async(
     model: str,
     run_slug: Optional[str],
@@ -1145,13 +1136,7 @@ def write_model_summary(
                 "correct": r.correct,
                 "latency_s": r.latency_s,
                 "error": r.error,
-                "prompt_tokens": r.prompt_tokens,
-                "completion_tokens": r.completion_tokens,
-                "total_tokens": r.total_tokens,
-                "reasoning_tokens": r.reasoning_tokens,
-                "reasoning_len": r.reasoning_len,
-                "thinking_blocks": r.thinking_blocks,
-                "raw_response": r.raw_response,
+                "llm_output": r.llm_output,
             }
             for r in sorted(results, key=lambda x: x.index)
         ],
@@ -1212,11 +1197,6 @@ async def eval_one(
                     if not content:
                         # Treat empty assistant text as transient API/gateway failure so retries apply.
                         raise OpenRouterError("No textual assistant content in completion payload")
-                    raw_response = None
-                    try:
-                        raw_response = json.dumps(resp, ensure_ascii=False)
-                    except Exception:
-                        raw_response = safe_preview(resp, limit=500000)
                     if logger.isEnabledFor(logging.DEBUG):
                         logger.debug("Item %02d extracted text: %s", idx, preview_text(content))
                     pred = parse_first_int(content)
@@ -1234,8 +1214,6 @@ async def eval_one(
                     completion_tokens = 0
                     total_tokens = 0
                     reasoning_tokens = 0
-                    reasoning_len = 0
-                    thinking_count = 0
                     try:
                         # Basic fields from response
                         choices = getattr(resp, "choices", None)
@@ -1270,20 +1248,6 @@ async def eval_one(
                                 msg_content = msg.get("content")
                         content_type = type(msg_content).__name__ if msg_content is not None else "None"
                         content_len = (len(msg_content) if isinstance(msg_content, str) else (len(msg_content) if isinstance(msg_content, list) else 0))
-                        # reasoning
-                        reasoning_content = None
-                        if msg is not None:
-                            reasoning_content = getattr(msg, "reasoning_content", None)
-                            if reasoning_content is None and isinstance(msg, dict):
-                                reasoning_content = msg.get("reasoning_content")
-                        reasoning_len = len(reasoning_content) if isinstance(reasoning_content, str) else 0
-                        # thinking blocks
-                        thinking_blocks = None
-                        if msg is not None:
-                            thinking_blocks = getattr(msg, "thinking_blocks", None)
-                            if thinking_blocks is None and isinstance(msg, dict):
-                                thinking_blocks = msg.get("thinking_blocks")
-                        thinking_count = len(thinking_blocks) if isinstance(thinking_blocks, list) else 0
                         # Build preview of extracted content
                         text_preview = (content[:160] + ("..." if len(content) > 160 else "")) if content else None
                         usage_str = None
@@ -1295,7 +1259,7 @@ async def eval_one(
                         debug_str = (
                             f"finish={finish_reason} choices={len(choices) if choices else 0} "
                             f"content_type={content_type} content_len={content_len} "
-                            f"reasoning_len={reasoning_len} thinking_blocks={thinking_count} "
+                            f"reasoning_tokens={reasoning_tokens} "
                             f"usage={usage_str}"
                         )
                     except Exception as _dbg_e:
@@ -1315,9 +1279,7 @@ async def eval_one(
                         completion_tokens=completion_tokens,
                         total_tokens=total_tokens,
                         reasoning_tokens=reasoning_tokens,
-                        reasoning_len=reasoning_len,
-                        thinking_blocks=thinking_count,
-                        raw_response=raw_response,
+                        llm_output=content,
                     )
 
                     if logger.isEnabledFor(logging.DEBUG):
@@ -1497,9 +1459,7 @@ async def run_model_once_openrouter(
     token_usage = aggregate_token_usage(results)
     input_price, output_price = price_info
     reasoning_tokens_total = sum(r.reasoning_tokens for r in results)
-    reasoning_observed = any(
-        (r.reasoning_tokens > 0 or r.reasoning_len > 0 or r.thinking_blocks > 0) for r in results
-    )
+    reasoning_observed = reasoning_tokens_total > 0
     effective_reasoning_effort = reasoning_effort or ("medium" if reasoning_observed else None)
     estimated_cost = (
         (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
@@ -1719,7 +1679,7 @@ def parse_args() -> argparse.Namespace:
         help="Number of images to evaluate (default: auto-detect count in --imgs)",
     )
     p.add_argument("--concurrency", type=int, default=4, help="Max in-flight requests (default: 4)")
-    p.add_argument("--request-timeout", type=float, default=2400.0, help="Per-request timeout seconds (default: 1200)")
+    p.add_argument("--request-timeout", type=float, default=1200.0, help="Per-request timeout seconds (default: 1200)")
     p.add_argument("--max-retries", type=int, default=5, help="Retries per item (default: 5)")
     p.add_argument(
         "--rate-limit-backoff",
@@ -1782,12 +1742,6 @@ def parse_args() -> argparse.Namespace:
     )
     p.set_defaults(tui=True)
     p.set_defaults(color=True)
-    p.add_argument(
-        "--price-per-million",
-        type=float,
-        default=0.0,
-        help="USD price per 1M tokens for cost estimates",
-    )
     return p.parse_args()
 
 

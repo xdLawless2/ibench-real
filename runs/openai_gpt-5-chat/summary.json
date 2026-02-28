@@ -47,13 +47,7 @@
       "correct": false,
       "latency_s": 1.6865791250020266,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152125-zg4h8EpmCTcWP9deCnYc\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 2,
@@ -62,13 +56,7 @@
       "correct": false,
       "latency_s": 1.5505073340027593,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152125-sXFYcazx7t37dMN2oywF\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 3,
@@ -77,13 +65,7 @@
       "correct": false,
       "latency_s": 1.3199463749915594,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152125-L9y2RRgmQSazA8DKNPX8\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 4,
@@ -92,13 +74,7 @@
       "correct": false,
       "latency_s": 2.227415959001519,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152125-y56P9HcKJxz556Rm0z6L\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 5,
@@ -107,13 +83,7 @@
       "correct": false,
       "latency_s": 1.0238155419938266,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152126-b6ATJIXQEH8cpPmkv3yU\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152126, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 6,
@@ -122,13 +92,7 @@
       "correct": true,
       "latency_s": 1.3319948749995092,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152127-VEyVK7o3xlmWoURYAVnS\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152127, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "17"
     },
     {
       "index": 7,
@@ -137,13 +101,7 @@
       "correct": false,
       "latency_s": 1.2612797909969231,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152127-xJaNG8zo1yr8xd3OpQjF\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152127, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 8,
@@ -152,13 +110,7 @@
       "correct": false,
       "latency_s": 1.4467471249954542,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152127-AJTFdnQo19SRrdlVD9Y3\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 9,
@@ -167,13 +119,7 @@
       "correct": false,
       "latency_s": 1.6773153329995694,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152127-6m9fpvkmyo3DxCsVxifR\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152127, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 10,
@@ -182,13 +128,7 @@
       "correct": false,
       "latency_s": 1.1747810829983791,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152128-cym6QjHvHQaFZ9CfyWyX\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"27\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "27"
     },
     {
       "index": 11,
@@ -197,13 +137,7 @@
       "correct": false,
       "latency_s": 1.4051647909946041,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152128-xoRhmXIVU5NPPE5FOnBt\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "15"
     },
     {
       "index": 12,
@@ -212,13 +146,7 @@
       "correct": false,
       "latency_s": 1.1766470419970574,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152129-CaVaE86ZmS3J0IoDvOLM\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152129, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 13,
@@ -227,13 +155,7 @@
       "correct": false,
       "latency_s": 1.501550208995468,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152129-gTDWPcyr6qsb3k8Dz2tP\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152129, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"7\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "7"
     },
     {
       "index": 14,
@@ -242,13 +164,7 @@
       "correct": false,
       "latency_s": 1.0841429580032127,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152129-BWRU1dpxFOp3iQ0va74o\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152129, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 15,
@@ -257,13 +173,7 @@
       "correct": false,
       "latency_s": 1.325317292008549,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152129-6Gme3VGfWuFZlnZNCRpM\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152129, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 16,
@@ -272,13 +182,7 @@
       "correct": false,
       "latency_s": 1.0496625420055352,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152130-idntCg1VdRV7qWs7Fjcl\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152130, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"23\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "23"
     },
     {
       "index": 17,
@@ -287,13 +191,7 @@
       "correct": false,
       "latency_s": 1.7783340419991873,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152130-re3RA3qe2bNP9PZSA8iy\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152130, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 18,
@@ -302,13 +200,7 @@
       "correct": false,
       "latency_s": 2.8469797500001732,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152130-Vqezb8FlZO3sCb17bS0g\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 19,
@@ -317,13 +209,7 @@
       "correct": false,
       "latency_s": 1.1340182499989169,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152131-BBoayuqJ0s5olPFK51X0\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "9"
     },
     {
       "index": 20,
@@ -332,13 +218,7 @@
       "correct": false,
       "latency_s": 1.0861795840028208,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152131-vmjawLLMDYpdng3CkcfS\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 21,
@@ -347,13 +227,7 @@
       "correct": false,
       "latency_s": 1.0642309169925284,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152132-1mmSiYR7jNhKm9dRW3PF\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152132, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"33\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "33"
     },
     {
       "index": 22,
@@ -362,13 +236,7 @@
       "correct": false,
       "latency_s": 1.158390500000678,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152132-ZqcaXBdpQj6Ot5GbCyvY\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152132, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 23,
@@ -377,13 +245,7 @@
       "correct": false,
       "latency_s": 1.0370559590082848,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152132-AMrLwLNtdTG8YRApWsQT\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152132, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"31\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "31"
     },
     {
       "index": 24,
@@ -392,13 +254,7 @@
       "correct": false,
       "latency_s": 1.8549552920012502,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152133-aoBY4flSCIQ8OGkLsUuF\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152134, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 25,
@@ -407,13 +263,7 @@
       "correct": false,
       "latency_s": 1.309807625002577,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152133-junBIw7kTMUo6XO5rxUL\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 26,
@@ -422,13 +272,7 @@
       "correct": false,
       "latency_s": 1.0910350839985767,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152133-fr9Olih2GoKIztKSKGOa\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 27,
@@ -437,13 +281,7 @@
       "correct": false,
       "latency_s": 1.7003310829895781,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152133-cDeStrchJAUzEfgtzvOT\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"31\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "31"
     },
     {
       "index": 28,
@@ -452,13 +290,7 @@
       "correct": false,
       "latency_s": 2.111539500008803,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152134-Ya7ao43mhx9Pj9aL7SUA\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152135, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 29,
@@ -467,13 +299,7 @@
       "correct": false,
       "latency_s": 2.1999226250045467,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152134-9P6qiu6KySwC8kS4mS7j\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152134, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 30,
@@ -482,13 +308,7 @@
       "correct": false,
       "latency_s": 1.4054162499960512,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152135-MTmnlZYz1IdH7BiRT43C\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152135, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 31,
@@ -497,13 +317,7 @@
       "correct": false,
       "latency_s": 1.5605735419958364,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152135-gAus5hYRLDLUDIl08stZ\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152136, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 32,
@@ -512,13 +326,7 @@
       "correct": false,
       "latency_s": 1.7117461659945548,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152136-G7q3ZPqpc6n5okqY4FMf\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152136, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 33,
@@ -527,13 +335,7 @@
       "correct": false,
       "latency_s": 1.168197291000979,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152136-K6cvv66azk0uEN0Dd2D4\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152136, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 34,
@@ -542,13 +344,7 @@
       "correct": false,
       "latency_s": 1.146568791999016,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152136-1aw5mmUCKqOKEgzmcSlF\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152136, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 35,
@@ -557,13 +353,7 @@
       "correct": false,
       "latency_s": 1.1767531250079628,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152137-RzFBV4z96KGbdtNXVx9H\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152137, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"23\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "23"
     },
     {
       "index": 36,
@@ -572,13 +362,7 @@
       "correct": false,
       "latency_s": 1.4111990829987917,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152137-s7FCOnV3T9C270UQA38q\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 37,
@@ -587,13 +371,7 @@
       "correct": false,
       "latency_s": 1.5536307500005933,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152138-C5FiaaxALGxnbKDVIywK\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 38,
@@ -602,13 +380,7 @@
       "correct": false,
       "latency_s": 1.0080756250099512,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152138-3WTScrcOoQxZYmSUcL2Q\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 39,
@@ -617,13 +389,7 @@
       "correct": false,
       "latency_s": 1.2430450419924455,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152138-6Hei3Eyh85o11Rr460iL\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 40,
@@ -632,13 +398,7 @@
       "correct": false,
       "latency_s": 1.5149740839988226,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152139-hL8JsU2JwQ53WlnIDl1k\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 41,
@@ -647,13 +407,7 @@
       "correct": false,
       "latency_s": 1.392817208004999,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152139-8nqCiPBlWjClZ9Hfm6fA\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 42,
@@ -662,13 +416,7 @@
       "correct": false,
       "latency_s": 1.3592849169945111,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152139-TorGE0RcBsep9oMzgK3T\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 43,
@@ -677,13 +425,7 @@
       "correct": false,
       "latency_s": 1.0997373749996768,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152139-Or9CdXFkuApXlhmD9BXW\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 44,
@@ -692,13 +434,7 @@
       "correct": false,
       "latency_s": 2.037606666010106,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152140-uwv2vIVcIkM1wsGSOWfE\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152140, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 45,
@@ -707,13 +443,7 @@
       "correct": false,
       "latency_s": 1.1166123339935439,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152140-KNaD5QMcwlI91w651qjL\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152140, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 46,
@@ -722,13 +452,7 @@
       "correct": false,
       "latency_s": 1.0523786660050973,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152140-VOPtxPFwblrcVwUx4uCT\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152140, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 47,
@@ -737,13 +461,7 @@
       "correct": false,
       "latency_s": 2.2775856249936623,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152140-aDFCltpVR2ltdjxb2mHq\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152140, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 48,
@@ -752,13 +470,7 @@
       "correct": false,
       "latency_s": 1.9769123340083752,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152141-iuhGOKkJKBakzUQ7yvJv\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152141, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 49,
@@ -767,13 +479,7 @@
       "correct": false,
       "latency_s": 1.1377422919904348,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152141-TBiA5moIfkf1JKmCfmmB\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152141, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 50,
@@ -782,13 +488,7 @@
       "correct": false,
       "latency_s": 2.2282094999973197,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152142-aBFcX3nZjJNooia4LmMz\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152142, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"25\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "25"
     },
     {
       "index": 51,
@@ -797,13 +497,7 @@
       "correct": false,
       "latency_s": 1.0419384579872712,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152143-OjVhsBnOs72uCtTAzK7f\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 52,
@@ -812,13 +506,7 @@
       "correct": false,
       "latency_s": 1.160124709000229,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152143-9cNPCeV7kwvDyDgEo3Ql\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"30\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "30"
     },
     {
       "index": 53,
@@ -827,13 +515,7 @@
       "correct": false,
       "latency_s": 1.7005504169937922,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152143-Kc1dEeEH7WoTpT3ZktPl\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "15"
     },
     {
       "index": 54,
@@ -842,13 +524,7 @@
       "correct": false,
       "latency_s": 1.114555082996958,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152144-jhLVythhCW1VTZWMKrvb\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 55,
@@ -857,13 +533,7 @@
       "correct": false,
       "latency_s": 1.0443805409886409,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152144-PtgTFeHwIESCjYTVJW5v\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 56,
@@ -872,13 +542,7 @@
       "correct": false,
       "latency_s": 1.261044667000533,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152144-QTQfWzZ4yEtGfbJAwNv4\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 57,
@@ -887,13 +551,7 @@
       "correct": false,
       "latency_s": 1.0186155419942224,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152145-sR68DrnAhDxnjNL1Xn3r\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152145, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 58,
@@ -902,13 +560,7 @@
       "correct": false,
       "latency_s": 1.2330076669895789,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152145-NwciDI02zz1GVX091Sub\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152145, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 59,
@@ -917,13 +569,7 @@
       "correct": false,
       "latency_s": 1.4301823749992764,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152145-7pZLEo5SA1XAIksIhb9g\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152145, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 60,
@@ -932,13 +578,7 @@
       "correct": false,
       "latency_s": 1.0938747079926543,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152146-Oqqc03v7kzO2dCZ5m3Xc\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 61,
@@ -947,13 +587,7 @@
       "correct": false,
       "latency_s": 1.4009962499985704,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152146-3kYDqeEWTRxkQCkb6tW9\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 62,
@@ -962,13 +596,7 @@
       "correct": false,
       "latency_s": 1.193247707997216,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152146-HRNTJLEnuEwfiDwsAfDx\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 63,
@@ -977,13 +605,7 @@
       "correct": false,
       "latency_s": 1.0235875409998698,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152146-9I7OxCgDXu6lABYib6Ue\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 64,
@@ -992,13 +614,7 @@
       "correct": false,
       "latency_s": 1.7310703750117682,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152147-3w0USBQqxlfGmdNafUSY\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 65,
@@ -1007,13 +623,7 @@
       "correct": false,
       "latency_s": 1.0726435419928748,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152147-x7RcIyMkLDogLlkcSWnA\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 66,
@@ -1022,13 +632,7 @@
       "correct": false,
       "latency_s": 2.3588132500008214,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152147-XJIRQ88AhPrBh6u5MpC1\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 67,
@@ -1037,13 +641,7 @@
       "correct": false,
       "latency_s": 1.0365909579995787,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152147-7BSeIRGPV2k9dT2cUOjg\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "17"
     },
     {
       "index": 68,
@@ -1052,13 +650,7 @@
       "correct": false,
       "latency_s": 1.0665254589985125,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152148-SXzuiBCG44BJzQko377k\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152148, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 69,
@@ -1067,13 +659,7 @@
       "correct": false,
       "latency_s": 1.560480500003905,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152149-qLQY4J85DN9rZjo1X8cl\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152149, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 70,
@@ -1082,13 +668,7 @@
       "correct": false,
       "latency_s": 3.6101472080044914,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152149-NU8A6BQ3IjnWeEE3ufXS\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152149, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "17"
     },
     {
       "index": 71,
@@ -1097,13 +677,7 @@
       "correct": false,
       "latency_s": 2.362205333003658,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152149-w4ytyvDtaUgRadyn4yxT\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152150, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 72,
@@ -1112,13 +686,7 @@
       "correct": false,
       "latency_s": 1.1427991250093328,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152150-Tx0UFnl7m4yQo1fRR2Gk\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152150, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 73,
@@ -1127,13 +695,7 @@
       "correct": false,
       "latency_s": 1.148272457998246,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152150-Buziyabo3fGU5Icr25xc\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152150, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 74,
@@ -1142,13 +704,7 @@
       "correct": false,
       "latency_s": 1.375526332994923,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152151-vK53L2Wn7biCAcHRvBby\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152151, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 75,
@@ -1157,13 +713,7 @@
       "correct": false,
       "latency_s": 1.049404624995077,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152151-Em5HVl1Djqb7CtZKaxEc\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152151, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 76,
@@ -1172,13 +722,7 @@
       "correct": false,
       "latency_s": 1.3754153750051046,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152152-cwNe2qCfdWksSxAkbZzf\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 77,
@@ -1187,13 +731,7 @@
       "correct": false,
       "latency_s": 1.3002668749977602,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152152-j0qC8lhyjYdUmNhRqzKn\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"23\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "23"
     },
     {
       "index": 78,
@@ -1202,13 +740,7 @@
       "correct": false,
       "latency_s": 1.2888551670039305,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152152-M2DEUjzdNqvL4AuTBy7J\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "15"
     },
     {
       "index": 79,
@@ -1217,13 +749,7 @@
       "correct": false,
       "latency_s": 1.4392234999977518,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152152-lJvEgNX849SReOYfmSmk\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 80,
@@ -1232,13 +758,7 @@
       "correct": false,
       "latency_s": 1.3897565829975065,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152153-BWwrdZcbiSTHcYdcXxfb\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152153, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 81,
@@ -1247,13 +767,7 @@
       "correct": false,
       "latency_s": 1.9684483749879291,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152153-X9CakcfkWY8CcWBs4gka\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152154, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "9"
     },
     {
       "index": 82,
@@ -1262,13 +776,7 @@
       "correct": false,
       "latency_s": 1.0286340419988846,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152153-bOjyp16qxCkNGAVKlZJR\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152153, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 83,
@@ -1277,13 +785,7 @@
       "correct": false,
       "latency_s": 1.1097772919893032,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152154-TRkcB8zMuL2F6mhkwx8G\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152154, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 84,
@@ -1292,13 +794,7 @@
       "correct": false,
       "latency_s": 1.1668559579993598,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152154-cWQGoC4oUK5Lr4wUJWPC\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152154, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 85,
@@ -1307,13 +803,7 @@
       "correct": false,
       "latency_s": 1.0424156249937369,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152155-IqjsYU7uYf1koEmbZd4E\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152155, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 86,
@@ -1322,13 +812,7 @@
       "correct": false,
       "latency_s": 1.0249467079993337,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152155-LMiiGy36gADoXHjDPzkj\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152155, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 87,
@@ -1337,13 +821,7 @@
       "correct": false,
       "latency_s": 1.3239361669984646,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152156-aeAZDdcB2urzWZtEn6Uf\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 88,
@@ -1352,13 +830,7 @@
       "correct": false,
       "latency_s": 2.535887999998522,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152156-5Fux5ADpg6IaMOMKiKRz\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"27\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "27"
     },
     {
       "index": 89,
@@ -1367,13 +839,7 @@
       "correct": false,
       "latency_s": 1.2179696660023183,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152156-Fe3FPT3tW4sS9OKGz9gR\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "15"
     },
     {
       "index": 90,
@@ -1382,13 +848,7 @@
       "correct": false,
       "latency_s": 1.031383374996949,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152156-nUS6AQnvV9wgjkTu6AW8\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 91,
@@ -1397,13 +857,7 @@
       "correct": false,
       "latency_s": 1.0720615000027465,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152157-VLfGnDjLzVtKMwHHwZLH\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "15"
     },
     {
       "index": 92,
@@ -1412,13 +866,7 @@
       "correct": false,
       "latency_s": 1.3809850419929717,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152157-d8YrtL5wUUvJj9zNbNnH\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 93,
@@ -1427,13 +875,7 @@
       "correct": false,
       "latency_s": 1.3936357920028968,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152157-Upkl0vt13Nm5AjUJ0vSd\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 94,
@@ -1442,13 +884,7 @@
       "correct": false,
       "latency_s": 1.3934742080018623,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152158-PdT0q7ge83dmpxt2TXq8\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152158, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "17"
     },
     {
       "index": 95,
@@ -1457,13 +893,7 @@
       "correct": true,
       "latency_s": 1.0544909160089446,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152158-MU6Skze2KZhmP3cNR9gq\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152158, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 96,
@@ -1472,13 +902,7 @@
       "correct": false,
       "latency_s": 1.747858582995832,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152158-AZZYOdp7ohw6t2auYvfA\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152158, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 97,
@@ -1487,13 +911,7 @@
       "correct": false,
       "latency_s": 1.0548727919958765,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152158-fsfPvEOpUzW1F1UbKala\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152158, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 98,
@@ -1502,13 +920,7 @@
       "correct": false,
       "latency_s": 0.992035625007702,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152159-LBvCGAQCsctmqQGYiYhe\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152159, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "9"
     },
     {
       "index": 99,
@@ -1517,13 +929,7 @@
       "correct": false,
       "latency_s": 1.761625292012468,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152159-Dm56IoKo4LHe0l1LZTMU\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152159, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "21"
     },
     {
       "index": 100,
@@ -1532,13 +938,7 @@
       "correct": false,
       "latency_s": 1.9333445000083884,
       "error": null,
-      "prompt_tokens": 1002,
-      "completion_tokens": 2,
-      "total_tokens": 1004,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772152159-DjnhChtsxxSE20awCG1R\", \"provider\": \"OpenAI\", \"model\": \"openai/gpt-5-chat\", \"object\": \"chat.completion\", \"created\": 1772152160, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"completed\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"31\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1002, \"completion_tokens\": 2, \"total_tokens\": 1004, \"cost\": 0.001259775, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012725, \"upstream_inference_prompt_cost\": 0.0012525, \"upstream_inference_completions_cost\": 2e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0}}}"
+      "llm_output": "31"
     }
   ]
 }

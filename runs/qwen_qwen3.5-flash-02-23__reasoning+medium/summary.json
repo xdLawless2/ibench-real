@@ -47,13 +47,7 @@
       "correct": false,
       "latency_s": 174.9621315409895,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19912,
-      "total_tokens": 22529,
-      "reasoning_tokens": 19907,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278750-x2YANd1869sajCWbnKQZ\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278750, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19912, \"total_tokens\": 22529, \"cost\": 0.008144235, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0082265, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0079648}, \"completion_tokens_details\": {\"reasoning_tokens\": 19907}}}"
+      "llm_output": "14"
     },
     {
       "index": 2,
@@ -62,13 +56,7 @@
       "correct": false,
       "latency_s": 94.44363299998804,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 11245,
-      "total_tokens": 13862,
-      "reasoning_tokens": 11240,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278750-qdfncxOPicF7xz5oPjs3\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278750, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 11245, \"total_tokens\": 13862, \"cost\": 0.004712103, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0047597, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.004498}, \"completion_tokens_details\": {\"reasoning_tokens\": 11240}}}"
+      "llm_output": "14"
     },
     {
       "index": 3,
@@ -77,13 +65,7 @@
       "correct": false,
       "latency_s": 160.6800579589908,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19439,
-      "total_tokens": 22056,
-      "reasoning_tokens": 19433,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278750-tq77qLUPLGMTuTNTPTKY\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278750, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19439, \"total_tokens\": 22056, \"cost\": 0.007956927, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0080373, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0077756}, \"completion_tokens_details\": {\"reasoning_tokens\": 19433}}}"
+      "llm_output": "22"
     },
     {
       "index": 4,
@@ -92,13 +74,7 @@
       "correct": false,
       "latency_s": 145.72092500000144,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19643,
-      "total_tokens": 22260,
-      "reasoning_tokens": 19637,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278750-Y0zhE5YGVEgs3YkKm0Nf\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278750, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19643, \"total_tokens\": 22260, \"cost\": 0.008037711, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0081189, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0078572}, \"completion_tokens_details\": {\"reasoning_tokens\": 19637}}}"
+      "llm_output": "26"
     },
     {
       "index": 5,
@@ -107,13 +83,7 @@
       "correct": false,
       "latency_s": 114.60342400000081,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13791,
-      "total_tokens": 16408,
-      "reasoning_tokens": 13785,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278844-RyXZFLkgJX6vITgDYlgH\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278844, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13791, \"total_tokens\": 16408, \"cost\": 0.005720319, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0057781, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0055164}, \"completion_tokens_details\": {\"reasoning_tokens\": 13785}}}"
+      "llm_output": "13"
     },
     {
       "index": 6,
@@ -122,13 +92,7 @@
       "correct": false,
       "latency_s": 135.40841937501682,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16364,
-      "total_tokens": 18981,
-      "reasoning_tokens": 16358,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278895-jqNhekSJ11OgndJd6sDH\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278895, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16364, \"total_tokens\": 18981, \"cost\": 0.006739227, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0068073, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0065456}, \"completion_tokens_details\": {\"reasoning_tokens\": 16358}}}"
+      "llm_output": "18"
     },
     {
       "index": 7,
@@ -137,13 +101,7 @@
       "correct": false,
       "latency_s": 815.8855336669949,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278910-DyXDSwnsgnJrjdD5zfoa\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278910, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "12"
     },
     {
       "index": 8,
@@ -152,13 +110,7 @@
       "correct": true,
       "latency_s": 59.15591612501885,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 7358,
-      "total_tokens": 9975,
-      "reasoning_tokens": 7353,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278924-bbbJD1jzDS7RDnURN6OU\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278924, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 7358, \"total_tokens\": 9975, \"cost\": 0.003172851, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0032049, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0029432}, \"completion_tokens_details\": {\"reasoning_tokens\": 7353}}}"
+      "llm_output": "12"
     },
     {
       "index": 9,
@@ -167,13 +119,7 @@
       "correct": false,
       "latency_s": 895.874918290996,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278959-sDJuKema2kG8w3t5p1yz\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278959, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "20"
     },
     {
       "index": 10,
@@ -182,13 +128,7 @@
       "correct": false,
       "latency_s": 162.68028299999423,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 18326,
-      "total_tokens": 20943,
-      "reasoning_tokens": 18321,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772278984-ouCcuruwQB6YyUVknj3k\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772278984, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 18326, \"total_tokens\": 20943, \"cost\": 0.007516179, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0075921, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0073304}, \"completion_tokens_details\": {\"reasoning_tokens\": 18321}}}"
+      "llm_output": "22"
     },
     {
       "index": 11,
@@ -197,13 +137,7 @@
       "correct": false,
       "latency_s": 158.1855082080001,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 17890,
-      "total_tokens": 20507,
-      "reasoning_tokens": 17884,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279031-ZQNTyzaOfeMGDp1AJjWk\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279031, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 17890, \"total_tokens\": 20507, \"cost\": 0.007343523, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0074177, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.007156}, \"completion_tokens_details\": {\"reasoning_tokens\": 17884}}}"
+      "llm_output": "16"
     },
     {
       "index": 12,
@@ -212,13 +146,7 @@
       "correct": false,
       "latency_s": 183.466641875013,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 21312,
-      "total_tokens": 23929,
-      "reasoning_tokens": 21306,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279146-7vwVc4RhBjiAzfAIGeW2\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 21312, \"total_tokens\": 23929, \"cost\": 0.008698635, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0087865, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0085248}, \"completion_tokens_details\": {\"reasoning_tokens\": 21306}}}"
+      "llm_output": "13"
     },
     {
       "index": 13,
@@ -227,13 +155,7 @@
       "correct": false,
       "latency_s": 89.98516795798787,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 9742,
-      "total_tokens": 12359,
-      "reasoning_tokens": 9737,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279189-yAOKxo9BV5PqKWnoteMp\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279189, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 9742, \"total_tokens\": 12359, \"cost\": 0.004116915, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0041585, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0038968}, \"completion_tokens_details\": {\"reasoning_tokens\": 9737}}}"
+      "llm_output": "12"
     },
     {
       "index": 14,
@@ -242,13 +164,7 @@
       "correct": true,
       "latency_s": 114.38790200001677,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15320,
-      "total_tokens": 17937,
-      "reasoning_tokens": 15315,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279279-PBdVM7gvGAUsC9utidng\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279279, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15320, \"total_tokens\": 17937, \"cost\": 0.006325803, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0063897, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.006128}, \"completion_tokens_details\": {\"reasoning_tokens\": 15315}}}"
+      "llm_output": "13"
     },
     {
       "index": 15,
@@ -257,13 +173,7 @@
       "correct": false,
       "latency_s": 1070.6103570830019,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279330-ioMySQUBkrF9Obxd8Ivs\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279330, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "16"
     },
     {
       "index": 16,
@@ -272,13 +182,7 @@
       "correct": false,
       "latency_s": 1077.6063562079798,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279393-aQQuhlWOxnZ5thYnmwTw\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279393, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "20"
     },
     {
       "index": 17,
@@ -287,13 +191,7 @@
       "correct": false,
       "latency_s": 272.7634795829945,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 24195,
-      "total_tokens": 26812,
-      "reasoning_tokens": 24190,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279726-30H5UVUILt3ZTZHfhAlH\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279726, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 24195, \"total_tokens\": 26812, \"cost\": 0.009840303, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0099397, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.009678}, \"completion_tokens_details\": {\"reasoning_tokens\": 24190}}}"
+      "llm_output": "20"
     },
     {
       "index": 18,
@@ -302,13 +200,7 @@
       "correct": false,
       "latency_s": 150.11838083399925,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 8752,
-      "total_tokens": 11369,
-      "reasoning_tokens": 8747,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279855-VejPMUp3sZWJSdjO4Bff\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279855, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 8752, \"total_tokens\": 11369, \"cost\": 0.003724875, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0037625, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0035008}, \"completion_tokens_details\": {\"reasoning_tokens\": 8747}}}"
+      "llm_output": "19"
     },
     {
       "index": 19,
@@ -317,13 +209,7 @@
       "correct": false,
       "latency_s": 185.31799737500842,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16555,
-      "total_tokens": 19172,
-      "reasoning_tokens": 16550,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772279999-ORgr2dqmDN182zyOR8x0\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772279999, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16555, \"total_tokens\": 19172, \"cost\": 0.006814863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0068837, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.006622}, \"completion_tokens_details\": {\"reasoning_tokens\": 16550}}}"
+      "llm_output": "14"
     },
     {
       "index": 20,
@@ -332,13 +218,7 @@
       "correct": false,
       "latency_s": 818.014689707983,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280005-e4L28WLMyZIFIHE7yHqc\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280005, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "14"
     },
     {
       "index": 21,
@@ -347,13 +227,7 @@
       "correct": false,
       "latency_s": 173.0213034999906,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19803,
-      "total_tokens": 22420,
-      "reasoning_tokens": 19797,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280184-y79plGQnYLP6nQOCQlaG\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280184, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19803, \"total_tokens\": 22420, \"cost\": 0.008101071, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0081829, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0079212}, \"completion_tokens_details\": {\"reasoning_tokens\": 19797}}}"
+      "llm_output": "21"
     },
     {
       "index": 22,
@@ -362,13 +236,7 @@
       "correct": true,
       "latency_s": 111.01650512500782,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15815,
-      "total_tokens": 18432,
-      "reasoning_tokens": 15810,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280357-mIEEgwvrur1dD5r6Oioo\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280357, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15815, \"total_tokens\": 18432, \"cost\": 0.006521823, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0065877, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.006326}, \"completion_tokens_details\": {\"reasoning_tokens\": 15810}}}"
+      "llm_output": "13"
     },
     {
       "index": 23,
@@ -377,13 +245,7 @@
       "correct": false,
       "latency_s": 177.63770829100395,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 22459,
-      "total_tokens": 25076,
-      "reasoning_tokens": 22453,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280400-VRTX7iwEXG9nP0f5kIr7\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280400, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"23\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 22459, \"total_tokens\": 25076, \"cost\": 0.009152847, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0092453, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0089836}, \"completion_tokens_details\": {\"reasoning_tokens\": 22453}}}"
+      "llm_output": "23"
     },
     {
       "index": 24,
@@ -392,13 +254,7 @@
       "correct": false,
       "latency_s": 844.8747202090162,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286410-SWMr1z1aDei1pDR0KCsJ\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286410, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"27\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "27"
     },
     {
       "index": 25,
@@ -407,13 +263,7 @@
       "correct": false,
       "latency_s": 119.07189204200404,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16108,
-      "total_tokens": 18725,
-      "reasoning_tokens": 16102,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280469-slshlSCZVs7U6v2VyBTa\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280469, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16108, \"total_tokens\": 18725, \"cost\": 0.006637851, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0067049, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0064432}, \"completion_tokens_details\": {\"reasoning_tokens\": 16102}}}"
+      "llm_output": "12"
     },
     {
       "index": 26,
@@ -422,13 +272,7 @@
       "correct": false,
       "latency_s": 112.22234791601659,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16434,
-      "total_tokens": 19051,
-      "reasoning_tokens": 16428,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280471-4SGsw95vnCghuVfDzYcC\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280471, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16434, \"total_tokens\": 19051, \"cost\": 0.006766947, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0068353, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0065736}, \"completion_tokens_details\": {\"reasoning_tokens\": 16428}}}"
+      "llm_output": "20"
     },
     {
       "index": 27,
@@ -437,13 +281,7 @@
       "correct": false,
       "latency_s": 109.84845129199675,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15917,
-      "total_tokens": 18534,
-      "reasoning_tokens": 15911,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280578-mhnk5jla3kJ7cInECmhr\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280578, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15917, \"total_tokens\": 18534, \"cost\": 0.006562215, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0066285, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0063668}, \"completion_tokens_details\": {\"reasoning_tokens\": 15911}}}"
+      "llm_output": "20"
     },
     {
       "index": 28,
@@ -452,13 +290,7 @@
       "correct": false,
       "latency_s": 132.09927341600996,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 18075,
-      "total_tokens": 20692,
-      "reasoning_tokens": 18069,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286653-mnHwk6bcjP7x2xWGaZoq\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286653, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 18075, \"total_tokens\": 20692, \"cost\": 0.007416783, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0074917, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.00723}, \"completion_tokens_details\": {\"reasoning_tokens\": 18069}}}"
+      "llm_output": "12"
     },
     {
       "index": 29,
@@ -467,13 +299,7 @@
       "correct": true,
       "latency_s": 63.396160917007364,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 9957,
-      "total_tokens": 12574,
-      "reasoning_tokens": 9952,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280584-agsfKoJFQ1MQDi3yvLKf\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280584, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 9957, \"total_tokens\": 12574, \"cost\": 0.004202055, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0042445, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0039828}, \"completion_tokens_details\": {\"reasoning_tokens\": 9952}}}"
+      "llm_output": "10"
     },
     {
       "index": 30,
@@ -482,13 +308,7 @@
       "correct": false,
       "latency_s": 629.1947608749906,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280588-IxLLUR8sZesJeKMVigak\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280588, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "12"
     },
     {
       "index": 31,
@@ -497,13 +317,7 @@
       "correct": false,
       "latency_s": 667.5553962500126,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280647-Q3aASeSR22ofBEY4lUIV\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280647, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"23\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "23"
     },
     {
       "index": 32,
@@ -512,13 +326,7 @@
       "correct": false,
       "latency_s": 131.1242197919928,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 18654,
-      "total_tokens": 21271,
-      "reasoning_tokens": 18649,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280688-fgVesAsbevtk48fGrfaO\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280688, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 18654, \"total_tokens\": 21271, \"cost\": 0.007646067, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0077233, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0074616}, \"completion_tokens_details\": {\"reasoning_tokens\": 18649}}}"
+      "llm_output": "16"
     },
     {
       "index": 33,
@@ -527,13 +335,7 @@
       "correct": false,
       "latency_s": 87.79464825001196,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 12748,
-      "total_tokens": 15365,
-      "reasoning_tokens": 12743,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280819-88aIsV7sglJBXzSlG3Yt\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280819, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 12748, \"total_tokens\": 15365, \"cost\": 0.005307291, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0053609, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0050992}, \"completion_tokens_details\": {\"reasoning_tokens\": 12743}}}"
+      "llm_output": "13"
     },
     {
       "index": 34,
@@ -542,13 +344,7 @@
       "correct": true,
       "latency_s": 648.8605222920014,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280823-htLSMw3N1lC6QVIbkuFJ\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280823, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "16"
     },
     {
       "index": 35,
@@ -557,13 +353,7 @@
       "correct": false,
       "latency_s": 165.3138920830097,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 22080,
-      "total_tokens": 24697,
-      "reasoning_tokens": 22075,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772280907-DVJ5qMsvfuLl5hnaXHpo\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772280907, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"30\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 22080, \"total_tokens\": 24697, \"cost\": 0.009002763, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0090937, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.008832}, \"completion_tokens_details\": {\"reasoning_tokens\": 22075}}}"
+      "llm_output": "30"
     },
     {
       "index": 36,
@@ -572,13 +362,7 @@
       "correct": false,
       "latency_s": 93.4350701670046,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13799,
-      "total_tokens": 16416,
-      "reasoning_tokens": 13793,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281072-3OV18qUPJMSAsgKGr9nM\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281072, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13799, \"total_tokens\": 16416, \"cost\": 0.005723487, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0057813, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0055196}, \"completion_tokens_details\": {\"reasoning_tokens\": 13793}}}"
+      "llm_output": "10"
     },
     {
       "index": 37,
@@ -587,13 +371,7 @@
       "correct": false,
       "latency_s": 139.14474391701515,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 22794,
-      "total_tokens": 25411,
-      "reasoning_tokens": 22788,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281166-xDEFmXPyF4IhPpC6KKPC\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281166, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 22794, \"total_tokens\": 25411, \"cost\": 0.009285507, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0093793, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0091176}, \"completion_tokens_details\": {\"reasoning_tokens\": 22788}}}"
+      "llm_output": "12"
     },
     {
       "index": 38,
@@ -602,13 +380,7 @@
       "correct": false,
       "latency_s": 109.68066808301955,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 14308,
-      "total_tokens": 16925,
-      "reasoning_tokens": 14303,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281217-ePdAKyrwqsjyOYRHbsDm\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281217, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 14308, \"total_tokens\": 16925, \"cost\": 0.005925051, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0059849, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0057232}, \"completion_tokens_details\": {\"reasoning_tokens\": 14303}}}"
+      "llm_output": "15"
     },
     {
       "index": 39,
@@ -617,13 +389,7 @@
       "correct": false,
       "latency_s": 142.26554320799187,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 22290,
-      "total_tokens": 24907,
-      "reasoning_tokens": 22284,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281305-gJjVbvc8D1ZioJZFB1k8\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281305, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 22290, \"total_tokens\": 24907, \"cost\": 0.009085923, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0091777, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.008916}, \"completion_tokens_details\": {\"reasoning_tokens\": 22284}}}"
+      "llm_output": "24"
     },
     {
       "index": 40,
@@ -632,13 +398,7 @@
       "correct": false,
       "latency_s": 98.82083299997612,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13493,
-      "total_tokens": 16110,
-      "reasoning_tokens": 13488,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281315-Mrit8pbcMLdJgxGtuCFh\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281315, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13493, \"total_tokens\": 16110, \"cost\": 0.005602311, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0056589, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0053972}, \"completion_tokens_details\": {\"reasoning_tokens\": 13488}}}"
+      "llm_output": "16"
     },
     {
       "index": 41,
@@ -647,13 +407,7 @@
       "correct": false,
       "latency_s": 163.65076899999985,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 23511,
-      "total_tokens": 26128,
-      "reasoning_tokens": 23504,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281327-jnFTbM02afmZcNtqzfMs\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281327, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 23511, \"total_tokens\": 26128, \"cost\": 0.009569439, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0096661, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0094044}, \"completion_tokens_details\": {\"reasoning_tokens\": 23504}}}"
+      "llm_output": "10"
     },
     {
       "index": 42,
@@ -662,13 +416,7 @@
       "correct": true,
       "latency_s": 105.31347183400067,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15069,
-      "total_tokens": 17686,
-      "reasoning_tokens": 15064,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281414-hqCa8wwSmEozN4ryW3RA\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281414, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15069, \"total_tokens\": 17686, \"cost\": 0.006226407, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0062893, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0060276}, \"completion_tokens_details\": {\"reasoning_tokens\": 15064}}}"
+      "llm_output": "16"
     },
     {
       "index": 43,
@@ -677,13 +425,7 @@
       "correct": false,
       "latency_s": 92.99322066700552,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 14812,
-      "total_tokens": 17429,
-      "reasoning_tokens": 14807,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281447-mrsRG2XNypROeOsfuS1l\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281447, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 14812, \"total_tokens\": 17429, \"cost\": 0.006124635, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0061865, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0059248}, \"completion_tokens_details\": {\"reasoning_tokens\": 14807}}}"
+      "llm_output": "16"
     },
     {
       "index": 44,
@@ -692,13 +434,7 @@
       "correct": false,
       "latency_s": 696.0420931249973,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281471-XkhtYhtHQh61w5F4sdn5\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281471, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "17"
     },
     {
       "index": 45,
@@ -707,13 +443,7 @@
       "correct": false,
       "latency_s": 634.0633317500178,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281490-K3LsFighPPhAt18lnfEO\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281490, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "17"
     },
     {
       "index": 46,
@@ -722,13 +452,7 @@
       "correct": false,
       "latency_s": 72.65018958400469,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 10266,
-      "total_tokens": 12883,
-      "reasoning_tokens": 10261,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281519-UDIZPnlcWxT6uUy2igmZ\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281519, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 10266, \"total_tokens\": 12883, \"cost\": 0.004324419, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0043681, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0041064}, \"completion_tokens_details\": {\"reasoning_tokens\": 10261}}}"
+      "llm_output": "15"
     },
     {
       "index": 47,
@@ -737,13 +461,7 @@
       "correct": true,
       "latency_s": 104.35570737498347,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15975,
-      "total_tokens": 18592,
-      "reasoning_tokens": 15970,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281540-a8RVeVr8Oa0BJMSA4bsG\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281540, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15975, \"total_tokens\": 18592, \"cost\": 0.006585183, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0066517, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.00639}, \"completion_tokens_details\": {\"reasoning_tokens\": 15970}}}"
+      "llm_output": "11"
     },
     {
       "index": 48,
@@ -752,13 +470,7 @@
       "correct": true,
       "latency_s": 683.3309696659853,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281591-z2M4juh0rZhlINXtiH3J\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281591, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "14"
     },
     {
       "index": 49,
@@ -767,13 +479,7 @@
       "correct": false,
       "latency_s": 132.7488657089998,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19241,
-      "total_tokens": 21858,
-      "reasoning_tokens": 19236,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281644-VvG7sT0HDOQr7PFH2do5\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281644, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19241, \"total_tokens\": 21858, \"cost\": 0.007878519, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0079581, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0076964}, \"completion_tokens_details\": {\"reasoning_tokens\": 19236}}}"
+      "llm_output": "13"
     },
     {
       "index": 50,
@@ -782,13 +488,7 @@
       "correct": true,
       "latency_s": 717.055686208012,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772281777-QgyboXcPZVJVtNkgba1W\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772281777, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "20"
     },
     {
       "index": 51,
@@ -797,13 +497,7 @@
       "correct": false,
       "latency_s": 140.87516916700406,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 22473,
-      "total_tokens": 25090,
-      "reasoning_tokens": 22466,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282124-lZ2ua7727MvpOzOUw595\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282124, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 22473, \"total_tokens\": 25090, \"cost\": 0.009158391, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0092509, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0089892}, \"completion_tokens_details\": {\"reasoning_tokens\": 22466}}}"
+      "llm_output": "20"
     },
     {
       "index": 52,
@@ -812,13 +506,7 @@
       "correct": false,
       "latency_s": 727.1130468750198,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282167-Zyogjht0mbKbD5Frv2a4\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282167, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "24"
     },
     {
       "index": 53,
@@ -827,13 +515,7 @@
       "correct": false,
       "latency_s": 723.8215252090013,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282265-uL3AH46toWGTbrotq0SX\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282265, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "11"
     },
     {
       "index": 54,
@@ -842,13 +524,7 @@
       "correct": true,
       "latency_s": 49.17573175000143,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 6657,
-      "total_tokens": 9274,
-      "reasoning_tokens": 6652,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282275-bCwYKvgnuvkJUhIMfk3e\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282275, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 6657, \"total_tokens\": 9274, \"cost\": 0.002895255, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0029245, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0026628}, \"completion_tokens_details\": {\"reasoning_tokens\": 6652}}}"
+      "llm_output": "12"
     },
     {
       "index": 55,
@@ -857,13 +533,7 @@
       "correct": true,
       "latency_s": 87.90025537498877,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 11518,
-      "total_tokens": 14135,
-      "reasoning_tokens": 11513,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282324-msoSHMdKaYSykUKxxuyo\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282324, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 11518, \"total_tokens\": 14135, \"cost\": 0.004820211, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0048689, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0046072}, \"completion_tokens_details\": {\"reasoning_tokens\": 11513}}}"
+      "llm_output": "14"
     },
     {
       "index": 56,
@@ -872,13 +542,7 @@
       "correct": false,
       "latency_s": 102.0530528750096,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13148,
-      "total_tokens": 15765,
-      "reasoning_tokens": 13143,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282412-K9b2F7bwiZunix0BYxlP\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282412, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13148, \"total_tokens\": 15765, \"cost\": 0.005465691, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0055209, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0052592}, \"completion_tokens_details\": {\"reasoning_tokens\": 13143}}}"
+      "llm_output": "13"
     },
     {
       "index": 57,
@@ -887,13 +551,7 @@
       "correct": false,
       "latency_s": 716.3694811669993,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282494-Eiw7UOqfYdMPgYMvkRa1\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282494, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "20"
     },
     {
       "index": 58,
@@ -902,13 +560,7 @@
       "correct": false,
       "latency_s": 123.64730233300361,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 17054,
-      "total_tokens": 19671,
-      "reasoning_tokens": 17048,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282514-xDk8DZTSyvDI28A9HtPv\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282514, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 17054, \"total_tokens\": 19671, \"cost\": 0.007012467, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0070833, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0068216}, \"completion_tokens_details\": {\"reasoning_tokens\": 17048}}}"
+      "llm_output": "18"
     },
     {
       "index": 59,
@@ -917,13 +569,7 @@
       "correct": true,
       "latency_s": 742.958262125001,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282638-46zthhCOvXc5wz9BYzMw\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282638, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "18"
     },
     {
       "index": 60,
@@ -932,13 +578,7 @@
       "correct": true,
       "latency_s": 753.3553877499944,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282895-cJYHW2fU4PYveNrh3GA4\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282895, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "17"
     },
     {
       "index": 61,
@@ -947,13 +587,7 @@
       "correct": true,
       "latency_s": 609.3796902909817,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772282989-EoEJfCwVs5CbIUZ6WCnz\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772282989, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "12"
     },
     {
       "index": 62,
@@ -962,13 +596,7 @@
       "correct": false,
       "latency_s": 489.33556454099016,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283211-Y2DvceJ5Ka8WJXvg4Bfo\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283211, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "18"
     },
     {
       "index": 63,
@@ -977,13 +605,7 @@
       "correct": false,
       "latency_s": 122.57596166699659,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16192,
-      "total_tokens": 18809,
-      "reasoning_tokens": 16186,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283381-80fjTbXdQGNKkbqfyLhE\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283381, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16192, \"total_tokens\": 18809, \"cost\": 0.006671115, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0067385, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0064768}, \"completion_tokens_details\": {\"reasoning_tokens\": 16186}}}"
+      "llm_output": "17"
     },
     {
       "index": 64,
@@ -992,13 +614,7 @@
       "correct": false,
       "latency_s": 161.64893749999464,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 17601,
-      "total_tokens": 20218,
-      "reasoning_tokens": 17594,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283503-CjK3hi5gEJrgjkb8qiKT\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283503, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 17601, \"total_tokens\": 20218, \"cost\": 0.007229079, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0073021, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0070404}, \"completion_tokens_details\": {\"reasoning_tokens\": 17594}}}"
+      "llm_output": "13"
     },
     {
       "index": 65,
@@ -1007,13 +623,7 @@
       "correct": false,
       "latency_s": 152.22197174999746,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 18379,
-      "total_tokens": 20996,
-      "reasoning_tokens": 18372,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283599-RxJPtJ2WpJFoLcskiaFh\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283599, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 18379, \"total_tokens\": 20996, \"cost\": 0.007537167, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0076133, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0073516}, \"completion_tokens_details\": {\"reasoning_tokens\": 18372}}}"
+      "llm_output": "14"
     },
     {
       "index": 66,
@@ -1022,13 +632,7 @@
       "correct": true,
       "latency_s": 904.4565952919947,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283648-Fo49ejUvnFvKqdGi9f6w\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283648, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "10"
     },
     {
       "index": 67,
@@ -1037,13 +641,7 @@
       "correct": false,
       "latency_s": 831.8039690410078,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283665-3olr8il1hX6mdfqyCVjF\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283665, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "18"
     },
     {
       "index": 68,
@@ -1052,13 +650,7 @@
       "correct": false,
       "latency_s": 70.9624311249936,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 8438,
-      "total_tokens": 11055,
-      "reasoning_tokens": 8432,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283700-eHy9sP5uOQ5rlaxOj2du\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283700, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 8438, \"total_tokens\": 11055, \"cost\": 0.003600531, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0036369, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0033752}, \"completion_tokens_details\": {\"reasoning_tokens\": 8432}}}"
+      "llm_output": "12"
     },
     {
       "index": 69,
@@ -1067,13 +659,7 @@
       "correct": false,
       "latency_s": 953.4204260830011,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81918,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283751-zHTGjTCkeICjQ5d47CY7\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283751, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81918}}}"
+      "llm_output": "17"
     },
     {
       "index": 70,
@@ -1082,13 +668,7 @@
       "correct": false,
       "latency_s": 172.8351527909981,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19256,
-      "total_tokens": 21873,
-      "reasoning_tokens": 19249,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283771-ZjYjh4ojew1TDX4OF4rp\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283771, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19256, \"total_tokens\": 21873, \"cost\": 0.007884459, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0079641, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0077024}, \"completion_tokens_details\": {\"reasoning_tokens\": 19249}}}"
+      "llm_output": "14"
     },
     {
       "index": 71,
@@ -1097,13 +677,7 @@
       "correct": false,
       "latency_s": 945.6404724160093,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81927,
-      "total_tokens": 84544,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772283944-ojvOmebW0mjPX8wbhVsI\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772283944, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81927, \"total_tokens\": 84544, \"cost\": 0.032702175, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330325, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327708}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "9"
     },
     {
       "index": 72,
@@ -1112,13 +686,7 @@
       "correct": false,
       "latency_s": 102.15194558401708,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 12493,
-      "total_tokens": 15110,
-      "reasoning_tokens": 12488,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284497-klPvVzpmwU5QCguddW18\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284497, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 12493, \"total_tokens\": 15110, \"cost\": 0.005206311, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0052589, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0049972}, \"completion_tokens_details\": {\"reasoning_tokens\": 12488}}}"
+      "llm_output": "18"
     },
     {
       "index": 73,
@@ -1127,13 +695,7 @@
       "correct": false,
       "latency_s": 68.39314308398752,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 7955,
-      "total_tokens": 10572,
-      "reasoning_tokens": 7950,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284553-64JWIbArkSXDKcGX93rA\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284553, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 7955, \"total_tokens\": 10572, \"cost\": 0.003409263, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0034437, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.003182}, \"completion_tokens_details\": {\"reasoning_tokens\": 7950}}}"
+      "llm_output": "13"
     },
     {
       "index": 74,
@@ -1142,13 +704,7 @@
       "correct": false,
       "latency_s": 949.8550472079951,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286664-gOdG6mmRMaIc719LYKiy\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286664, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "22"
     },
     {
       "index": 75,
@@ -1157,13 +713,7 @@
       "correct": false,
       "latency_s": 145.44607075001113,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19829,
-      "total_tokens": 22446,
-      "reasoning_tokens": 19824,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284599-hHscuXpPip9XZOEhffmc\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284599, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19829, \"total_tokens\": 22446, \"cost\": 0.008111367, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0081933, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0079316}, \"completion_tokens_details\": {\"reasoning_tokens\": 19824}}}"
+      "llm_output": "15"
     },
     {
       "index": 76,
@@ -1172,13 +722,7 @@
       "correct": false,
       "latency_s": 111.34935895798844,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15149,
-      "total_tokens": 17766,
-      "reasoning_tokens": 15143,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284621-DdOmB7KvavelLKKwG05J\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284621, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15149, \"total_tokens\": 17766, \"cost\": 0.006258087, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0063213, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0060596}, \"completion_tokens_details\": {\"reasoning_tokens\": 15143}}}"
+      "llm_output": "11"
     },
     {
       "index": 77,
@@ -1187,13 +731,7 @@
       "correct": false,
       "latency_s": 76.16597812497639,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 8806,
-      "total_tokens": 11423,
-      "reasoning_tokens": 8801,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284704-A89x17MJG5BqaODkd0lo\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284704, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 8806, \"total_tokens\": 11423, \"cost\": 0.003746259, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0037841, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0035224}, \"completion_tokens_details\": {\"reasoning_tokens\": 8801}}}"
+      "llm_output": "15"
     },
     {
       "index": 78,
@@ -1202,13 +740,7 @@
       "correct": false,
       "latency_s": 1157.5380837920238,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284732-srCHDSa1M1vPuNv4AkIL\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284732, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "11"
     },
     {
       "index": 79,
@@ -1217,13 +749,7 @@
       "correct": false,
       "latency_s": 728.4597122090054,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284745-VF9kWvo2WsabE18cN9cD\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284745, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "26"
     },
     {
       "index": 80,
@@ -1232,13 +758,7 @@
       "correct": false,
       "latency_s": 94.78658483398613,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13458,
-      "total_tokens": 16075,
-      "reasoning_tokens": 13453,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284780-VuS6qHi0s7pBimB4bOyx\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284780, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13458, \"total_tokens\": 16075, \"cost\": 0.005588451, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0056449, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0053832}, \"completion_tokens_details\": {\"reasoning_tokens\": 13453}}}"
+      "llm_output": "10"
     },
     {
       "index": 81,
@@ -1247,13 +767,7 @@
       "correct": false,
       "latency_s": 832.9961491250142,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81927,
-      "total_tokens": 84544,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772284875-sQCe0LmP6nh2r9MsDPrl\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772284875, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81927, \"total_tokens\": 84544, \"cost\": 0.032702175, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330325, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327708}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "9"
     },
     {
       "index": 82,
@@ -1262,13 +776,7 @@
       "correct": true,
       "latency_s": 108.97820679098368,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 12994,
-      "total_tokens": 15611,
-      "reasoning_tokens": 12989,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286785-Ug4IBe1wNBk2htTy0Tr3\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286785, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 12994, \"total_tokens\": 15611, \"cost\": 0.005404707, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0054593, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0051976}, \"completion_tokens_details\": {\"reasoning_tokens\": 12989}}}"
+      "llm_output": "13"
     },
     {
       "index": 83,
@@ -1277,13 +785,7 @@
       "correct": false,
       "latency_s": 129.24957962500048,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 16298,
-      "total_tokens": 18915,
-      "reasoning_tokens": 16293,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285054-0m6arPxgZa1RDvgVqgQB\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285054, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 16298, \"total_tokens\": 18915, \"cost\": 0.006713091, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0067809, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0065192}, \"completion_tokens_details\": {\"reasoning_tokens\": 16293}}}"
+      "llm_output": "16"
     },
     {
       "index": 84,
@@ -1292,13 +794,7 @@
       "correct": false,
       "latency_s": 85.56908045802265,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 10591,
-      "total_tokens": 13208,
-      "reasoning_tokens": 10586,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285183-UyUcxhi6fCr40GmTD06n\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285183, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"17\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 10591, \"total_tokens\": 13208, \"cost\": 0.004453119, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0044981, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0042364}, \"completion_tokens_details\": {\"reasoning_tokens\": 10586}}}"
+      "llm_output": "17"
     },
     {
       "index": 85,
@@ -1307,13 +803,7 @@
       "correct": false,
       "latency_s": 200.2864187079831,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 20082,
-      "total_tokens": 22699,
-      "reasoning_tokens": 20077,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286894-nMOZeo0808GK5Zt0ZE3O\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286894, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 20082, \"total_tokens\": 22699, \"cost\": 0.008211555, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0082945, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0080328}, \"completion_tokens_details\": {\"reasoning_tokens\": 20077}}}"
+      "llm_output": "14"
     },
     {
       "index": 86,
@@ -1322,13 +812,7 @@
       "correct": false,
       "latency_s": 156.38609045901103,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 19178,
-      "total_tokens": 21795,
-      "reasoning_tokens": 19171,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285473-KrbbM8DISybp8cQ0pVII\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285473, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 19178, \"total_tokens\": 21795, \"cost\": 0.007853571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0079329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0076712}, \"completion_tokens_details\": {\"reasoning_tokens\": 19171}}}"
+      "llm_output": "22"
     },
     {
       "index": 87,
@@ -1337,13 +821,7 @@
       "correct": false,
       "latency_s": 53.14484041699325,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 6986,
-      "total_tokens": 9603,
-      "reasoning_tokens": 6981,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285538-6kvsPIPOEPdnIgqK0OLI\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285538, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 6986, \"total_tokens\": 9603, \"cost\": 0.003025539, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0030561, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0027944}, \"completion_tokens_details\": {\"reasoning_tokens\": 6981}}}"
+      "llm_output": "18"
     },
     {
       "index": 88,
@@ -1352,13 +830,7 @@
       "correct": false,
       "latency_s": 162.23998779099202,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 21429,
-      "total_tokens": 24046,
-      "reasoning_tokens": 21422,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285591-w1ejNEAgWSFQsh9CJdjW\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285591, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"21\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 21429, \"total_tokens\": 24046, \"cost\": 0.008744967, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0088333, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0085716}, \"completion_tokens_details\": {\"reasoning_tokens\": 21422}}}"
+      "llm_output": "21"
     },
     {
       "index": 89,
@@ -1367,13 +839,7 @@
       "correct": false,
       "latency_s": 83.28343025001232,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 11400,
-      "total_tokens": 14017,
-      "reasoning_tokens": 11394,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285630-8XUnzuuSGxGjRsrURje5\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285630, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 11400, \"total_tokens\": 14017, \"cost\": 0.004773483, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0048217, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.00456}, \"completion_tokens_details\": {\"reasoning_tokens\": 11394}}}"
+      "llm_output": "13"
     },
     {
       "index": 90,
@@ -1382,13 +848,7 @@
       "correct": false,
       "latency_s": 107.13146337500075,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 14580,
-      "total_tokens": 17197,
-      "reasoning_tokens": 14575,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285708-GSXdncYmy2WXNHViOScN\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285708, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 14580, \"total_tokens\": 17197, \"cost\": 0.006032763, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0060937, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.005832}, \"completion_tokens_details\": {\"reasoning_tokens\": 14575}}}"
+      "llm_output": "14"
     },
     {
       "index": 91,
@@ -1397,13 +857,7 @@
       "correct": false,
       "latency_s": 116.78091874998063,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 15292,
-      "total_tokens": 17909,
-      "reasoning_tokens": 15287,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285713-mWntEnAavWIsgmTEoGqO\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285713, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 15292, \"total_tokens\": 17909, \"cost\": 0.006314715, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0063785, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0061168}, \"completion_tokens_details\": {\"reasoning_tokens\": 15287}}}"
+      "llm_output": "18"
     },
     {
       "index": 92,
@@ -1412,13 +866,7 @@
       "correct": false,
       "latency_s": 212.9022066250036,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 25429,
-      "total_tokens": 28046,
-      "reasoning_tokens": 25422,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285753-4MYeX74DX8ZqyYrGj1yS\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285753, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 25429, \"total_tokens\": 28046, \"cost\": 0.010328967, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0104333, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0101716}, \"completion_tokens_details\": {\"reasoning_tokens\": 25422}}}"
+      "llm_output": "24"
     },
     {
       "index": 93,
@@ -1427,13 +875,7 @@
       "correct": false,
       "latency_s": 837.7195696249837,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81921,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285815-6usAqSYGSnOZ03pAY2tb\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285815, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81921}}}"
+      "llm_output": "20"
     },
     {
       "index": 94,
@@ -1442,13 +884,7 @@
       "correct": false,
       "latency_s": 834.7350215409824,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81919,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285830-6jsvwuVwUuYiZZybUDlF\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285830, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81919}}}"
+      "llm_output": "14"
     },
     {
       "index": 95,
@@ -1457,13 +893,7 @@
       "correct": false,
       "latency_s": 110.09971716700238,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 14372,
-      "total_tokens": 16989,
-      "reasoning_tokens": 14367,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285890-ybICVlS4hSLYrUyN83Ag\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285890, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 14372, \"total_tokens\": 16989, \"cost\": 0.005950395, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0060105, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0057488}, \"completion_tokens_details\": {\"reasoning_tokens\": 14367}}}"
+      "llm_output": "10"
     },
     {
       "index": 96,
@@ -1472,13 +902,7 @@
       "correct": false,
       "latency_s": 112.01092733399128,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 13395,
-      "total_tokens": 16012,
-      "reasoning_tokens": 13390,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772285966-ZEZrqH83oKex1Y4F9tGK\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772285966, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 13395, \"total_tokens\": 16012, \"cost\": 0.005563503, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0056197, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.005358}, \"completion_tokens_details\": {\"reasoning_tokens\": 13390}}}"
+      "llm_output": "14"
     },
     {
       "index": 97,
@@ -1487,13 +911,7 @@
       "correct": false,
       "latency_s": 127.69062729200232,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 12586,
-      "total_tokens": 15203,
-      "reasoning_tokens": 12582,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286000-ZvDkBm0SqmFguQB2gLxk\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286000, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"9\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 12586, \"total_tokens\": 15203, \"cost\": 0.005243139, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0052961, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0050344}, \"completion_tokens_details\": {\"reasoning_tokens\": 12582}}}"
+      "llm_output": "9"
     },
     {
       "index": 98,
@@ -1502,13 +920,7 @@
       "correct": true,
       "latency_s": 178.73047254199628,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 21553,
-      "total_tokens": 24170,
-      "reasoning_tokens": 21548,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286078-l8WUQBf0kfsexDQturmf\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286078, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 21553, \"total_tokens\": 24170, \"cost\": 0.008794071, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0088829, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0086212}, \"completion_tokens_details\": {\"reasoning_tokens\": 21548}}}"
+      "llm_output": "10"
     },
     {
       "index": 99,
@@ -1517,13 +929,7 @@
       "correct": false,
       "latency_s": 1038.643100834015,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 81928,
-      "total_tokens": 84545,
-      "reasoning_tokens": 81920,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286128-q6HsXougIJ9kaSFfcXJb\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"15\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 81928, \"total_tokens\": 84545, \"cost\": 0.032702571, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0330329, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.0327712}, \"completion_tokens_details\": {\"reasoning_tokens\": 81920}}}"
+      "llm_output": "15"
     },
     {
       "index": 100,
@@ -1532,13 +938,7 @@
       "correct": false,
       "latency_s": 153.23972587499884,
       "error": null,
-      "prompt_tokens": 2617,
-      "completion_tokens": 18415,
-      "total_tokens": 21032,
-      "reasoning_tokens": 18410,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772286257-cGjOkDEXbVnC6Y2SEs5p\", \"provider\": \"Alibaba\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"object\": \"chat.completion\", \"created\": 1772286257, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null}}], \"system_fingerprint\": null, \"usage\": {\"prompt_tokens\": 2617, \"completion_tokens\": 18415, \"total_tokens\": 21032, \"cost\": 0.007551423, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0076277, \"upstream_inference_prompt_cost\": 0.0002617, \"upstream_inference_completions_cost\": 0.007366}, \"completion_tokens_details\": {\"reasoning_tokens\": 18410}}}"
+      "llm_output": "14"
     }
   ]
 }

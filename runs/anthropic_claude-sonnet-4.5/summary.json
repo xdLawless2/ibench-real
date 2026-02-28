@@ -47,13 +47,7 @@
       "correct": false,
       "latency_s": 1.8313945830013836,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151479-z0a91PBVAbNX18n8LYhR\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151479, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 2,
@@ -62,13 +56,7 @@
       "correct": false,
       "latency_s": 1.948156790997018,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151479-Fw8RJyvv3HW7SqqzwDCH\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151479, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 3,
@@ -77,13 +65,7 @@
       "correct": true,
       "latency_s": 2.0001264169986825,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151479-dLjc0bKHLDxkqFf5LErP\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151479, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 4,
@@ -92,13 +74,7 @@
       "correct": true,
       "latency_s": 1.4091293340025004,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151479-l1KAXZztFYGpsjfVVPsD\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151479, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 5,
@@ -107,13 +83,7 @@
       "correct": false,
       "latency_s": 1.3452391659957357,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151480-zfpC9fk1sDyJf5X5qHBw\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151480, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 6,
@@ -122,13 +92,7 @@
       "correct": false,
       "latency_s": 1.5341564590053167,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151480-CTsqd9TVJrgLWX4y9p7E\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151480, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 7,
@@ -137,13 +101,7 @@
       "correct": false,
       "latency_s": 1.500550042008399,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151481-jqPc4fWt14JLDs77whqW\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151481, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 8,
@@ -152,13 +110,7 @@
       "correct": false,
       "latency_s": 1.50508158300363,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151481-4luivjEwuuhohOK4s2L1\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151481, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 9,
@@ -167,13 +119,7 @@
       "correct": true,
       "latency_s": 1.1198276249924675,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151481-LPv0w0Bl5WEFI8YzhvKi\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151482, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 10,
@@ -182,13 +128,7 @@
       "correct": false,
       "latency_s": 1.5273463330086088,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151482-xbkz669MdVa6MjsYTH9U\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151482, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 11,
@@ -197,13 +137,7 @@
       "correct": false,
       "latency_s": 1.5730534169997554,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151482-IqPijeOw1wdvazThOjrA\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151482, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 12,
@@ -212,13 +146,7 @@
       "correct": false,
       "latency_s": 1.5516674169921316,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151482-JVqauBtmmiD43algHLNC\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151482, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 13,
@@ -227,13 +155,7 @@
       "correct": false,
       "latency_s": 1.2818402090051677,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151483-1AesBPHKkmpDQ4ibcZj7\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151483, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 14,
@@ -242,13 +164,7 @@
       "correct": false,
       "latency_s": 1.0988384170050267,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151484-zjpFFDWLUaVr0Qn08KDH\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151484, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 15,
@@ -257,13 +173,7 @@
       "correct": false,
       "latency_s": 1.520540166995488,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151484-PC0W3OTXlMS1UNlVwUGN\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151484, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 16,
@@ -272,13 +182,7 @@
       "correct": true,
       "latency_s": 1.4974577079992741,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151484-wD83CpwDylxHsdRJ1rI8\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151484, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 17,
@@ -287,13 +191,7 @@
       "correct": false,
       "latency_s": 1.3751876659953268,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151484-eKfmWCpSev9ehR35w8I3\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151484, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 18,
@@ -302,13 +200,7 @@
       "correct": false,
       "latency_s": 1.7669538750051288,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151485-YGVlmmV7sLY76OsIu4MU\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151485, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 19,
@@ -317,13 +209,7 @@
       "correct": false,
       "latency_s": 1.644270124990726,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151485-4VqUOmby4PVep5kk6tXi\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151485, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 20,
@@ -332,13 +218,7 @@
       "correct": false,
       "latency_s": 1.5657849999988684,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151485-llFDxUlbvNlrXJywJme2\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151485, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 21,
@@ -347,13 +227,7 @@
       "correct": true,
       "latency_s": 1.604947167012142,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151485-NCEVX0lIxrflnmo0oe0I\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151485, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 22,
@@ -362,13 +236,7 @@
       "correct": true,
       "latency_s": 1.110478000002331,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151486-0AJBqAXGnMKjWgpIifpF\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151486, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 23,
@@ -377,13 +245,7 @@
       "correct": false,
       "latency_s": 1.5554873749933904,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151487-zqoA6IYj0kWZvAjOcVbq\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151487, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 24,
@@ -392,13 +254,7 @@
       "correct": false,
       "latency_s": 1.6985729159932816,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151487-6SL2HKmXCFMFECFqDxtK\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151487, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 25,
@@ -407,13 +263,7 @@
       "correct": false,
       "latency_s": 1.4389847089914838,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151487-tCuxgqs4YC5CJF45idCG\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151487, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 26,
@@ -422,13 +272,7 @@
       "correct": false,
       "latency_s": 1.5368099580082344,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151487-e7yy8FxqkIhzi5ZdpXLY\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151487, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 27,
@@ -437,13 +281,7 @@
       "correct": false,
       "latency_s": 1.4924870830000145,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151488-6ORxiJ1Vq6FphXJql1dg\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151488, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 28,
@@ -452,13 +290,7 @@
       "correct": false,
       "latency_s": 1.5738311669992981,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151488-F5gvWmnS8L0M4sRNvkdM\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151488, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 29,
@@ -467,13 +299,7 @@
       "correct": false,
       "latency_s": 1.0697474170010537,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151488-YFC8YblDFMAUkvpc6gRe\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151488, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 30,
@@ -482,13 +308,7 @@
       "correct": false,
       "latency_s": 1.5394897500082152,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151489-rFhcgFAN5Ag244N72Z3q\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151489, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 31,
@@ -497,13 +317,7 @@
       "correct": false,
       "latency_s": 1.5787930829974357,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151490-w1S2Amc6HraG9yZ8c3An\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151490, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 32,
@@ -512,13 +326,7 @@
       "correct": false,
       "latency_s": 1.3967136249993928,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151490-Yi7FVKuY5YOlQjDiLXjR\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151490, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 33,
@@ -527,13 +335,7 @@
       "correct": false,
       "latency_s": 1.8574689579982078,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151490-uVvrkzR4BnUenBbFStgx\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151490, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 34,
@@ -542,13 +344,7 @@
       "correct": false,
       "latency_s": 1.1055682500009425,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151491-Wz36AiGMzcThOEIOAAbQ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151491, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 35,
@@ -557,13 +353,7 @@
       "correct": false,
       "latency_s": 1.269521915994119,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151491-9jsIU99LPHC8vvFrucj2\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151491, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 36,
@@ -572,13 +362,7 @@
       "correct": false,
       "latency_s": 1.7513409160019364,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151491-zkEgEptKrL5bbNHgEhO9\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151491, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 37,
@@ -587,13 +371,7 @@
       "correct": false,
       "latency_s": 1.2920384160097456,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151492-kwG9Ekqab2GuPQ8DA7R1\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151492, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 38,
@@ -602,13 +380,7 @@
       "correct": false,
       "latency_s": 1.144639083999209,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151492-XM4xAcn5jM8FJu82LHwK\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151492, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 39,
@@ -617,13 +389,7 @@
       "correct": false,
       "latency_s": 1.3068527090072166,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151492-kNMuHKspnc7RVBnY2bYB\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151493, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 40,
@@ -632,13 +398,7 @@
       "correct": true,
       "latency_s": 1.492954916000599,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151493-nmuWBa9FDhtywfRyiRa8\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151493, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 41,
@@ -647,13 +407,7 @@
       "correct": false,
       "latency_s": 1.5671970830007922,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151493-0rysjK4wBxdnbiMef1jQ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151493, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 42,
@@ -662,13 +416,7 @@
       "correct": false,
       "latency_s": 1.3089020420011366,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151493-WDi2Y3JDwQcwJeFhGsXN\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151493, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 43,
@@ -677,13 +425,7 @@
       "correct": false,
       "latency_s": 0.959007333003683,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151494-ZXzXPfIaFiocqclUrtnA\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151494, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 44,
@@ -692,13 +434,7 @@
       "correct": false,
       "latency_s": 1.1423447500128532,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151494-1f4ZBB1MmDH2DpF3xROV\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151494, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 45,
@@ -707,13 +443,7 @@
       "correct": false,
       "latency_s": 1.7333021670056041,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151494-fpDPgwroWMGYC3HtRDIS\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151494, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 46,
@@ -722,13 +452,7 @@
       "correct": true,
       "latency_s": 1.5183784999971977,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151494-2PmRLC74Rknk6RCHZyCM\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151494, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 47,
@@ -737,13 +461,7 @@
       "correct": false,
       "latency_s": 1.293086999998195,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151495-BSLSDb2qLxkZWl0iFB3a\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151495, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 48,
@@ -752,13 +470,7 @@
       "correct": false,
       "latency_s": 1.74516500000027,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151495-NdElrbOpYJtBHUH0OigB\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151495, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 49,
@@ -767,13 +479,7 @@
       "correct": false,
       "latency_s": 1.0380580839992035,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151496-jNWMGBiF2dkufHcdqIMv\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151496, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 50,
@@ -782,13 +488,7 @@
       "correct": false,
       "latency_s": 1.5192312500003027,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151496-605Fnl3UxGEonYtnmk0o\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151496, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 51,
@@ -797,13 +497,7 @@
       "correct": false,
       "latency_s": 1.0649951250088634,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151496-ir1IDMbVsvu2NABTQvnD\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151496, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 52,
@@ -812,13 +506,7 @@
       "correct": true,
       "latency_s": 1.3171911660028854,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151497-0SuTfc4yQko4ZUK0DhFj\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151497, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 53,
@@ -827,13 +515,7 @@
       "correct": true,
       "latency_s": 1.5322174999892013,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151497-L4o8M8pRO9d5gBBiOCq6\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151497, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 54,
@@ -842,13 +524,7 @@
       "correct": false,
       "latency_s": 1.503914208005881,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151497-f6oDW97TXLz7Rldw1PT3\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151497, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 55,
@@ -857,13 +533,7 @@
       "correct": false,
       "latency_s": 1.6769918750069337,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151497-dUWWv03atgwnHUHnw5we\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151497, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 56,
@@ -872,13 +542,7 @@
       "correct": false,
       "latency_s": 1.2674442499992438,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151498-BSdqcbBoDLUyr0BZ8cel\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151498, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 57,
@@ -887,13 +551,7 @@
       "correct": false,
       "latency_s": 1.5127572500059614,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151499-sWK6iCFDGeldTm5ggnWP\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151499, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 58,
@@ -902,13 +560,7 @@
       "correct": false,
       "latency_s": 1.4387650420103455,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151499-foLAacfP3j5YZ0GDGURL\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151499, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 59,
@@ -917,13 +569,7 @@
       "correct": false,
       "latency_s": 1.0852814160025446,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151499-sC50CdpSrsvBbiJYnUQZ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151499, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 60,
@@ -932,13 +578,7 @@
       "correct": false,
       "latency_s": 0.99199233300169,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151500-X1zgbZtmhWIS8RJGtj2d\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151500, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 61,
@@ -947,13 +587,7 @@
       "correct": false,
       "latency_s": 1.0753771250019781,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151500-GdNRW80fQIfLFrFjDJxd\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151500, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 62,
@@ -962,13 +596,7 @@
       "correct": false,
       "latency_s": 1.5710394579946296,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151500-nSVEVVOb8tLP4dfIdUZK\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151500, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 63,
@@ -977,13 +605,7 @@
       "correct": false,
       "latency_s": 1.1268310840096092,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151500-Oygc6IzXs56dLjcWuL8T\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151500, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 64,
@@ -992,13 +614,7 @@
       "correct": false,
       "latency_s": 1.0147805419983342,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151501-97i6waJOzk50q2boCQQG\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151501, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 65,
@@ -1007,13 +623,7 @@
       "correct": false,
       "latency_s": 1.7103644169983454,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151501-n9eTCDacrDZOpYg16drV\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151501, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 66,
@@ -1022,13 +632,7 @@
       "correct": false,
       "latency_s": 1.5142768749938114,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151501-9YrhonPdorqT9sFZfuzB\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151501, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 67,
@@ -1037,13 +641,7 @@
       "correct": true,
       "latency_s": 1.3661587499955203,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151502-jt15CTKg3xHMyMSRNSxW\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151502, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 68,
@@ -1052,13 +650,7 @@
       "correct": false,
       "latency_s": 1.5334212079906138,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151502-tGZDRwWSQfHCgMsYzDiX\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151502, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"11\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "11"
     },
     {
       "index": 69,
@@ -1067,13 +659,7 @@
       "correct": false,
       "latency_s": 1.5820294589939294,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151503-TvUtUFzAL4fnmWRQavod\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151503, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 70,
@@ -1082,13 +668,7 @@
       "correct": false,
       "latency_s": 1.5164539159886772,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151503-vR0rf56aLlOtM21SC6gn\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151503, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 71,
@@ -1097,13 +677,7 @@
       "correct": false,
       "latency_s": 1.0609505000029458,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151503-ETPO3GLogE23sUetBvWN\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151503, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 72,
@@ -1112,13 +686,7 @@
       "correct": false,
       "latency_s": 1.0727207090094453,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151503-UzDvKuUvnpfpJCAWmkVk\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151503, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 73,
@@ -1127,13 +695,7 @@
       "correct": false,
       "latency_s": 1.5163914580043638,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151504-IbHYYgOyhDnTwd4Sxokq\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151504, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 74,
@@ -1142,13 +704,7 @@
       "correct": false,
       "latency_s": 1.5416976249980507,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151504-ZXSor4XlhMCCl1dbKJel\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151504, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 75,
@@ -1157,13 +713,7 @@
       "correct": false,
       "latency_s": 1.5793185829970753,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151504-ErfjPGYmL2gC1BterRZm\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151504, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 76,
@@ -1172,13 +722,7 @@
       "correct": false,
       "latency_s": 1.076618041988695,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151504-dzY1Ya3N7dWDK1NPEqpQ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151504, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 77,
@@ -1187,13 +731,7 @@
       "correct": true,
       "latency_s": 1.3804569170024479,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151506-gIFmITBS1kuBLWqdZzwJ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151506, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 78,
@@ -1202,13 +740,7 @@
       "correct": true,
       "latency_s": 1.1038077499979408,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151506-EnSn3i7s75UbKzYIbu4i\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151506, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 79,
@@ -1217,13 +749,7 @@
       "correct": false,
       "latency_s": 1.1217539589997614,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151506-trMYjluUig7QuBqvW2nx\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151506, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"27\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "27"
     },
     {
       "index": 80,
@@ -1232,13 +758,7 @@
       "correct": false,
       "latency_s": 1.5113590830005705,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151506-xYPMd9ilbCdaNOHr23NG\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151506, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 81,
@@ -1247,13 +767,7 @@
       "correct": false,
       "latency_s": 1.5628077909932472,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151507-ZByivAsbVbicJAg6gl1t\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151507, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 82,
@@ -1262,13 +776,7 @@
       "correct": false,
       "latency_s": 1.212421042000642,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151507-vPHeIMSypEX1YYg0Q9UR\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151507, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 83,
@@ -1277,13 +785,7 @@
       "correct": false,
       "latency_s": 1.52869741700124,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151507-KTA6dkyV64R7OmdN38L4\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151507, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 84,
@@ -1292,13 +794,7 @@
       "correct": false,
       "latency_s": 1.5761265830078628,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151508-vHTnXA3JDbGMbWjzMCJ4\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151508, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 85,
@@ -1307,13 +803,7 @@
       "correct": false,
       "latency_s": 1.3806898329930846,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151508-Gjd0WoGFuWJZe6K3hIaP\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151508, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 86,
@@ -1322,13 +812,7 @@
       "correct": false,
       "latency_s": 1.098765667004045,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151508-kMpZqWsbOFcgonqOH7bU\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151508, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 87,
@@ -1337,13 +821,7 @@
       "correct": false,
       "latency_s": 1.5702817080018576,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151509-p9sfYT9rJ3zIFqlbDX1w\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151509, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 88,
@@ -1352,13 +830,7 @@
       "correct": true,
       "latency_s": 1.16810962499585,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151509-XoJJ86Dov1iDgMEzq8BR\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151509, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 89,
@@ -1367,13 +839,7 @@
       "correct": false,
       "latency_s": 1.114004708986613,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151509-nkdJ8NbOLfv3z79TOJ79\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151509, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 90,
@@ -1382,13 +848,7 @@
       "correct": false,
       "latency_s": 1.2340921249997336,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151510-NM9mLIxRnmcnH1T5oMsw\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151510, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 91,
@@ -1397,13 +857,7 @@
       "correct": false,
       "latency_s": 1.5713788339926396,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151510-cHRGuo8Ka7gUXVlB8HYu\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151510, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 92,
@@ -1412,13 +866,7 @@
       "correct": false,
       "latency_s": 1.5146320829953765,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151510-HqRTyPISX7sRUpJlMw30\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151510, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     },
     {
       "index": 93,
@@ -1427,13 +875,7 @@
       "correct": false,
       "latency_s": 1.095662291001645,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151510-shV25xV5th5CYtwsxvBS\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151510, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 94,
@@ -1442,13 +884,7 @@
       "correct": false,
       "latency_s": 1.8067166669934522,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151511-eIqegLVtjzxdRbtQVa2O\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151511, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 95,
@@ -1457,13 +893,7 @@
       "correct": true,
       "latency_s": 1.106512667000061,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151512-q85oFiLMn2X9iPPNJ12q\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151512, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"13\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "13"
     },
     {
       "index": 96,
@@ -1472,13 +902,7 @@
       "correct": false,
       "latency_s": 1.9883024589944398,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151512-5ngZOAgtZsN6o3e0uX6x\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151512, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 97,
@@ -1487,13 +911,7 @@
       "correct": false,
       "latency_s": 4.520784542008187,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151512-vfZMS6TBa1cw2yK8bwD4\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151512, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"8\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "8"
     },
     {
       "index": 98,
@@ -1502,13 +920,7 @@
       "correct": false,
       "latency_s": 1.0050261669966858,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151513-UoOyk7wwxuPJTicJncMc\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151513, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 99,
@@ -1517,13 +929,7 @@
       "correct": false,
       "latency_s": 1.0801405419915682,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151513-a8R27V0OObrhBclWXzJm\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151513, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"14\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "14"
     },
     {
       "index": 100,
@@ -1532,13 +938,7 @@
       "correct": false,
       "latency_s": 1.3132897499890532,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151514-SKehMFAtMKB6tjb6OoAg\", \"provider\": \"Google\", \"model\": \"anthropic/claude-sonnet-4.5\", \"object\": \"chat.completion\", \"created\": 1772151514, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"19\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.00497178, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005022, \"upstream_inference_prompt_cost\": 0.004947, \"upstream_inference_completions_cost\": 7.5e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "19"
     }
   ]
 }

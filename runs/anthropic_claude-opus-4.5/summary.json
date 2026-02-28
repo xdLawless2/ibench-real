@@ -47,13 +47,7 @@
       "correct": false,
       "latency_s": 2.948103041999275,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151116-77Fc4jdqMjcAYOCMePEs\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151117, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 2,
@@ -62,13 +56,7 @@
       "correct": false,
       "latency_s": 1.232069625009899,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151116-fKVNbM8BA1q8RKo6UBxL\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151116, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 3,
@@ -77,13 +65,7 @@
       "correct": false,
       "latency_s": 2.409365165993222,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151116-za3gUJa2vrMio64c4SBB\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151116, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 4,
@@ -92,13 +74,7 @@
       "correct": false,
       "latency_s": 2.4046105419984087,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151116-kOpXxHoJDBj6JZzotYN6\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151116, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 5,
@@ -107,13 +83,7 @@
       "correct": false,
       "latency_s": 3.037134166996111,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151117-V9SFxsKWkORdRXTAnqky\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151118, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 6,
@@ -122,13 +92,7 @@
       "correct": false,
       "latency_s": 2.8333060830045724,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151118-KgDmIfDc8Jsn4ocL2qSI\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151119, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 7,
@@ -137,13 +101,7 @@
       "correct": false,
       "latency_s": 1.658946833005757,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151118-tWRDBh3ih4Y3MFFm4kqA\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151118, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 8,
@@ -152,13 +110,7 @@
       "correct": false,
       "latency_s": 2.1201832500082674,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151119-VdXg7thc702JPOA48Y8M\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151119, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 9,
@@ -167,13 +119,7 @@
       "correct": false,
       "latency_s": 1.4340257089934312,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151120-npLyGg5z76cMFrx8Sl81\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151120, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 10,
@@ -182,13 +128,7 @@
       "correct": false,
       "latency_s": 3.6027919170010136,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151120-i3UQyHw154Akf1g2uKDt\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151120, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 11,
@@ -197,13 +137,7 @@
       "correct": false,
       "latency_s": 1.282696958995075,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151121-nSv7kTkVfbaTfCacc4hy\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151121, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 12,
@@ -212,13 +146,7 @@
       "correct": false,
       "latency_s": 2.6225359169911826,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151121-3WqsN0jla8q0SLkdW2v4\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151121, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"40\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "40"
     },
     {
       "index": 13,
@@ -227,13 +155,7 @@
       "correct": false,
       "latency_s": 2.681038583003101,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151122-KncVJB2PAJCLBEfn6q10\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151122, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 14,
@@ -242,13 +164,7 @@
       "correct": false,
       "latency_s": 1.417287958000088,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151122-GFfrYfRLkesCbcovzNmG\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151122, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 15,
@@ -257,13 +173,7 @@
       "correct": false,
       "latency_s": 1.3774780410021776,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151124-A6aOTIywLJFcyA0aAfkO\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151124, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 16,
@@ -272,13 +182,7 @@
       "correct": false,
       "latency_s": 2.2231158329959726,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151124-lWF4GkWrOLtFYBZJQ5fx\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151124, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 17,
@@ -287,13 +191,7 @@
       "correct": false,
       "latency_s": 2.5838398749910994,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151124-42tOiZWAcuSw4NZXrroJ\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151124, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 18,
@@ -302,13 +200,7 @@
       "correct": false,
       "latency_s": 2.656511082997895,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151124-x0G2fyq7UQAcv2m1O5ot\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 19,
@@ -317,13 +209,7 @@
       "correct": false,
       "latency_s": 2.565693124997779,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151125-fVUEnbvViPcfpu3OOaHl\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151125, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 20,
@@ -332,13 +218,7 @@
       "correct": false,
       "latency_s": 1.6549465420102933,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151126-zJaN21EdaHgFOKVyIsGc\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151126, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 21,
@@ -347,13 +227,7 @@
       "correct": false,
       "latency_s": 3.1916213750082534,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151127-kjJBVzo2CM2ECmpDXH8l\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151127, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 22,
@@ -362,13 +236,7 @@
       "correct": false,
       "latency_s": 1.4602451670070877,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151127-deX5ZUBZVH1BSZn4B8nN\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151127, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 23,
@@ -377,13 +245,7 @@
       "correct": false,
       "latency_s": 2.5718067919951864,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151128-iCpEMt616o1HmkpkEcir\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"32\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "32"
     },
     {
       "index": 24,
@@ -392,13 +254,7 @@
       "correct": false,
       "latency_s": 2.1874199580051936,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151128-kvxqnMn7IxpGOJWz8rmh\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151128, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 25,
@@ -407,13 +263,7 @@
       "correct": false,
       "latency_s": 2.5741818329988746,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151128-uHq2SFL1ujQ314uSCkD6\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151129, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 26,
@@ -422,13 +272,7 @@
       "correct": false,
       "latency_s": 1.572269292009878,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151130-ZxlmrEDnQAv9E3tcQu2h\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151130, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 27,
@@ -437,13 +281,7 @@
       "correct": false,
       "latency_s": 1.302936916006729,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151130-5qlnTThLCIHWzMfwPIvm\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151130, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 28,
@@ -452,13 +290,7 @@
       "correct": false,
       "latency_s": 2.7822858750005253,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151130-VH7W6ZVod29StmPxzgqf\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 29,
@@ -467,13 +299,7 @@
       "correct": false,
       "latency_s": 2.928321583007346,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151131-4FQt4PrYfdno78nfcNov\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 30,
@@ -482,13 +308,7 @@
       "correct": false,
       "latency_s": 1.034300291998079,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151131-3orLZ82hyoksuyqUQ8lN\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 31,
@@ -497,13 +317,7 @@
       "correct": false,
       "latency_s": 1.4204230420000385,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151131-BmW9yGui2thykxFNbZFn\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151131, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 32,
@@ -512,13 +326,7 @@
       "correct": false,
       "latency_s": 2.6984252499969443,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151132-B9LNRLxe0zGHNsMI0kpP\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 33,
@@ -527,13 +335,7 @@
       "correct": false,
       "latency_s": 2.8736448339914205,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151133-PZXoKhN8Rdwdk8EonJiW\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 34,
@@ -542,13 +344,7 @@
       "correct": false,
       "latency_s": 2.1683292090019677,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151133-xe5TutTnmZ6k0A2wHG4g\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151133, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 35,
@@ -557,13 +353,7 @@
       "correct": false,
       "latency_s": 2.800679666994256,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151134-4tNIvadP9gASgtxjUR0L\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151134, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 36,
@@ -572,13 +362,7 @@
       "correct": false,
       "latency_s": 2.6589711670094403,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151135-re1qhveSyOWWheztb2tV\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151135, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 37,
@@ -587,13 +371,7 @@
       "correct": false,
       "latency_s": 2.1205575419880915,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151135-hCUnlHW8rmCflHbFtlNv\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151135, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 38,
@@ -602,13 +380,7 @@
       "correct": false,
       "latency_s": 1.2046759590011789,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151136-VEZpv6cxhsqNbG6bFasx\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151136, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 39,
@@ -617,13 +389,7 @@
       "correct": false,
       "latency_s": 2.3235106659994926,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151137-9ez1YNez9waEQ2eii6dF\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151137, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 40,
@@ -632,13 +398,7 @@
       "correct": false,
       "latency_s": 1.7324801250069868,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151137-poUVSO2v67AxFiepNE3W\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151137, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 41,
@@ -647,13 +407,7 @@
       "correct": false,
       "latency_s": 2.810965833006776,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151137-3t2tkPZOprIvFoIkqL56\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 42,
@@ -662,13 +416,7 @@
       "correct": false,
       "latency_s": 3.6497851659951266,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151138-uIcEgUUeSeVmi7UZOiWh\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151138, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 43,
@@ -677,13 +425,7 @@
       "correct": false,
       "latency_s": 1.5021968340006424,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151139-BlQz350G5qVcw4Q4aRJF\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 44,
@@ -692,13 +434,7 @@
       "correct": false,
       "latency_s": 2.510051666002255,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151139-g6NBIPoXBxDURLZPGM2k\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151139, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 45,
@@ -707,13 +443,7 @@
       "correct": false,
       "latency_s": 2.1837362080113962,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151140-emckQo4kiDuWSDjKiaPF\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151140, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 46,
@@ -722,13 +452,7 @@
       "correct": false,
       "latency_s": 2.4773576669977047,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151140-ZnTmhAADBgutfnGHkTck\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151141, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 47,
@@ -737,13 +461,7 @@
       "correct": false,
       "latency_s": 2.8738267079897923,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151141-RX6jE8Ud5ojhZV2I05ev\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151141, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 48,
@@ -752,13 +470,7 @@
       "correct": false,
       "latency_s": 1.305574042009539,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151141-Y2TyVBpBQq91NibSEVcf\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151141, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 49,
@@ -767,13 +479,7 @@
       "correct": false,
       "latency_s": 1.2266477499942994,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151142-uzgmfbGty6IvMDt55sC8\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151142, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 50,
@@ -782,13 +488,7 @@
       "correct": false,
       "latency_s": 1.4907624589977786,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151143-CakSSwmVDkCTwzkhutLA\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"32\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "32"
     },
     {
       "index": 51,
@@ -797,13 +497,7 @@
       "correct": false,
       "latency_s": 1.149510667004506,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151143-ynvOz52xMqC63e3Gnwq2\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 52,
@@ -812,13 +506,7 @@
       "correct": false,
       "latency_s": 2.1689407499943627,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151143-CqIYIxTEnn2sWMtNjaf3\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151143, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"32\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "32"
     },
     {
       "index": 53,
@@ -827,13 +515,7 @@
       "correct": false,
       "latency_s": 2.658104749993072,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151144-mz10rfzYKaZ3vCziB9BO\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 54,
@@ -842,13 +524,7 @@
       "correct": true,
       "latency_s": 2.262841917006881,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151144-2RqNiMK3VkZZZodFaHt4\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 55,
@@ -857,13 +533,7 @@
       "correct": false,
       "latency_s": 2.4941143750038464,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151144-fm8xMLYitylDUi56H6vN\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151144, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 56,
@@ -872,13 +542,7 @@
       "correct": false,
       "latency_s": 2.138357582996832,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151146-GmzzAN2a34rjpXxfz0ni\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 57,
@@ -887,13 +551,7 @@
       "correct": false,
       "latency_s": 1.507794791003107,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151146-vBspEgrGduqGirvPymot\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151146, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 58,
@@ -902,13 +560,7 @@
       "correct": false,
       "latency_s": 2.761126957993838,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151147-3OvuCXTx7F3lyp67OeNZ\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 59,
@@ -917,13 +569,7 @@
       "correct": false,
       "latency_s": 2.1093691660062177,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151147-NP7w4EpsyE2A0wYJy5A5\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151147, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 60,
@@ -932,13 +578,7 @@
       "correct": false,
       "latency_s": 1.3163317089929478,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151148-A0vF5eL7MCqwtcto86UN\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151148, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"22\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "22"
     },
     {
       "index": 61,
@@ -947,13 +587,7 @@
       "correct": true,
       "latency_s": 1.3323551250068704,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151148-rq2xnmF6jvG5LtdFxDGV\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151148, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 62,
@@ -962,13 +596,7 @@
       "correct": false,
       "latency_s": 2.634404666008777,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151149-LU2V1YFVJKXKaTuQ0oXl\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151149, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 63,
@@ -977,13 +605,7 @@
       "correct": true,
       "latency_s": 1.6140176670014625,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151149-FsEWOU6BVEGcAoLE1g7I\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151149, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 64,
@@ -992,13 +614,7 @@
       "correct": false,
       "latency_s": 2.3493082499917364,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151149-WNII98OGFnDpGx2ihQvB\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151149, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 65,
@@ -1007,13 +623,7 @@
       "correct": false,
       "latency_s": 3.2404735000018263,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151149-9KEAoyyctIkI9QwwXd1r\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151150, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 66,
@@ -1022,13 +632,7 @@
       "correct": false,
       "latency_s": 1.2443403329962166,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151151-cSnRKAA3EKO6kxbMEi6a\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151151, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 67,
@@ -1037,13 +641,7 @@
       "correct": false,
       "latency_s": 1.6007267499953741,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151151-jWEVK6ZbMkM9mKlrI4Wc\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151151, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 68,
@@ -1052,13 +650,7 @@
       "correct": false,
       "latency_s": 2.6706675000023097,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151152-N3DsGpIeEVyrCtPzrn34\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 69,
@@ -1067,13 +659,7 @@
       "correct": false,
       "latency_s": 2.3618666660040617,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151152-95xOPXOMjKUxgAdapJhe\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151152, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 70,
@@ -1082,13 +668,7 @@
       "correct": false,
       "latency_s": 2.7071869999927003,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151153-tBXhAzE9vj0MRYHPWjeu\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151153, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 71,
@@ -1097,13 +677,7 @@
       "correct": false,
       "latency_s": 1.6586585839977488,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151153-sKzfecIxjghmWVZuARPQ\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151153, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 72,
@@ -1112,13 +686,7 @@
       "correct": false,
       "latency_s": 2.5802355829946464,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151154-Fb2R2rqQTU3Y8vVqltII\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151155, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"40\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "40"
     },
     {
       "index": 73,
@@ -1127,13 +695,7 @@
       "correct": false,
       "latency_s": 1.3728724160027923,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151154-nILGCvtPxZ5XFCyeYHk5\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151154, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 74,
@@ -1142,13 +704,7 @@
       "correct": false,
       "latency_s": 1.9536836249899352,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151155-XKaTDbe8fc2dXbLKbcM0\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151155, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 75,
@@ -1157,13 +713,7 @@
       "correct": true,
       "latency_s": 2.643402916000923,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151155-YeLTPTM94EMVrTMI9lOF\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 76,
@@ -1172,13 +722,7 @@
       "correct": false,
       "latency_s": 1.3008002499991562,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151156-Z6OIhSxAuZKrcRseNmJb\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151156, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 77,
@@ -1187,13 +731,7 @@
       "correct": false,
       "latency_s": 2.709704624998267,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151157-OV3QeBxbRVQRPODhlgr8\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"32\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "32"
     },
     {
       "index": 78,
@@ -1202,13 +740,7 @@
       "correct": false,
       "latency_s": 2.6374638339912053,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151157-3wxNGnX0roIxnCnOj4MO\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 79,
@@ -1217,13 +749,7 @@
       "correct": true,
       "latency_s": 2.284204541007057,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151157-j5F5VC8GcUGWXyDlRfRm\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151157, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 80,
@@ -1232,13 +758,7 @@
       "correct": false,
       "latency_s": 1.3534048339934088,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151158-mpAOWd6Vq4N4k4WHkf8w\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151158, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 81,
@@ -1247,13 +767,7 @@
       "correct": false,
       "latency_s": 1.5634236670011887,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151159-ov0oWBuOUFjI2sZKBITt\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151159, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 82,
@@ -1262,13 +776,7 @@
       "correct": false,
       "latency_s": 2.679478249992826,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151159-Wx6wr9Xo2J2ZU3vqUfcg\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151160, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 83,
@@ -1277,13 +785,7 @@
       "correct": false,
       "latency_s": 2.0329537079960573,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151159-AsvYWrhvdwTcNeCdAYyv\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151159, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"28\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "28"
     },
     {
       "index": 84,
@@ -1292,13 +794,7 @@
       "correct": false,
       "latency_s": 2.3407450419908855,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151159-M0UVpwy1FD9qWuRobWbi\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151159, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 85,
@@ -1307,13 +803,7 @@
       "correct": false,
       "latency_s": 2.115835832999437,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151161-HtRudMEBDyS6DQWtciK2\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151161, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 86,
@@ -1322,13 +812,7 @@
       "correct": false,
       "latency_s": 1.9328308749973075,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151161-8f0zqKzWXxwIUs9qZXim\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151161, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"32\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "32"
     },
     {
       "index": 87,
@@ -1337,13 +821,7 @@
       "correct": false,
       "latency_s": 1.59571366700402,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151162-QuBvLsxQw17J7jQnrPVC\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151162, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 88,
@@ -1352,13 +830,7 @@
       "correct": false,
       "latency_s": 1.3275276249914896,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151162-KrK5sFIuHN8NsvCzyrZz\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151162, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 89,
@@ -1367,13 +839,7 @@
       "correct": false,
       "latency_s": 3.0814343340025516,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151163-03DKTiwiAccUD7thy4QA\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151163, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 90,
@@ -1382,13 +848,7 @@
       "correct": false,
       "latency_s": 2.8063930420030374,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151163-JQZzkfUS5BjWLPkDxZmc\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151164, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"24\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "24"
     },
     {
       "index": 91,
@@ -1397,13 +857,7 @@
       "correct": false,
       "latency_s": 1.2997863329946995,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151163-VzQdyZa4IusdU8AC9ToG\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151163, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 92,
@@ -1412,13 +866,7 @@
       "correct": false,
       "latency_s": 1.4535265420126962,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151163-wNqso1anqqn5T0CM1MUf\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151163, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"26\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "26"
     },
     {
       "index": 93,
@@ -1427,13 +875,7 @@
       "correct": false,
       "latency_s": 0.9970750000065891,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151165-30TSeGJQkGYRn3qwQPy7\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151165, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 94,
@@ -1442,13 +884,7 @@
       "correct": false,
       "latency_s": 6.05285887500213,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151165-wrL4mnAuM7v0n0EcEh85\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151165, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 95,
@@ -1457,13 +893,7 @@
       "correct": false,
       "latency_s": 2.779331333003938,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151166-ZE5fy8elkPVzMmIxBaLB\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151166, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"18\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "18"
     },
     {
       "index": 96,
@@ -1472,13 +902,7 @@
       "correct": false,
       "latency_s": 3.5818798749969574,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151166-VXyaMYSI9kvbVTAOlv00\", \"provider\": \"Anthropic\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151166, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"16\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "16"
     },
     {
       "index": 97,
@@ -1487,13 +911,7 @@
       "correct": false,
       "latency_s": 2.5883339579886524,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151166-b0xEtJRfbNruJatjQtum\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151166, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"12\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "12"
     },
     {
       "index": 98,
@@ -1502,13 +920,7 @@
       "correct": true,
       "latency_s": 1.2551486250013113,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151168-Tb8tyTW1KL5fFkIuUx4T\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151168, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"10\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "10"
     },
     {
       "index": 99,
@@ -1517,13 +929,7 @@
       "correct": false,
       "latency_s": 1.89759729198704,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151169-2yRKxqpbsChRGW9NHBTv\", \"provider\": \"Google\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151169, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"20\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "20"
     },
     {
       "index": 100,
@@ -1532,13 +938,7 @@
       "correct": false,
       "latency_s": 2.662634166001226,
       "error": null,
-      "prompt_tokens": 1649,
-      "completion_tokens": 5,
-      "total_tokens": 1654,
-      "reasoning_tokens": 0,
-      "reasoning_len": 0,
-      "thinking_blocks": 0,
-      "raw_response": "{\"id\": \"gen-1772151170-SMijhSRwxxNjgoe6pPb5\", \"provider\": \"Amazon Bedrock\", \"model\": \"anthropic/claude-opus-4.5\", \"object\": \"chat.completion\", \"created\": 1772151170, \"choices\": [{\"logprobs\": null, \"finish_reason\": \"stop\", \"native_finish_reason\": \"stop\", \"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"40\", \"refusal\": null, \"reasoning\": null}}], \"usage\": {\"prompt_tokens\": 1649, \"completion_tokens\": 5, \"total_tokens\": 1654, \"cost\": 0.0082863, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00837, \"upstream_inference_prompt_cost\": 0.008245, \"upstream_inference_completions_cost\": 0.000125}, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}"
+      "llm_output": "40"
     }
   ]
 }
