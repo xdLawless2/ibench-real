@@ -14,7 +14,7 @@ import json
 import re
 from pathlib import Path
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional, Set, Tuple
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -34,6 +34,7 @@ PROVIDER_COLORS: Dict[str, str] = {
 }
 
 FALLBACK_COLOR = "#9b59b6"  # Purple for unknown/open-source models
+MODEL_PRICE_FILE = Path("config/model_prices.json")
 
 
 @dataclass
@@ -71,11 +72,68 @@ def _coerce_float(val: object) -> Optional[float]:
     return None
 
 
+def _load_price_overrides() -> Dict[str, Tuple[float, float]]:
+    path = MODEL_PRICE_FILE
+    if not path.exists():
+        return {}
+    try:
+        text = path.read_text(encoding="utf-8")
+        raw = json.loads(text)
+    except Exception:
+        # Be tolerant of common hand-edited JSON issue: trailing commas.
+        try:
+            sanitized = re.sub(r",(\s*[}\]])", r"\1", text)
+            raw = json.loads(sanitized)
+        except Exception:
+            return {}
+    if not isinstance(raw, dict):
+        return {}
+
+    out: Dict[str, Tuple[float, float]] = {}
+    for key, val in raw.items():
+        k = str(key).strip().lower()
+        if not k:
+            continue
+        if isinstance(val, dict):
+            inp = _coerce_float(val.get("input") or val.get("prompt") or val.get("prompt_per_million"))
+            outp = _coerce_float(val.get("output") or val.get("completion") or val.get("output_per_million"))
+            if inp is None and outp is None:
+                continue
+            out[k] = (inp or 0.0, outp or 0.0)
+    return out
+
+
+def _lookup_price_pair(model_id: str, slug: str, overrides: Dict[str, Tuple[float, float]]) -> Optional[Tuple[float, float]]:
+    mid = (model_id or "").strip()
+    short = short_model_name(mid).strip()
+    candidates: List[str] = [
+        mid.lower(),
+        short.lower(),
+        slug.lower(),
+    ]
+    # Common aliasing: "gpt-5-chat" should map to gpt-5 pricing.
+    if mid.lower().endswith("/gpt-5-chat"):
+        candidates.append("openai/gpt-5")
+        candidates.append("gpt-5")
+    # Try without provider prefix too.
+    if "/" in mid:
+        candidates.append(mid.split("/", 1)[1].lower())
+    # De-duplicate preserving order.
+    seen: Set[str] = set()
+    ordered = [c for c in candidates if not (c in seen or seen.add(c))]
+    for c in ordered:
+        pair = overrides.get(c)
+        if pair is not None:
+            return pair
+    return None
+
+
 def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
     """Load metrics from all runs/*/summary.json files."""
     items: List[RunMetric] = []
     if not runs_dir.exists():
         return items
+    overrides = _load_price_overrides()
     for summary_file in sorted(runs_dir.glob("*/summary.json")):
         try:
             doc = json.loads(summary_file.read_text(encoding="utf-8"))
@@ -112,13 +170,32 @@ def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
             if isinstance(items_list, list):
                 n_val = len(items_list)
 
-        # Average cost per image
-        cost_total = _coerce_float(summary.get("estimated_cost")) if isinstance(summary, dict) else None
+        # Average cost per image (recomputed from token usage + per-million prices).
+        cost_total = None
         total_time_s = _coerce_float(summary.get("total_time_s")) if isinstance(summary, dict) else None
-        if cost_total is None and isinstance(doc, dict):
+        token_usage = doc.get("token_usage", {}) if isinstance(doc, dict) else {}
+        prompt_tokens = _coerce_float(token_usage.get("prompt_tokens")) if isinstance(token_usage, dict) else None
+        completion_tokens = _coerce_float(token_usage.get("completion_tokens")) if isinstance(token_usage, dict) else None
+
+        price_pair = _lookup_price_pair(str(base_model), summary_file.parent.name, overrides)
+        if price_pair is None and isinstance(doc, dict):
             price_obj = doc.get("price", {})
             if isinstance(price_obj, dict):
-                cost_total = _coerce_float(price_obj.get("estimated_cost"))
+                in_p = _coerce_float(price_obj.get("input_per_million"))
+                out_p = _coerce_float(price_obj.get("output_per_million"))
+                if in_p is not None or out_p is not None:
+                    price_pair = (in_p or 0.0, out_p or 0.0)
+
+        if price_pair is not None and prompt_tokens is not None and completion_tokens is not None:
+            in_p, out_p = price_pair
+            cost_total = (prompt_tokens / 1_000_000.0) * in_p + (completion_tokens / 1_000_000.0) * out_p
+        elif isinstance(summary, dict):
+            # Last-resort fallback for legacy summaries.
+            cost_total = _coerce_float(summary.get("estimated_cost"))
+            if cost_total is None and isinstance(doc, dict):
+                price_obj = doc.get("price", {})
+                if isinstance(price_obj, dict):
+                    cost_total = _coerce_float(price_obj.get("estimated_cost"))
         avg_cost = None
         if cost_total is not None and isinstance(n_val, int) and n_val > 0:
             avg_cost = cost_total / n_val
@@ -363,7 +440,12 @@ def render_scatter(
             if x_val is None:
                 continue
             is_new = m.slug in new_slugs
-            label_text = f"{m.label} NEW" if is_new else m.label
+            label_base = re.sub(r"\s+\([^)]*\)$", "", m.label, flags=re.IGNORECASE).strip()
+            if x_attr == "avg_cost":
+                has_reasoning = "__reasoning+" in m.slug and "__reasoning+none" not in m.slug
+                if not has_reasoning:
+                    label_base = f"{label_base}*"
+            label_text = f"{label_base} NEW" if is_new else label_base
             color = highlight_color if is_new else "#111111"
             fontweight = "bold" if is_new else "normal"
             ax.text(x_val, y_val, label_text, fontsize=7, color=color, fontweight=fontweight)
@@ -481,7 +563,7 @@ def main() -> None:
         title="EyeBench-V2: Cost vs Accuracy",
         output=cost_output,
         new_slugs=new_slugs,
-        log_x=True,
+        log_x=False,
     )
     render_reasoning_time_vs_performance(data, time_output)
     save_seen_slugs(state_path, current_slugs)

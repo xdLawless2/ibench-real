@@ -1,0 +1,944 @@
+{
+  "model": "moonshotai/kimi-k2.5",
+  "model_label": "moonshotai/kimi-k2.5 (medium reasoning)",
+  "benchmark_label": "kimi-k2.5 (medium reasoning)",
+  "run_slug": "moonshotai_kimi-k2.5__reasoning+medium",
+  "base_url": "https://openrouter.ai/api/v1",
+  "timestamp": "2026-02-28T16:38:27.935977Z",
+  "params": {
+    "n": 100,
+    "concurrency": 4,
+    "max_retries": 5,
+    "reasoning_effort": "medium",
+    "model_delay": 60.0
+  },
+  "summary": {
+    "n": 100,
+    "total_time_s": 6382.112377915997,
+    "throughput_ips": 0.015668793352186915,
+    "accuracy_exact": 0.16,
+    "mae": 3.15,
+    "latency_avg_s": 229.25040062502026,
+    "latency_p50_s": 207.7083743125113,
+    "latency_p95_s": 430.68461028930614,
+    "failures": 0,
+    "percent_correct": 16.0,
+    "num_correct": 16,
+    "estimated_cost": 3.271285,
+    "reasoning_observed": true,
+    "reasoning_tokens_total": 1241068,
+    "effective_reasoning_effort": "medium"
+  },
+  "token_usage": {
+    "prompt_tokens": 376718,
+    "completion_tokens": 1101045,
+    "total_tokens": 1477763
+  },
+  "price": {
+    "input_per_million": 0.5,
+    "output_per_million": 2.8,
+    "estimated_cost": 3.271285
+  },
+  "items": [
+    {
+      "index": 1,
+      "truth": 17,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 315.7913871250057,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 2,
+      "truth": 18,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 264.1089406659885,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 3,
+      "truth": 13,
+      "pred": 16,
+      "correct": false,
+      "latency_s": 500.3905640000012,
+      "error": null,
+      "llm_output": "16"
+    },
+    {
+      "index": 4,
+      "truth": 19,
+      "pred": 21,
+      "correct": false,
+      "latency_s": 574.2025795000081,
+      "error": null,
+      "llm_output": "21"
+    },
+    {
+      "index": 5,
+      "truth": 12,
+      "pred": 12,
+      "correct": true,
+      "latency_s": 431.44734245800646,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 6,
+      "truth": 17,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 79.79492062499048,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 7,
+      "truth": 14,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 111.10688166698674,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 8,
+      "truth": 12,
+      "pred": 12,
+      "correct": true,
+      "latency_s": 460.1190939579974,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 9,
+      "truth": 19,
+      "pred": 19,
+      "correct": true,
+      "latency_s": 325.0126823329774,
+      "error": null,
+      "llm_output": "19"
+    },
+    {
+      "index": 10,
+      "truth": 18,
+      "pred": 21,
+      "correct": false,
+      "latency_s": 171.4347399160033,
+      "error": null,
+      "llm_output": "21"
+    },
+    {
+      "index": 11,
+      "truth": 11,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 272.71666737500345,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 12,
+      "truth": 20,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 233.53883700000006,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 13,
+      "truth": 11,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 177.9253933329892,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 14,
+      "truth": 13,
+      "pred": 7,
+      "correct": false,
+      "latency_s": 247.1521006670082,
+      "error": null,
+      "llm_output": "7"
+    },
+    {
+      "index": 15,
+      "truth": 15,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 268.26429829202243,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 16,
+      "truth": 19,
+      "pred": 18,
+      "correct": false,
+      "latency_s": 236.80393066699617,
+      "error": null,
+      "llm_output": "18"
+    },
+    {
+      "index": 17,
+      "truth": 15,
+      "pred": 20,
+      "correct": false,
+      "latency_s": 416.1926990840002,
+      "error": null,
+      "llm_output": "20"
+    },
+    {
+      "index": 18,
+      "truth": 18,
+      "pred": 9,
+      "correct": false,
+      "latency_s": 290.97811216599075,
+      "error": null,
+      "llm_output": "9"
+    },
+    {
+      "index": 19,
+      "truth": 10,
+      "pred": 10,
+      "correct": true,
+      "latency_s": 139.0493302079849,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 20,
+      "truth": 13,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 224.65643783300766,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 21,
+      "truth": 19,
+      "pred": 23,
+      "correct": false,
+      "latency_s": 198.82838987500872,
+      "error": null,
+      "llm_output": "23"
+    },
+    {
+      "index": 22,
+      "truth": 13,
+      "pred": 8,
+      "correct": false,
+      "latency_s": 354.2875318340084,
+      "error": null,
+      "llm_output": "8"
+    },
+    {
+      "index": 23,
+      "truth": 20,
+      "pred": 29,
+      "correct": false,
+      "latency_s": 196.38015395900584,
+      "error": null,
+      "llm_output": "29"
+    },
+    {
+      "index": 24,
+      "truth": 18,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 348.8588240419922,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 25,
+      "truth": 10,
+      "pred": 10,
+      "correct": true,
+      "latency_s": 170.35623333402327,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 26,
+      "truth": 15,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 167.77212783301366,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 27,
+      "truth": 18,
+      "pred": 16,
+      "correct": false,
+      "latency_s": 190.37093350000214,
+      "error": null,
+      "llm_output": "16"
+    },
+    {
+      "index": 28,
+      "truth": 17,
+      "pred": 19,
+      "correct": false,
+      "latency_s": 241.84636874997523,
+      "error": null,
+      "llm_output": "19"
+    },
+    {
+      "index": 29,
+      "truth": 10,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 140.76770325002144,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 30,
+      "truth": 15,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 250.8115326249972,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 31,
+      "truth": 17,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 245.59216483301134,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 32,
+      "truth": 14,
+      "pred": 14,
+      "correct": true,
+      "latency_s": 159.39939879099256,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 33,
+      "truth": 15,
+      "pred": 21,
+      "correct": false,
+      "latency_s": 305.25168741698144,
+      "error": null,
+      "llm_output": "Looking at the image, I need to count all distinct intersection points between different shapes.\n\n**Left area:**\n- Circle and Rectangle: 2 intersection points\n\n**Center area:**\n- Circle and Diagonal Line: 2 points\n- Triangle and Diagonal Line: 2 points  \n- Triangle and Vertical Line: 2 points\n- Diagonal Line and Vertical Line: 1 point\n- Circle and Triangle: 0 points (separate with gap visible)\n\n**Bottom area:**\n- Circle and Diagonal Line: 2 points\n- Circle and Triangle: 2 points\n- Triangle and Diagonal Line: 2 points\n\n**Right area:**\n- Top Quadrilateral and Diagonal Line: 2 points\n- Bottom Rectangle and Diagonal Line: 2 points\n- Top Quadrilateral and Bottom Rectangle: 2 points\n\n**Total:** 2+2+2+2+1+2+2+2+2+2+2 = **21**"
+    },
+    {
+      "index": 34,
+      "truth": 16,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 147.75793995900312,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 35,
+      "truth": 18,
+      "pred": 21,
+      "correct": false,
+      "latency_s": 188.17747079199762,
+      "error": null,
+      "llm_output": "21"
+    },
+    {
+      "index": 36,
+      "truth": 12,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 140.20394566599862,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 37,
+      "truth": 14,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 112.72277708299225,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 38,
+      "truth": 11,
+      "pred": 8,
+      "correct": false,
+      "latency_s": 82.45960720899166,
+      "error": null,
+      "llm_output": "8"
+    },
+    {
+      "index": 39,
+      "truth": 16,
+      "pred": 17,
+      "correct": false,
+      "latency_s": 126.88587887500762,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 40,
+      "truth": 20,
+      "pred": 19,
+      "correct": false,
+      "latency_s": 197.95937504197354,
+      "error": null,
+      "llm_output": "19"
+    },
+    {
+      "index": 41,
+      "truth": 11,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 278.6772631670174,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 42,
+      "truth": 16,
+      "pred": 17,
+      "correct": false,
+      "latency_s": 304.4479941249883,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 43,
+      "truth": 10,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 249.28607566599385,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 44,
+      "truth": 15,
+      "pred": 21,
+      "correct": false,
+      "latency_s": 241.2615282080078,
+      "error": null,
+      "llm_output": "21"
+    },
+    {
+      "index": 45,
+      "truth": 16,
+      "pred": 22,
+      "correct": false,
+      "latency_s": 306.69286233300227,
+      "error": null,
+      "llm_output": "22"
+    },
+    {
+      "index": 46,
+      "truth": 19,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 124.70581283399952,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 47,
+      "truth": 11,
+      "pred": 7,
+      "correct": false,
+      "latency_s": 136.33524533300078,
+      "error": null,
+      "llm_output": "7"
+    },
+    {
+      "index": 48,
+      "truth": 14,
+      "pred": 19,
+      "correct": false,
+      "latency_s": 237.2256207499886,
+      "error": null,
+      "llm_output": "Looking at the image, I need to count all distinct intersection points between different shapes.\n\n**Top-left cluster:**\n- Circle and diamond: 2 intersections\n- Circle and slanted line: 2 intersections  \n- Diamond and slanted line: 2 intersections\n- Slanted line and vertical line: 1 intersection\n**Subtotal: 7**\n\n**Bottom-left cluster:**\n- Bottom circle and lower rectangle: 2 intersections\n- Lower rectangle and small diamond: 2 intersections\n- Small diamond and upper rectangle: 2 intersections\n- Upper rectangle and small top circle: 2 intersections\n**Subtotal: 8**\n\n**Right side:**\n- Large circle and triangle: 2 intersections\n- Small circle and line: 2 intersections\n**Subtotal: 4**\n\n**Top-right circle:** Isolated, no intersections.\n\n**Total: 7 + 8 + 4 = 19**\n\n19"
+    },
+    {
+      "index": 49,
+      "truth": 10,
+      "pred": 10,
+      "correct": true,
+      "latency_s": 375.73543241701555,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 50,
+      "truth": 20,
+      "pred": 18,
+      "correct": false,
+      "latency_s": 209.59920483300812,
+      "error": null,
+      "llm_output": "18"
+    },
+    {
+      "index": 51,
+      "truth": 17,
+      "pred": 26,
+      "correct": false,
+      "latency_s": 563.0197601669934,
+      "error": null,
+      "llm_output": "26"
+    },
+    {
+      "index": 52,
+      "truth": 19,
+      "pred": 35,
+      "correct": false,
+      "latency_s": 164.9071274160233,
+      "error": null,
+      "llm_output": "35"
+    },
+    {
+      "index": 53,
+      "truth": 14,
+      "pred": 9,
+      "correct": false,
+      "latency_s": 195.2161449159903,
+      "error": null,
+      "llm_output": "9"
+    },
+    {
+      "index": 54,
+      "truth": 12,
+      "pred": 12,
+      "correct": true,
+      "latency_s": 181.36820254198392,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 55,
+      "truth": 14,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 235.42026975000044,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 56,
+      "truth": 14,
+      "pred": 14,
+      "correct": true,
+      "latency_s": 101.92974024999421,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 57,
+      "truth": 19,
+      "pred": 23,
+      "correct": false,
+      "latency_s": 190.66238958397298,
+      "error": null,
+      "llm_output": "23"
+    },
+    {
+      "index": 58,
+      "truth": 12,
+      "pred": 16,
+      "correct": false,
+      "latency_s": 209.37880479200976,
+      "error": null,
+      "llm_output": "16"
+    },
+    {
+      "index": 59,
+      "truth": 18,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 205.23716020898428,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 60,
+      "truth": 17,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 183.03584283401142,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 61,
+      "truth": 12,
+      "pred": 8,
+      "correct": false,
+      "latency_s": 138.81919466602267,
+      "error": null,
+      "llm_output": "8"
+    },
+    {
+      "index": 62,
+      "truth": 16,
+      "pred": 13,
+      "correct": false,
+      "latency_s": 204.22961512499023,
+      "error": null,
+      "llm_output": "13"
+    },
+    {
+      "index": 63,
+      "truth": 16,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 378.4338694170001,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 64,
+      "truth": 11,
+      "pred": 11,
+      "correct": true,
+      "latency_s": 167.16527937498176,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 65,
+      "truth": 16,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 99.25541737501044,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 66,
+      "truth": 10,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 144.53104870801326,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 67,
+      "truth": 13,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 338.6295730420097,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 68,
+      "truth": 14,
+      "pred": 14,
+      "correct": true,
+      "latency_s": 141.7448006249906,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 69,
+      "truth": 15,
+      "pred": 16,
+      "correct": false,
+      "latency_s": 257.77656975001446,
+      "error": null,
+      "llm_output": "16"
+    },
+    {
+      "index": 70,
+      "truth": 11,
+      "pred": 17,
+      "correct": false,
+      "latency_s": 258.6379317920073,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 71,
+      "truth": 15,
+      "pred": 15,
+      "correct": true,
+      "latency_s": 265.21679408298223,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 72,
+      "truth": 20,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 220.4378385830205,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 73,
+      "truth": 11,
+      "pred": 19,
+      "correct": false,
+      "latency_s": 281.8071367920202,
+      "error": null,
+      "llm_output": "19"
+    },
+    {
+      "index": 74,
+      "truth": 20,
+      "pred": 18,
+      "correct": false,
+      "latency_s": 391.10606458300026,
+      "error": null,
+      "llm_output": "18"
+    },
+    {
+      "index": 75,
+      "truth": 20,
+      "pred": 17,
+      "correct": false,
+      "latency_s": 375.3021604999958,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 76,
+      "truth": 12,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 223.00689991601394,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 77,
+      "truth": 19,
+      "pred": 23,
+      "correct": false,
+      "latency_s": 210.82737941699452,
+      "error": null,
+      "llm_output": "23"
+    },
+    {
+      "index": 78,
+      "truth": 14,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 71.84348000001046,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 79,
+      "truth": 20,
+      "pred": 20,
+      "correct": true,
+      "latency_s": 184.17056337499525,
+      "error": null,
+      "llm_output": "20"
+    },
+    {
+      "index": 80,
+      "truth": 12,
+      "pred": 9,
+      "correct": false,
+      "latency_s": 112.55924425000558,
+      "error": null,
+      "llm_output": "9"
+    },
+    {
+      "index": 81,
+      "truth": 10,
+      "pred": 12,
+      "correct": false,
+      "latency_s": 202.96056504099397,
+      "error": null,
+      "llm_output": "12"
+    },
+    {
+      "index": 82,
+      "truth": 13,
+      "pred": 17,
+      "correct": false,
+      "latency_s": 156.2628602499899,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 83,
+      "truth": 17,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 202.0559205839818,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 84,
+      "truth": 16,
+      "pred": 22,
+      "correct": false,
+      "latency_s": 138.99696320900694,
+      "error": null,
+      "llm_output": "22"
+    },
+    {
+      "index": 85,
+      "truth": 13,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 189.900628125004,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 86,
+      "truth": 15,
+      "pred": 11,
+      "correct": false,
+      "latency_s": 339.9812632499961,
+      "error": null,
+      "llm_output": "11"
+    },
+    {
+      "index": 87,
+      "truth": 17,
+      "pred": 17,
+      "correct": true,
+      "latency_s": 146.35697824999806,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 88,
+      "truth": 19,
+      "pred": 15,
+      "correct": false,
+      "latency_s": 314.97287758401944,
+      "error": null,
+      "llm_output": "15"
+    },
+    {
+      "index": 89,
+      "truth": 12,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 132.16413691698108,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 90,
+      "truth": 17,
+      "pred": 17,
+      "correct": true,
+      "latency_s": 262.66310195901315,
+      "error": null,
+      "llm_output": "17"
+    },
+    {
+      "index": 91,
+      "truth": 20,
+      "pred": 18,
+      "correct": false,
+      "latency_s": 159.48180454201065,
+      "error": null,
+      "llm_output": "18"
+    },
+    {
+      "index": 92,
+      "truth": 18,
+      "pred": 22,
+      "correct": false,
+      "latency_s": 218.53076470899396,
+      "error": null,
+      "llm_output": "22"
+    },
+    {
+      "index": 93,
+      "truth": 17,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 286.497117040999,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 94,
+      "truth": 13,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 205.15838658300345,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 95,
+      "truth": 13,
+      "pred": 10,
+      "correct": false,
+      "latency_s": 73.58174487497308,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 96,
+      "truth": 11,
+      "pred": 14,
+      "correct": false,
+      "latency_s": 173.1261427910067,
+      "error": null,
+      "llm_output": "14"
+    },
+    {
+      "index": 97,
+      "truth": 10,
+      "pred": 10,
+      "correct": true,
+      "latency_s": 102.94884600001387,
+      "error": null,
+      "llm_output": "10"
+    },
+    {
+      "index": 98,
+      "truth": 10,
+      "pred": 8,
+      "correct": false,
+      "latency_s": 246.75225112499902,
+      "error": null,
+      "llm_output": "8"
+    },
+    {
+      "index": 99,
+      "truth": 16,
+      "pred": 18,
+      "correct": false,
+      "latency_s": 206.03794383301283,
+      "error": null,
+      "llm_output": "18"
+    },
+    {
+      "index": 100,
+      "truth": 18,
+      "pred": 22,
+      "correct": false,
+      "latency_s": 299.58943879199796,
+      "error": null,
+      "llm_output": "22"
+    }
+  ]
+}
