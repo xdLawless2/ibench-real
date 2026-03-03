@@ -178,7 +178,12 @@ class RunDashboard:
         self.concurrency = max(1, concurrency)
         self.start_ts = time.time()
         term = (os.environ.get("TERM") or "").lower()
-        interactive_tty = bool(sys.stdout.isatty() and sys.stderr.isatty() and term not in ("", "dumb"))
+        # On Windows shells (including Cursor's PowerShell terminal), TERM is often unset
+        # even when ANSI + TTY are available. Requiring TERM there disables live TUI updates.
+        if os.name == "nt":
+            interactive_tty = bool(sys.stdout.isatty() and sys.stderr.isatty())
+        else:
+            interactive_tty = bool(sys.stdout.isatty() and sys.stderr.isatty() and term not in ("", "dumb"))
         self._enabled = bool(force_live or interactive_tty)
         self._use_color = bool(use_color and self._enabled)
         self._last_render_lines = 0
