@@ -148,6 +148,7 @@ class ModelRunState:
     total_items: int = 0
     completed_items: int = 0
     correct_items: int = 0
+    miss_items: int = 0
     failure_items: int = 0
     running_latency_sum: float = 0.0
     start_ts: Optional[float] = None
@@ -186,6 +187,8 @@ class RunDashboard:
             interactive_tty = bool(sys.stdout.isatty() and sys.stderr.isatty() and term not in ("", "dumb"))
         self._enabled = bool(force_live or interactive_tty)
         self._use_color = bool(use_color and self._enabled)
+        # Keep alternate-screen TUI off on Windows so final output remains visible.
+        self._use_alt_screen = bool(self._enabled and os.name != "nt")
         self._last_render_lines = 0
         self._verbose = bool(verbose)
         self._cursor_hidden = False
@@ -215,6 +218,7 @@ class RunDashboard:
         st = self.states[model_idx]
         st.completed_items += 1
         st.correct_items += 1 if res.correct else 0
+        st.miss_items += 1 if not res.correct else 0
         st.failure_items += 1 if (res.pred is None or res.error is not None) else 0
         st.running_latency_sum += max(0.0, res.latency_s)
         st.completed_indices.add(res.index)
@@ -254,6 +258,9 @@ class RunDashboard:
         st.status = "failed" if failed else "done"
         st.end_ts = time.time()
         st.summary_path = summary_path
+        st.miss_items = max(0, int(metrics.get("n", st.completed_items)) - int(metrics.get("num_correct", st.correct_items)))
+        # Align dashboard counter with summary's computed failures.
+        st.failure_items = int(metrics.get("failures", st.failure_items))
         st.last_event = (
             f"acc={metrics.get('accuracy_exact', 0.0) * 100.0:.1f}% "
             f"failures={metrics.get('failures', 0)}"
@@ -265,7 +272,7 @@ class RunDashboard:
         if self._enabled and self._cursor_hidden:
             sys.stdout.write("\x1b[?25h")
             self._cursor_hidden = False
-        if self._enabled and self._screen_active:
+        if self._enabled and self._screen_active and self._use_alt_screen:
             # Leave alternate screen and return to normal terminal buffer.
             sys.stdout.write("\x1b[?1049l")
             self._screen_active = False
@@ -364,7 +371,7 @@ class RunDashboard:
                 model_disp += f" ({st.reasoning_effort})"
             lines.append(
                 f"now   {active_idx + 1}/{len(self.states)} {model_disp} | "
-                f"item {done}/{total} | ok {st.correct_items} | fail {st.failure_items} | eta~{self._fmt_s(eta_s)}"
+                f"item {done}/{total} | ok {st.correct_items} | miss {st.miss_items} | fail {st.failure_items} | eta~{self._fmt_s(eta_s)}"
             )
 
             # Show the currently in-flight questions (typically matches concurrency, e.g. 4)
@@ -414,7 +421,7 @@ class RunDashboard:
 
         sep = "-" * max(50, len(lines[0]))
         lines.append(sep)
-        lines.append("id  status  model                                   prog%   acc%  fail  avg_s  run_t    event")
+        lines.append("id  status  model                                   prog%   acc%  miss fail  avg_s  run_t    event")
         for idx, st in enumerate(self.states, start=1):
             model_name = f"{st.provider}:{st.model}"
             if st.reasoning_effort:
@@ -436,7 +443,7 @@ class RunDashboard:
                 event = event[:21] + "..."
             lines.append(
                 f"{idx:02d}  {self._status_text(st.status):<7} {model_name:<39} "
-                f"{pct:6.1f}  {acc:5.1f}  {st.failure_items:4d}  {avg_lat:5.1f}  {self._fmt_s(self._elapsed(st)):<8} {event}"
+                f"{pct:6.1f}  {acc:5.1f}  {st.miss_items:4d} {st.failure_items:4d}  {avg_lat:5.1f}  {self._fmt_s(self._elapsed(st)):<8} {event}"
             )
             if st.status == "running":
                 lines.append(f"    {bar}")
@@ -447,7 +454,7 @@ class RunDashboard:
 
         text = "\n".join(lines)
         if self._enabled:
-            if not self._screen_active:
+            if self._use_alt_screen and not self._screen_active:
                 # Use alternate screen so terminal scrollback stays clean.
                 sys.stdout.write("\x1b[?1049h")
                 self._screen_active = True
@@ -1171,11 +1178,13 @@ async def eval_one(
     for attempt in range(max_retries):
         try:
             choice0 = None
-            logger.debug("Item %02d attempt %d starting", idx, attempt + 1)
+            # This log happens before semaphore acquisition; it's queued, not running yet.
+            logger.debug("Item %02d attempt %d queued", idx, attempt + 1)
             async with semaphore:
                 if dashboard is not None and model_idx is not None:
                     dashboard.mark_item_in_flight(model_idx, idx, attempt + 1)
                 try:
+                    logger.debug("Item %02d attempt %d sending request", idx, attempt + 1)
                     t0 = time.perf_counter()
 
                     payload = {
