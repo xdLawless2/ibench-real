@@ -22,6 +22,8 @@
     "openai_gpt-5.2__reasoning+none",
     "openai_gpt-5.3-chat",
     "openai_gpt-5.3-codex__reasoning+medium",
+    "openai_gpt-5.4__reasoning+medium",
+    "openai_gpt-5.4__reasoning+none",
     "openai_gpt-5__reasoning+medium",
     "openai_o3__reasoning+medium",
     "openai_o4-mini__reasoning+medium",
