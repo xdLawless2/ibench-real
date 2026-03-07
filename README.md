@@ -1,4 +1,4 @@
-# ibench-real
+# EyeBench v2
 
 Micro-benchmark for evaluating vision models on one task:
 counting line intersections in synthetic images.
@@ -12,7 +12,9 @@ summary per model to `runs/<run_slug>/summary.json`.
 - `scripts/generate-imgs.py` - synthetic dataset generator (`1.png..N.png` + `truth.txt`)
 - `scripts/graph-maker.py` - graph generator from run summaries
 - `scripts/fix-costs.py` - recalculate `estimated_cost` from `token_usage`
+- `scripts/build-web-data.py` - generates `web/src/data/benchmark-data.json` from runs
 - `config/model_prices.json` - optional local pricing overrides
+- `web/` - interactive results viewer (Vite + React)
 
 ## Quick Start
 
@@ -68,11 +70,11 @@ Key flags and defaults:
 
 - `--model` default: `qwen/qwen3-vl-235b-a22b-instruct`
 - `--models` default: `None`
-- `--imgs` default: `public/imgs`
+- `--imgs` default: `imgs`
 - `--truth` default: `truth.txt`
 - `--n` default: auto-detect from `--imgs`
 - `--concurrency` default: `4`
-- `--request-timeout` default: `1200`
+- `--request-timeout` default: `3600`
 - `--max-retries` default: `5`
 - `--rate-limit-backoff` default: `5.0`
 - `--model-delay` default: `60`
@@ -120,7 +122,7 @@ Resolution order:
 Generate images + truth labels:
 
 ```bash
-python scripts/generate-imgs.py 100 -o public/imgs -s 42
+python scripts/generate-imgs.py 100 -o imgs -s 42
 ```
 
 ## Graphs
@@ -136,6 +138,38 @@ Outputs:
 - `graphs/benchmark.jpg`
 - `graphs/cost_vs_accuracy.jpg`
 - `graphs/reasoning_time_vs_performance.jpg`
+
+## Interactive Results Viewer
+
+An interactive web UI lives in `web/`. It reads from the auto-generated
+`web/src/data/benchmark-data.json` and provides a sortable leaderboard,
+interactive charts, per-model detail panels, and an image viewer.
+
+### Regenerate data from runs
+
+```bash
+python scripts/build-web-data.py
+```
+
+### Local development
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+### Deploy to Netlify
+
+Connect the repo and set the base directory to `web/`. The `netlify.toml`
+handles build command and publish directory automatically.
+
+Or deploy manually:
+
+```bash
+cd web && npm run build
+# Upload web/dist/ to any static host
+```
 
 ## Notes
 

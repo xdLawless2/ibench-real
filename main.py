@@ -58,9 +58,10 @@ SYSTEM_MSG = (
 INT_RE = re.compile(r"\d+")
 
 OPENROUTER_DEFAULT_BASE = "https://openrouter.ai/api/v1"
+DEFAULT_REQUEST_TIMEOUT_S = 3600.0
 
 
-logger = logging.getLogger("ibench")
+logger = logging.getLogger("eyebench")
 
 RUNS_DIR = Path("runs")
 MODEL_PRICE_FILE = Path("config/model_prices.json")
@@ -189,7 +190,6 @@ class RunDashboard:
         self._use_color = bool(use_color and self._enabled)
         # Keep alternate-screen TUI off on Windows so final output remains visible.
         self._use_alt_screen = bool(self._enabled and os.name != "nt")
-        self._last_render_lines = 0
         self._verbose = bool(verbose)
         self._cursor_hidden = False
         self._screen_active = False
@@ -198,13 +198,33 @@ class RunDashboard:
     def _mark_dirty(self) -> None:
         self._dirty = True
 
-    def start_model(self, model_idx: int, total_items: int) -> None:
+    def start_model(self, model_idx: int, total_items: int, seed_results: Optional[List[ItemResult]] = None) -> None:
         st = self.states[model_idx]
         st.status = "running"
         st.total_items = total_items
+        st.completed_items = 0
+        st.correct_items = 0
+        st.miss_items = 0
+        st.failure_items = 0
+        st.running_latency_sum = 0.0
         st.start_ts = time.time()
         st.end_ts = None
         st.wait_until_ts = None
+        st.in_flight.clear()
+        st.completed_indices.clear()
+        st.last_error_by_item.clear()
+        st.recent_events = []
+        if seed_results:
+            st.completed_items = len(seed_results)
+            st.correct_items = sum(1 for r in seed_results if r.correct)
+            st.miss_items = sum(1 for r in seed_results if not r.correct)
+            st.failure_items = sum(1 for r in seed_results if (r.pred is None or r.error is not None))
+            st.running_latency_sum = sum(max(0.0, r.latency_s) for r in seed_results)
+            st.completed_indices = {r.index for r in seed_results}
+            st.last_event = f"resumed {len(seed_results)}/{total_items}"
+            st.recent_events = [f"resumed with {len(seed_results)} completed item(s)"]
+        else:
+            st.last_event = ""
         self._mark_dirty()
 
     def set_waiting(self, model_idx: int, wait_seconds: float) -> None:
@@ -468,7 +488,6 @@ class RunDashboard:
             if final:
                 sys.stdout.write("\n")
             sys.stdout.flush()
-            self._last_render_lines = len(lines)
             self._dirty = False
         else:
             print(text, flush=True)
@@ -644,18 +663,27 @@ async def fetch_openrouter_price_pair(
         pricing = item.get("pricing") or {}
         if not isinstance(pricing, dict):
             return None
+
+        # OpenRouter's Models API exposes `prompt`/`completion` in USD per token,
+        # while local overrides and stored summaries use USD per million tokens.
         prompt_val = _coerce_float(
-            pricing.get("prompt")
-            or pricing.get("input")
-            or pricing.get("prompt_per_million")
+            pricing.get("prompt_per_million")
             or pricing.get("input_per_million")
         )
+        if prompt_val is None:
+            prompt_per_token = _coerce_float(pricing.get("prompt") or pricing.get("input"))
+            if prompt_per_token is not None:
+                prompt_val = prompt_per_token * 1_000_000.0
+
         completion_val = _coerce_float(
-            pricing.get("completion")
-            or pricing.get("output")
-            or pricing.get("completion_per_million")
+            pricing.get("completion_per_million")
             or pricing.get("output_per_million")
         )
+        if completion_val is None:
+            completion_per_token = _coerce_float(pricing.get("completion") or pricing.get("output"))
+            if completion_per_token is not None:
+                completion_val = completion_per_token * 1_000_000.0
+
         if prompt_val is None and completion_val is None:
             return None
         return (prompt_val or 0.0, completion_val or 0.0)
@@ -894,31 +922,16 @@ def build_run_slug(model: str, reasoning_effort: Optional[str]) -> str:
     return base
 
 
-def build_model_label(model: str, reasoning_effort: Optional[str]) -> str:
-    if reasoning_effort:
-        return f"{model} ({reasoning_effort} reasoning)"
-    return model
-
-
 def short_model_name(model_id: str) -> str:
     """Strip provider prefixes and return the bare model name."""
     raw = (model_id or "").strip()
     if not raw:
         return raw
-    raw = raw.split(" (", 1)[0]
     lowered = raw.lower()
     if lowered.startswith("openrouter/"):
         raw = raw[len("openrouter/") :]
     parts = [p for p in raw.replace("\\", "/").split("/") if p]
     return parts[-1] if parts else raw
-
-
-def build_benchmark_label(model: str, reasoning_effort: Optional[str]) -> str:
-    """Build the display label used by graph rendering."""
-    display = short_model_name(model)
-    if reasoning_effort:
-        display = f"{display} ({reasoning_effort} reasoning)"
-    return display
 
 
 KNOWN_PROVIDERS = {"openrouter"}
@@ -996,6 +1009,181 @@ def aggregate_token_usage(results: List[ItemResult]) -> Dict[str, int]:
     }
 
 
+def _coerce_nonnegative_int(value: Any) -> int:
+    if isinstance(value, bool):
+        return int(value)
+    if isinstance(value, int):
+        return max(0, value)
+    if isinstance(value, float):
+        return max(0, int(value))
+    if isinstance(value, str):
+        try:
+            return max(0, int(float(value)))
+        except ValueError:
+            return 0
+    return 0
+
+
+def load_resume_state(
+    model: str,
+    reasoning_effort: Optional[str],
+    run_slug: str,
+    total_requested: int,
+) -> Tuple[List[ItemResult], Dict[str, int], int, float]:
+    summary_path = RUNS_DIR / run_slug / "summary.json"
+    if not summary_path.exists():
+        raise FileNotFoundError(f"Resume requested but no summary exists at {summary_path}")
+
+    try:
+        doc = json.loads(summary_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise RuntimeError(f"Failed to read resume summary {summary_path}: {exc}") from exc
+
+    saved_model = doc.get("model")
+    if saved_model != model:
+        raise RuntimeError(
+            f"Resume summary model mismatch: expected '{model}', found '{saved_model}'"
+        )
+
+    params = doc.get("params", {}) if isinstance(doc, dict) else {}
+    saved_reasoning = normalize_reasoning_effort(params.get("reasoning_effort"))
+    expected_reasoning = normalize_reasoning_effort(reasoning_effort)
+    if saved_reasoning != expected_reasoning:
+        raise RuntimeError(
+            "Resume summary reasoning mismatch: "
+            f"expected '{expected_reasoning}', found '{saved_reasoning}'"
+        )
+
+    progress = doc.get("progress", {}) if isinstance(doc, dict) else {}
+    saved_total = _coerce_nonnegative_int(progress.get("total") or params.get("n"))
+    if saved_total and saved_total != total_requested:
+        raise RuntimeError(
+            f"Resume summary item-count mismatch: expected {total_requested}, found {saved_total}"
+        )
+
+    raw_items = doc.get("items")
+    if not isinstance(raw_items, list):
+        raise RuntimeError(f"Resume summary at {summary_path} has no valid 'items' array")
+
+    results: List[ItemResult] = []
+    seen_indices: set[int] = set()
+    for raw in raw_items:
+        if not isinstance(raw, dict):
+            continue
+        idx = _coerce_nonnegative_int(raw.get("index"))
+        if idx <= 0 or idx in seen_indices or idx > total_requested:
+            continue
+        seen_indices.add(idx)
+        truth_raw = raw.get("truth")
+        pred_raw = raw.get("pred")
+        truth = truth_raw if isinstance(truth_raw, int) else None
+        pred = pred_raw if isinstance(pred_raw, int) else None
+        error_raw = raw.get("error")
+        llm_output_raw = raw.get("llm_output")
+        results.append(
+            ItemResult(
+                index=idx,
+                truth=truth,
+                pred=pred,
+                correct=bool(raw.get("correct")),
+                latency_s=float(raw.get("latency_s") or 0.0),
+                error=error_raw if isinstance(error_raw, str) else None,
+                prompt_tokens=_coerce_nonnegative_int(raw.get("prompt_tokens")),
+                completion_tokens=_coerce_nonnegative_int(raw.get("completion_tokens")),
+                total_tokens=_coerce_nonnegative_int(raw.get("total_tokens")),
+                reasoning_tokens=_coerce_nonnegative_int(raw.get("reasoning_tokens")),
+                llm_output=llm_output_raw if isinstance(llm_output_raw, str) else None,
+            )
+        )
+
+    results.sort(key=lambda r: r.index)
+    summary = doc.get("summary", {}) if isinstance(doc, dict) else {}
+    token_usage_raw = doc.get("token_usage", {}) if isinstance(doc, dict) else {}
+    seed_token_usage = {
+        "prompt_tokens": _coerce_nonnegative_int(token_usage_raw.get("prompt_tokens")),
+        "completion_tokens": _coerce_nonnegative_int(token_usage_raw.get("completion_tokens")),
+        "total_tokens": _coerce_nonnegative_int(token_usage_raw.get("total_tokens")),
+    }
+    seed_reasoning_tokens = _coerce_nonnegative_int(summary.get("reasoning_tokens_total"))
+    seed_total_time = float(summary.get("total_time_s") or 0.0)
+
+    token_totals_present_per_item = any(
+        r.prompt_tokens or r.completion_tokens or r.total_tokens or r.reasoning_tokens
+        for r in results
+    )
+    if token_totals_present_per_item:
+        seeded_item_tokens = aggregate_token_usage(results)
+        seed_token_usage["prompt_tokens"] = max(
+            0, seed_token_usage["prompt_tokens"] - seeded_item_tokens["prompt_tokens"]
+        )
+        seed_token_usage["completion_tokens"] = max(
+            0, seed_token_usage["completion_tokens"] - seeded_item_tokens["completion_tokens"]
+        )
+        seed_token_usage["total_tokens"] = max(
+            0, seed_token_usage["total_tokens"] - seeded_item_tokens["total_tokens"]
+        )
+        seeded_reasoning_tokens = sum(r.reasoning_tokens for r in results)
+        seed_reasoning_tokens = max(0, seed_reasoning_tokens - seeded_reasoning_tokens)
+
+    return results, seed_token_usage, seed_reasoning_tokens, max(0.0, seed_total_time)
+
+
+def compute_run_metrics(
+    results: List[ItemResult],
+    total_time: float,
+    reasoning_effort: Optional[str],
+    price_info: Tuple[float, float],
+    seed_token_usage: Optional[Dict[str, int]] = None,
+    seed_reasoning_tokens: int = 0,
+) -> Tuple[Dict[str, Any], Dict[str, int], float]:
+    total = len(results)
+    num_correct = sum(1 for r in results if r.correct)
+    if total > 0:
+        acc, mae, avg_lat, p50, p95, failures = summarize(results)
+        throughput = total / total_time if total_time > 0 else float("nan")
+    else:
+        acc = 0.0
+        mae = None
+        avg_lat = None
+        p50 = None
+        p95 = None
+        failures = 0
+        throughput = 0.0
+    token_usage = aggregate_token_usage(results)
+    if seed_token_usage:
+        token_usage = {
+            "prompt_tokens": token_usage["prompt_tokens"] + _coerce_nonnegative_int(seed_token_usage.get("prompt_tokens")),
+            "completion_tokens": token_usage["completion_tokens"] + _coerce_nonnegative_int(seed_token_usage.get("completion_tokens")),
+            "total_tokens": token_usage["total_tokens"] + _coerce_nonnegative_int(seed_token_usage.get("total_tokens")),
+        }
+    input_price, output_price = price_info
+    reasoning_tokens_total = max(0, seed_reasoning_tokens) + sum(r.reasoning_tokens for r in results)
+    reasoning_observed = reasoning_tokens_total > 0
+    effective_reasoning_effort = reasoning_effort or ("medium" if reasoning_observed else None)
+    estimated_cost = (
+        (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
+        + (token_usage["completion_tokens"] / 1_000_000.0) * output_price
+    ) if (input_price or output_price) else 0.0
+    metrics = {
+        "n": total,
+        "total_time_s": total_time,
+        "throughput_ips": throughput,
+        "accuracy_exact": acc,
+        "mae": mae,
+        "latency_avg_s": avg_lat,
+        "latency_p50_s": p50,
+        "latency_p95_s": p95,
+        "failures": failures,
+        "percent_correct": acc * 100.0,
+        "num_correct": num_correct,
+        "estimated_cost": estimated_cost,
+        "reasoning_observed": reasoning_observed,
+        "reasoning_tokens_total": reasoning_tokens_total,
+        "effective_reasoning_effort": effective_reasoning_effort,
+    }
+    return metrics, token_usage, estimated_cost
+
+
 def lookup_price_override(model: str, slug: str) -> Optional[Tuple[float, float]]:
     if not MODEL_PRICE_FILE.exists():
         return None
@@ -1068,10 +1256,6 @@ def load_price_info_local(model: str, run_slug: Optional[str] = None) -> Optiona
                         float(prompt_val) if isinstance(prompt_val, (int, float)) else 0.0,
                         float(completion_val) if isinstance(completion_val, (int, float)) else 0.0,
                     )
-                legacy = price_obj.get("per_million")
-                if isinstance(legacy, (int, float)):
-                    val = float(legacy)
-                    return val, val
             except Exception as exc:
                 logger.debug("Unable to parse previous summary for price: %s", exc)
 
@@ -1107,19 +1291,22 @@ def write_model_summary(
     run_slug: str,
     reasoning_effort: Optional[str],
     args: argparse.Namespace,
+    total_requested: int,
     results: List[ItemResult],
     metrics: Dict[str, Any],
     token_usage: Dict[str, int],
     price_info: Tuple[float, float],
     estimated_cost: float,
+    run_status: str,
 ) -> Path:
     out_dir = RUNS_DIR / run_slug
     out_dir.mkdir(parents=True, exist_ok=True)
     prompt_price, completion_price = price_info
-    summary_effort_raw = metrics.get("effective_reasoning_effort")
-    summary_effort = summary_effort_raw if isinstance(summary_effort_raw, str) and summary_effort_raw else None
-    benchmark_label = build_benchmark_label(model, summary_effort)
+    benchmark_label = short_model_name(model)
+    completed = len(results)
+    progress_pct = (100.0 * completed / total_requested) if total_requested > 0 else 0.0
     payload = {
+        "status": run_status,
         "model": model,
         "model_label": model_label,
         "benchmark_label": benchmark_label,
@@ -1127,11 +1314,18 @@ def write_model_summary(
         "base_url": args.base_url,
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "params": {
-            "n": metrics["n"],
+            "n": total_requested,
             "concurrency": args.concurrency,
             "max_retries": args.max_retries,
             "reasoning_effort": reasoning_effort,
             "model_delay": args.model_delay,
+        },
+        "progress": {
+            "completed": completed,
+            "total": total_requested,
+            "remaining": max(0, total_requested - completed),
+            "percent": progress_pct,
+            "is_final": run_status in {"done", "failed"},
         },
         "summary": metrics,
         "token_usage": token_usage,
@@ -1148,13 +1342,19 @@ def write_model_summary(
                 "correct": r.correct,
                 "latency_s": r.latency_s,
                 "error": r.error,
+                "prompt_tokens": r.prompt_tokens,
+                "completion_tokens": r.completion_tokens,
+                "total_tokens": r.total_tokens,
+                "reasoning_tokens": r.reasoning_tokens,
                 "llm_output": r.llm_output,
             }
             for r in sorted(results, key=lambda x: x.index)
         ],
     }
     out_path = out_dir / "summary.json"
-    out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    tmp_path = out_dir / "summary.json.tmp"
+    tmp_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    tmp_path.replace(out_path)
     return out_path
 
 
@@ -1393,10 +1593,28 @@ async def run_model_once_openrouter(
 ) -> None:
     """Run benchmark for a single model using OpenRouter API."""
     run_slug = build_run_slug(model, reasoning_effort)
-    model_label = build_model_label(model, reasoning_effort)
+    model_label = model
     sem = asyncio.Semaphore(args.concurrency)
     models_url = build_models_url(args.base_url)
     price_info: Tuple[float, float]
+    total_requested = len(img_indices)
+    resume_results: List[ItemResult] = []
+    seed_token_usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+    seed_reasoning_tokens = 0
+    seed_total_time = 0.0
+
+    if args.resume:
+        resume_results, seed_token_usage, seed_reasoning_tokens, seed_total_time = load_resume_state(
+            model=model,
+            reasoning_effort=reasoning_effort,
+            run_slug=run_slug,
+            total_requested=total_requested,
+        )
+        completed_indices = {r.index for r in resume_results}
+        pending_img_indices = [i for i in img_indices if i not in completed_indices]
+        if not pending_img_indices:
+            logger.info("Resume requested for %s but the run is already complete", model_label)
+        img_indices = pending_img_indices
 
     t_start = time.perf_counter()
     async with aiohttp.ClientSession() as session:
@@ -1429,13 +1647,35 @@ async def run_model_once_openrouter(
             for i in img_indices
         ]
 
-        results: List[ItemResult] = []
+        results: List[ItemResult] = list(resume_results)
         completed = 0
         total = len(tasks)
         if dashboard is not None and model_idx is not None:
-            dashboard.start_model(model_idx, total)
+            dashboard.start_model(model_idx, total_requested, seed_results=results)
+        initial_metrics, initial_token_usage, initial_estimated_cost = compute_run_metrics(
+            results=results,
+            total_time=seed_total_time,
+            reasoning_effort=reasoning_effort,
+            price_info=price_info,
+            seed_token_usage=seed_token_usage,
+            seed_reasoning_tokens=seed_reasoning_tokens,
+        )
+        write_model_summary(
+            model=model,
+            model_label=model_label,
+            run_slug=run_slug,
+            reasoning_effort=reasoning_effort,
+            args=args,
+            total_requested=total_requested,
+            results=results,
+            metrics=initial_metrics,
+            token_usage=initial_token_usage,
+            price_info=price_info,
+            estimated_cost=initial_estimated_cost,
+            run_status="running",
+        )
         if args.progress and dashboard is None:
-            print(f"[progress] {completed}/{total} completed", flush=True)
+            print(f"[progress] {len(results)}/{total_requested} completed", flush=True)
 
         for finished in asyncio.as_completed(tasks):
             res = await finished
@@ -1445,9 +1685,31 @@ async def run_model_once_openrouter(
                 dashboard.on_item(model_idx, res)
             if args.progress and dashboard is None:
                 print(
-                    f"[progress] {completed}/{total} completed (last={res.index:02d})",
+                    f"[progress] {len(results)}/{total_requested} completed (last={res.index:02d})",
                     flush=True,
                 )
+            metrics, token_usage, estimated_cost = compute_run_metrics(
+                results=results,
+                total_time=seed_total_time + (time.perf_counter() - t_start),
+                reasoning_effort=reasoning_effort,
+                price_info=price_info,
+                seed_token_usage=seed_token_usage,
+                seed_reasoning_tokens=seed_reasoning_tokens,
+            )
+            write_model_summary(
+                model=model,
+                model_label=model_label,
+                run_slug=run_slug,
+                reasoning_effort=reasoning_effort,
+                args=args,
+                total_requested=total_requested,
+                results=results,
+                metrics=metrics,
+                token_usage=token_usage,
+                price_info=price_info,
+                estimated_cost=estimated_cost,
+                run_status="running",
+            )
     t_end = time.perf_counter()
 
     # Per-item lines only when explicitly requested.
@@ -1465,37 +1727,26 @@ async def run_model_once_openrouter(
                     print(f"    text: {r.raw_text_preview!r}")
 
     # Summary
-    acc, mae, avg_lat, p50, p95, failures = summarize(results)
-    num_correct = sum(1 for r in results if r.correct)
+    total_time = seed_total_time + (t_end - t_start)
+    metrics, token_usage, estimated_cost = compute_run_metrics(
+        results=results,
+        total_time=total_time,
+        reasoning_effort=reasoning_effort,
+        price_info=price_info,
+        seed_token_usage=seed_token_usage,
+        seed_reasoning_tokens=seed_reasoning_tokens,
+    )
+    acc = metrics["accuracy_exact"]
+    mae = metrics["mae"]
+    avg_lat = metrics["latency_avg_s"]
+    p50 = metrics["latency_p50_s"]
+    p95 = metrics["latency_p95_s"]
+    failures = metrics["failures"]
+    num_correct = metrics["num_correct"]
     total = len(results)
-    total_time = t_end - t_start
-    throughput = len(results) / total_time if total_time > 0 else float("nan")
-    token_usage = aggregate_token_usage(results)
     input_price, output_price = price_info
-    reasoning_tokens_total = sum(r.reasoning_tokens for r in results)
-    reasoning_observed = reasoning_tokens_total > 0
-    effective_reasoning_effort = reasoning_effort or ("medium" if reasoning_observed else None)
-    estimated_cost = (
-        (token_usage["prompt_tokens"] / 1_000_000.0) * input_price
-        + (token_usage["completion_tokens"] / 1_000_000.0) * output_price
-    ) if (input_price or output_price) else 0.0
-    metrics = {
-        "n": total,
-        "total_time_s": total_time,
-        "throughput_ips": throughput,
-        "accuracy_exact": acc,
-        "mae": mae,
-        "latency_avg_s": avg_lat,
-        "latency_p50_s": p50,
-        "latency_p95_s": p95,
-        "failures": failures,
-        "percent_correct": acc * 100.0,
-        "num_correct": num_correct,
-        "estimated_cost": estimated_cost,
-        "reasoning_observed": reasoning_observed,
-        "reasoning_tokens_total": reasoning_tokens_total,
-        "effective_reasoning_effort": effective_reasoning_effort,
-    }
+    effective_reasoning_effort = metrics["effective_reasoning_effort"]
+    throughput = metrics["throughput_ips"]
     if dashboard is None:
         print("\n--- summary ---")
         print(f"model={model}")
@@ -1531,11 +1782,13 @@ async def run_model_once_openrouter(
         run_slug=run_slug,
         reasoning_effort=reasoning_effort,
         args=args,
+        total_requested=total_requested,
         results=results,
         metrics=metrics,
         token_usage=token_usage,
         price_info=price_info,
         estimated_cost=estimated_cost,
+        run_status="failed" if failures else "done",
     )
     if dashboard is not None and model_idx is not None:
         dashboard.finish_model(model_idx, failed=bool(failures), summary_path=str(summary_path), metrics=metrics)
@@ -1587,8 +1840,7 @@ async def main_async(args):
 
     if args.models and not args.tui:
         def fmt(p: str, m: str, r: Optional[str]) -> str:
-            reasoning_str = f" ({r} reasoning)" if r else ""
-            return f"{p}:{m}{reasoning_str}"
+            return f"{p}:{m}"
 
         desc = ", ".join([fmt(p, m, r) for p, m, r in model_specs])
         print(f"Queued models ({len(model_specs)}): {desc}")
@@ -1596,7 +1848,7 @@ async def main_async(args):
     dashboard: Optional[RunDashboard] = None
     dashboard_stop_event: Optional[asyncio.Event] = None
     dashboard_task: Optional[asyncio.Task] = None
-    prev_ibench_level: Optional[int] = None
+    prev_eyebench_level: Optional[int] = None
     if args.tui and len(model_specs) > 0:
         dashboard = RunDashboard(
             model_specs,
@@ -1607,8 +1859,8 @@ async def main_async(args):
             force_live=False,
         )
         # Keep terminal output dedicated to the live dashboard.
-        prev_ibench_level = logging.getLogger("ibench").level
-        logging.getLogger("ibench").setLevel(logging.CRITICAL)
+        prev_eyebench_level = logging.getLogger("eyebench").level
+        logging.getLogger("eyebench").setLevel(logging.CRITICAL)
         dashboard.render()
         dashboard_stop_event = asyncio.Event()
 
@@ -1638,8 +1890,6 @@ async def main_async(args):
                     await asyncio.sleep(delay)
 
             run_label = f"{provider}:{model}"
-            if reasoning_effort:
-                run_label += f" ({reasoning_effort} reasoning)"
             if dashboard is None:
                 print(f"\n=== Running model {run_label} ({idx + 1}/{len(model_specs)}) ===")
 
@@ -1658,8 +1908,8 @@ async def main_async(args):
     finally:
         if dashboard is not None:
             dashboard.finish_all()
-        if prev_ibench_level is not None:
-            logging.getLogger("ibench").setLevel(prev_ibench_level)
+        if prev_eyebench_level is not None:
+            logging.getLogger("eyebench").setLevel(prev_eyebench_level)
         if dashboard_stop_event is not None:
             dashboard_stop_event.set()
         if dashboard_task is not None:
@@ -1684,7 +1934,7 @@ def parse_args() -> argparse.Namespace:
         help="Queue multiple OpenRouter models to run sequentially. "
              "Example: --models openai/gpt-5 openai/gpt-5.1 openrouter:openai/o3:reasoning=high",
     )
-    p.add_argument("--imgs", type=str, default="public/imgs", help="Directory containing images named 1.png..N.png (default: ./public/imgs)")
+    p.add_argument("--imgs", type=str, default="imgs", help="Directory containing images named 1.png..N.png (default: ./imgs)")
     p.add_argument("--truth", type=str, default="truth.txt", help="Path to truth.txt (one integer per line)")
     p.add_argument(
         "--n",
@@ -1693,7 +1943,12 @@ def parse_args() -> argparse.Namespace:
         help="Number of images to evaluate (default: auto-detect count in --imgs)",
     )
     p.add_argument("--concurrency", type=int, default=4, help="Max in-flight requests (default: 4)")
-    p.add_argument("--request-timeout", type=float, default=1200.0, help="Per-request timeout seconds (default: 1200)")
+    p.add_argument(
+        "--request-timeout",
+        type=float,
+        default=DEFAULT_REQUEST_TIMEOUT_S,
+        help="Per-request timeout seconds (default: 3600)",
+    )
     p.add_argument("--max-retries", type=int, default=5, help="Retries per item (default: 5)")
     p.add_argument(
         "--rate-limit-backoff",
@@ -1736,6 +1991,11 @@ def parse_args() -> argparse.Namespace:
         "--progress",
         action="store_true",
         help="Print streaming progress updates as items complete",
+    )
+    p.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume an interrupted run from runs/<run_slug>/summary.json by skipping completed items",
     )
     p.add_argument(
         "--no-tui",

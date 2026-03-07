@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Render benchmark graphs from runs/<model>/summary.json files.
 
-Generates two charts into a `graphs/` folder by default:
+Generates charts into a `graphs/` folder by default:
 1) Accuracy leaderboard (horizontal bars).
 2) Average cost per image vs accuracy (scatter).
+3) Total run cost vs accuracy (scatter).
 
 Newly added run folders are highlighted the first time they appear. Previously seen
 slugs are stored in a small state file next to the output directory (override with --state).
@@ -40,11 +41,15 @@ MODEL_PRICE_FILE = Path("config/model_prices.json")
 @dataclass
 class RunMetric:
     slug: str
+    model_id: str
     label: str
     accuracy: float
     avg_cost: Optional[float]
+    total_cost: Optional[float]
     total_time_s: Optional[float]
     provider_hint: str
+    reasoning_active: bool = False
+    explicit_reasoning_effort: Optional[str] = None
     is_baseline: bool = False
 
 
@@ -53,7 +58,6 @@ def short_model_name(model_id: str) -> str:
     raw = (model_id or "").strip()
     if not raw:
         return raw
-    raw = raw.split(" (", 1)[0]
     lowered = raw.lower()
     if lowered.startswith("openrouter/"):
         raw = raw[len("openrouter/") :]
@@ -77,15 +81,9 @@ def _load_price_overrides() -> Dict[str, Tuple[float, float]]:
     if not path.exists():
         return {}
     try:
-        text = path.read_text(encoding="utf-8")
-        raw = json.loads(text)
+        raw = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
-        # Be tolerant of common hand-edited JSON issue: trailing commas.
-        try:
-            sanitized = re.sub(r",(\s*[}\]])", r"\1", text)
-            raw = json.loads(sanitized)
-        except Exception:
-            return {}
+        return {}
     if not isinstance(raw, dict):
         return {}
 
@@ -140,77 +138,86 @@ def load_run_metrics(runs_dir: Path) -> List[RunMetric]:
         except Exception:
             continue
         summary = doc.get("summary", {}) if isinstance(doc, dict) else {}
+        if not isinstance(summary, dict):
+            continue
         percent = summary.get("percent_correct")
-        if percent is None:
-            acc = summary.get("accuracy_exact")
-            percent = acc * 100 if isinstance(acc, (int, float)) else None
-        if percent is None:
+        if not isinstance(percent, (int, float)):
             continue
         params = doc.get("params", {}) if isinstance(doc, dict) else {}
-        summary_effort = summary.get("effective_reasoning_effort") if isinstance(summary, dict) else None
-        reasoning_effort = params.get("reasoning_effort") or summary_effort
+        reasoning_observed = bool(summary.get("reasoning_observed")) if isinstance(summary, dict) else False
+        explicit_reasoning_effort = params.get("reasoning_effort") if isinstance(params, dict) else None
         base_model = doc.get("model") or doc.get("model_label") or summary_file.parent.name
 
         label_override = doc.get("benchmark_label") if isinstance(doc, dict) else None
-        if isinstance(label_override, str) and label_override.strip():
-            display = label_override.strip()
-        else:
-            display = short_model_name(str(base_model))
-            if isinstance(reasoning_effort, str) and reasoning_effort:
-                display = f"{display} ({reasoning_effort} reasoning)"
+        if not isinstance(label_override, str) or not label_override.strip():
+            continue
+        display = label_override.strip()
 
         provider_hint = str(doc.get("model") or doc.get("model_label") or base_model)
 
-        # N (images) for averages
         n_val = summary.get("n") if isinstance(summary, dict) else None
         if not isinstance(n_val, int):
-            n_val = params.get("n") if isinstance(params, dict) else None
-        if not isinstance(n_val, int):
-            items_list = doc.get("items")
-            if isinstance(items_list, list):
-                n_val = len(items_list)
+            continue
 
-        # Average cost per image (recomputed from token usage + per-million prices).
-        cost_total = None
         total_time_s = _coerce_float(summary.get("total_time_s")) if isinstance(summary, dict) else None
         token_usage = doc.get("token_usage", {}) if isinstance(doc, dict) else {}
         prompt_tokens = _coerce_float(token_usage.get("prompt_tokens")) if isinstance(token_usage, dict) else None
         completion_tokens = _coerce_float(token_usage.get("completion_tokens")) if isinstance(token_usage, dict) else None
+        if prompt_tokens is None or completion_tokens is None:
+            continue
 
         price_pair = _lookup_price_pair(str(base_model), summary_file.parent.name, overrides)
-        if price_pair is None and isinstance(doc, dict):
-            price_obj = doc.get("price", {})
-            if isinstance(price_obj, dict):
-                in_p = _coerce_float(price_obj.get("input_per_million"))
-                out_p = _coerce_float(price_obj.get("output_per_million"))
-                if in_p is not None or out_p is not None:
-                    price_pair = (in_p or 0.0, out_p or 0.0)
-
-        if price_pair is not None and prompt_tokens is not None and completion_tokens is not None:
-            in_p, out_p = price_pair
-            cost_total = (prompt_tokens / 1_000_000.0) * in_p + (completion_tokens / 1_000_000.0) * out_p
-        elif isinstance(summary, dict):
-            # Last-resort fallback for legacy summaries.
-            cost_total = _coerce_float(summary.get("estimated_cost"))
-            if cost_total is None and isinstance(doc, dict):
-                price_obj = doc.get("price", {})
-                if isinstance(price_obj, dict):
-                    cost_total = _coerce_float(price_obj.get("estimated_cost"))
-        avg_cost = None
-        if cost_total is not None and isinstance(n_val, int) and n_val > 0:
-            avg_cost = cost_total / n_val
+        if price_pair is None:
+            continue
+        in_p, out_p = price_pair
+        cost_total = (prompt_tokens / 1_000_000.0) * in_p + (completion_tokens / 1_000_000.0) * out_p
+        avg_cost = cost_total / n_val if n_val > 0 else None
 
         items.append(
             RunMetric(
                 slug=summary_file.parent.name,
+                model_id=str(base_model),
                 label=display,
                 accuracy=float(percent),
                 avg_cost=avg_cost,
+                total_cost=cost_total,
                 total_time_s=total_time_s,
                 provider_hint=provider_hint,
+                reasoning_active=bool(
+                    reasoning_observed
+                    or (
+                        isinstance(explicit_reasoning_effort, str)
+                        and explicit_reasoning_effort.strip().lower() != "none"
+                    )
+                ),
+                explicit_reasoning_effort=(
+                    explicit_reasoning_effort.strip().lower()
+                    if isinstance(explicit_reasoning_effort, str) and explicit_reasoning_effort.strip()
+                    else None
+                ),
             )
         )
     return items
+
+
+def prune_superseded_unset_reasoning_runs(data: List[RunMetric]) -> List[RunMetric]:
+    """Drop unset-reasoning runs when the exact same model has an explicit reasoning run."""
+    explicit_models = {
+        (m.model_id or "").strip().lower()
+        for m in data
+        if not m.is_baseline and m.explicit_reasoning_effort not in (None, "none")
+    }
+    if not explicit_models:
+        return data
+
+    filtered: List[RunMetric] = []
+    for m in data:
+        model_key = (m.model_id or "").strip().lower()
+        has_unset_reasoning = m.explicit_reasoning_effort is None
+        if not m.is_baseline and has_unset_reasoning and model_key in explicit_models:
+            continue
+        filtered.append(m)
+    return filtered
 
 
 def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
@@ -219,11 +226,14 @@ def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
         data.append(
             RunMetric(
                 slug="__baseline_human__",
+                model_id="__baseline_human__",
                 label="Human",
                 accuracy=100.0,
                 avg_cost=None,
+                total_cost=None,
                 total_time_s=None,
                 provider_hint="Human",
+                explicit_reasoning_effort=None,
                 is_baseline=True,
             )
         )
@@ -231,11 +241,14 @@ def ensure_baselines(data: List[RunMetric]) -> List[RunMetric]:
         data.append(
             RunMetric(
                 slug="__baseline_random__",
+                model_id="__baseline_random__",
                 label="Random Guess",
                 accuracy=10.0,
                 avg_cost=None,
+                total_cost=None,
                 total_time_s=None,
                 provider_hint="Random Guess",
+                explicit_reasoning_effort=None,
                 is_baseline=True,
             )
         )
@@ -285,13 +298,24 @@ def pick_color(label: str) -> str:
     return FALLBACK_COLOR
 
 
+def is_non_reasoning_run(metric: RunMetric) -> bool:
+    return (not metric.is_baseline) and (not metric.reasoning_active)
+
+
+def format_metric_label(metric: RunMetric) -> str:
+    label = metric.label
+    if is_non_reasoning_run(metric) and not label.endswith("*"):
+        label = f"{label}*"
+    return label
+
+
 def render_accuracy_bar(data: List[RunMetric], output: Path, new_slugs: Set[str]) -> None:
     data = ensure_baselines(data)
     if len(data) <= 2 and all(m.label in {"Human", "Random Guess"} for m in data):
         print("No runs found; rendering baseline comparison only.")
     sorted_items = sorted(data, key=lambda x: x.accuracy)
     slugs = [m.slug for m in sorted_items]
-    labels = [m.label for m in sorted_items]
+    labels = [format_metric_label(m) for m in sorted_items]
     values = [m.accuracy for m in sorted_items]
     provider_hints = [m.provider_hint for m in sorted_items]
     colors = [pick_color(hint) for hint in provider_hints]
@@ -440,11 +464,7 @@ def render_scatter(
             if x_val is None:
                 continue
             is_new = m.slug in new_slugs
-            label_base = re.sub(r"\s+\([^)]*\)$", "", m.label, flags=re.IGNORECASE).strip()
-            if x_attr == "avg_cost":
-                has_reasoning = "__reasoning+" in m.slug and "__reasoning+none" not in m.slug
-                if not has_reasoning:
-                    label_base = f"{label_base}*"
+            label_base = format_metric_label(m)
             label_text = f"{label_base} NEW" if is_new else label_base
             color = highlight_color if is_new else "#111111"
             fontweight = "bold" if is_new else "normal"
@@ -464,13 +484,13 @@ def render_scatter(
 
 
 def render_reasoning_time_vs_performance(data: List[RunMetric], output: Path) -> None:
-    """Render time vs accuracy for all runs with explicit reasoning enabled."""
+    """Render time vs accuracy for runs that actually used reasoning."""
     points = [
         m for m in data
         if (not m.is_baseline)
-        and ("__reasoning+" in m.slug)
-        and ("__reasoning+none" not in m.slug)
+        and m.reasoning_active
         and (m.total_time_s is not None)
+        and ((m.total_time_s or 0.0) > 0)
     ]
     if not points:
         print("No reasoning-enabled runs found; skipping time vs performance chart.")
@@ -481,9 +501,20 @@ def render_reasoning_time_vs_performance(data: List[RunMetric], output: Path) ->
     ys = [m.accuracy for m in points]
     cs = [pick_color(m.provider_hint) for m in points]
 
+    ax.set_xscale("log")
+    x_min = min(xs)
+    x_max = max(xs)
+    if x_min == x_max:
+        x_min = max(x_min * 0.9, 1e-6)
+        x_max = x_max * 1.5
+    else:
+        x_min = max(x_min * 0.9, 1e-6)
+        x_max = x_max * 1.5
+    ax.set_xlim(x_min, x_max)
+
     ax.scatter(xs, ys, c=cs, s=90, edgecolors="#111111", linewidths=0.6)
     for m, x, y in zip(points, xs, ys):
-        clean_label = re.sub(r"\s+\([^)]*reasoning\)$", "", m.label, flags=re.IGNORECASE)
+        clean_label = format_metric_label(m)
         ax.text(x, y, clean_label, fontsize=8)
 
     ax.set_title("EyeBench-V2: Run time vs Performance", fontsize=14, fontweight="bold")
@@ -548,9 +579,10 @@ def main() -> None:
 
     base_dir = bar_output.parent
     cost_output = base_dir / "cost_vs_accuracy.jpg"
+    overall_cost_output = base_dir / "overall_cost_vs_accuracy.jpg"
     time_output = base_dir / "reasoning_time_vs_performance.jpg"
 
-    data = load_run_metrics(runs_dir)
+    data = prune_superseded_unset_reasoning_runs(load_run_metrics(runs_dir))
     current_slugs = {m.slug for m in data}
     state_path = Path(args.state).resolve() if args.state else (base_dir / ".graph-maker-state.json")
     prev_slugs = load_seen_slugs(state_path)
@@ -563,7 +595,16 @@ def main() -> None:
         title="EyeBench-V2: Cost vs Accuracy",
         output=cost_output,
         new_slugs=new_slugs,
-        log_x=False,
+        log_x=True,
+    )
+    render_scatter(
+        data,
+        x_attr="total_cost",
+        x_label="Total run cost (USD)",
+        title="EyeBench-V2: Overall Cost vs Accuracy",
+        output=overall_cost_output,
+        new_slugs=new_slugs,
+        log_x=True,
     )
     render_reasoning_time_vs_performance(data, time_output)
     save_seen_slugs(state_path, current_slugs)

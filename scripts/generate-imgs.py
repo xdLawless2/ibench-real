@@ -931,7 +931,7 @@ def draw_scene(scene: Scene, out_path: str) -> None:
 
 def generate_questions(
     n: int = DEFAULT_NUM_IMAGES,
-    output_dir: str = "public/imgs",
+    output_dir: str = "imgs",
     truth_path: str = "truth.txt",
     min_intersections: int = DEFAULT_MIN_INTERSECTIONS,
     max_intersections: int = DEFAULT_MAX_INTERSECTIONS,
@@ -993,8 +993,8 @@ def parse_args() -> argparse.Namespace:
         "-o",
         "--output",
         type=str,
-        default="public/imgs",
-        help="Output image directory (default: public/imgs)",
+        default="imgs",
+        help="Output image directory (default: imgs)",
     )
     parser.add_argument(
         "-t",
