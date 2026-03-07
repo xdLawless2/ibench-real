@@ -1,7 +1,7 @@
 {
   "model": "openai/o3",
   "model_label": "openai/o3 (medium reasoning)",
-  "benchmark_label": "o3 (medium reasoning)",
+  "benchmark_label": "o3",
   "run_slug": "openai_o3__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-28T05:04:40.994712Z",

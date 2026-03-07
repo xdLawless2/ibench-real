@@ -1,7 +1,7 @@
 {
   "model": "anthropic/claude-sonnet-4.6",
   "model_label": "anthropic/claude-sonnet-4.6",
-  "benchmark_label": "claude-sonnet-4.6 (Instant)",
+  "benchmark_label": "claude-sonnet-4.6",
   "run_slug": "anthropic_claude-sonnet-4.6",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T00:24:47.383923Z",

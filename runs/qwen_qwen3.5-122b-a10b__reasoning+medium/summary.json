@@ -1,7 +1,7 @@
 {
   "model": "qwen/qwen3.5-122b-a10b",
   "model_label": "qwen/qwen3.5-122b-a10b (medium reasoning)",
-  "benchmark_label": "qwen3.5-122b-a10b (medium reasoning)",
+  "benchmark_label": "qwen3.5-122b-a10b",
   "run_slug": "qwen_qwen3.5-122b-a10b__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-28T13:50:16.385224Z",
@@ -24,7 +24,7 @@
     "failures": 0,
     "percent_correct": 25.0,
     "num_correct": 25,
-    "estimated_cost": 8.4061744e-06,
+    "estimated_cost": 5.46401336,
     "reasoning_observed": true,
     "reasoning_tokens_total": 2593606,
     "effective_reasoning_effort": "medium"
@@ -35,9 +35,10 @@
     "total_tokens": 2855917
   },
   "price": {
-    "input_per_million": 4e-07,
-    "output_per_million": 3.2e-06,
-    "estimated_cost": 8.4061744e-06
+    "input_per_million": 0.26,
+    "output_per_million": 2.08,
+    "estimated_cost": 5.46401336,
+    "price_source": "qwen/qwen3.5-122b-a10b"
   },
   "items": [
     {

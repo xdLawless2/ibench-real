@@ -1,7 +1,7 @@
 {
   "model": "openai/gpt-5.4",
   "model_label": "openai/gpt-5.4 (none reasoning)",
-  "benchmark_label": "gpt-5.4 (Instant)",
+  "benchmark_label": "gpt-5.4",
   "run_slug": "openai_gpt-5.4__reasoning+none",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-03-05T18:39:11.475737Z",
@@ -24,7 +24,7 @@
     "failures": 0,
     "percent_correct": 14.000000000000002,
     "num_correct": 14,
-    "estimated_cost": 7.737500000000001e-07,
+    "estimated_cost": 0.7737499999999999,
     "reasoning_observed": false,
     "reasoning_tokens_total": 0,
     "effective_reasoning_effort": "none"
@@ -35,9 +35,10 @@
     "total_tokens": 307000
   },
   "price": {
-    "input_per_million": 2.5e-06,
-    "output_per_million": 1.5e-05,
-    "estimated_cost": 7.737500000000001e-07
+    "input_per_million": 2.5,
+    "output_per_million": 15.0,
+    "estimated_cost": 0.7737499999999999,
+    "price_source": "openai/gpt-5.4"
   },
   "items": [
     {

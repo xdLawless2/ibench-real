@@ -1,7 +1,7 @@
 {
   "model": "google/gemini-3.1-pro-preview",
   "model_label": "google/gemini-3.1-pro-preview (medium reasoning)",
-  "benchmark_label": "gemini-3.1-pro-preview (medium reasoning)",
+  "benchmark_label": "gemini-3.1-pro-preview",
   "run_slug": "google_gemini-3.1-pro-preview__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T18:29:59.711085Z",

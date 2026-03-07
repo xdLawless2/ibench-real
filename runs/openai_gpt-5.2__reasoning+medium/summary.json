@@ -1,7 +1,7 @@
 {
   "model": "openai/gpt-5.2",
   "model_label": "openai/gpt-5.2 (medium reasoning)",
-  "benchmark_label": "gpt-5.2 (medium reasoning)",
+  "benchmark_label": "gpt-5.2",
   "run_slug": "openai_gpt-5.2__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T22:32:27.414149Z",

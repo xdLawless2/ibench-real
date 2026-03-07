@@ -1,7 +1,7 @@
 {
   "model": "google/gemini-3-flash-preview",
   "model_label": "google/gemini-3-flash-preview (medium reasoning)",
-  "benchmark_label": "gemini-3-flash-preview (medium reasoning)",
+  "benchmark_label": "gemini-3-flash-preview",
   "run_slug": "google_gemini-3-flash-preview__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-26T19:53:18.847865Z",
@@ -24,7 +24,7 @@
     "failures": 0,
     "percent_correct": 26.0,
     "num_correct": 26,
-    "estimated_cost": 2.500081e-06,
+    "estimated_cost": 2.5000809999999998,
     "reasoning_observed": true,
     "reasoning_tokens_total": 756401,
     "effective_reasoning_effort": "medium"
@@ -35,9 +35,10 @@
     "total_tokens": 930477
   },
   "price": {
-    "input_per_million": 5e-07,
-    "output_per_million": 3e-06,
-    "estimated_cost": 2.500081e-06
+    "input_per_million": 0.5,
+    "output_per_million": 3.0,
+    "estimated_cost": 2.5000809999999998,
+    "price_source": "google/gemini-3-flash-preview"
   },
   "items": [
     {

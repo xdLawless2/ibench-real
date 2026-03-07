@@ -1,7 +1,7 @@
 {
   "model": "openai/o4-mini",
   "model_label": "openai/o4-mini (medium reasoning)",
-  "benchmark_label": "o4-mini (medium reasoning)",
+  "benchmark_label": "o4-mini",
   "run_slug": "openai_o4-mini__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-28T05:19:30.376878Z",

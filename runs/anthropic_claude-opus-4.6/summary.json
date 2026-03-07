@@ -1,7 +1,7 @@
 {
   "model": "anthropic/claude-opus-4.6",
   "model_label": "anthropic/claude-opus-4.6",
-  "benchmark_label": "claude-opus-4.6 (Instant)",
+  "benchmark_label": "claude-opus-4.6",
   "run_slug": "anthropic_claude-opus-4.6",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T00:16:59.082572Z",

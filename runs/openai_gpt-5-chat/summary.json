@@ -1,7 +1,7 @@
 {
   "model": "openai/gpt-5-chat",
   "model_label": "openai/gpt-5-chat",
-  "benchmark_label": "gpt-5 (Instant)",
+  "benchmark_label": "gpt-5-chat",
   "run_slug": "openai_gpt-5-chat",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T00:29:21.717496Z",
@@ -24,7 +24,7 @@
     "failures": 0,
     "percent_correct": 2.0,
     "num_correct": 2,
-    "estimated_cost": 1.2725e-07,
+    "estimated_cost": 0.12725,
     "reasoning_observed": false,
     "reasoning_tokens_total": 0,
     "effective_reasoning_effort": null
@@ -35,9 +35,10 @@
     "total_tokens": 100400
   },
   "price": {
-    "input_per_million": 1.25e-06,
-    "output_per_million": 1e-05,
-    "estimated_cost": 1.2725e-07
+    "input_per_million": 1.25,
+    "output_per_million": 10.0,
+    "estimated_cost": 0.12725,
+    "price_source": "openai/gpt-5-chat"
   },
   "items": [
     {

@@ -1,7 +1,7 @@
 {
   "model": "moonshotai/kimi-k2.5",
   "model_label": "moonshotai/kimi-k2.5 (medium reasoning)",
-  "benchmark_label": "kimi-k2.5 (medium reasoning)",
+  "benchmark_label": "kimi-k2.5",
   "run_slug": "moonshotai_kimi-k2.5__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-28T16:38:27.935977Z",

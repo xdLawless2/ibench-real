@@ -1,7 +1,7 @@
 {
   "model": "anthropic/claude-sonnet-4.6",
   "model_label": "anthropic/claude-sonnet-4.6 (medium reasoning)",
-  "benchmark_label": "claude-sonnet-4.6 (medium reasoning)",
+  "benchmark_label": "claude-sonnet-4.6",
   "run_slug": "anthropic_claude-sonnet-4.6__reasoning+medium",
   "base_url": "https://openrouter.ai/api/v1",
   "timestamp": "2026-02-27T14:16:54.852069Z",
