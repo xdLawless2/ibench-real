@@ -1,5 +1,4 @@
-import { useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useMemo, useState, useEffect, useRef } from "react";
 import {
   BarChart,
   Bar,
@@ -56,7 +55,7 @@ function TokenBreakdown({ tokens, providerColor }) {
               width: `${(d.value / total) * 100}%`,
               background: colors[i],
             }}
-            className="transition-all duration-500 first:rounded-l-full last:rounded-r-full"
+            className="first:rounded-l-full last:rounded-r-full"
             title={`${d.name}: ${d.value.toLocaleString()}`}
           />
         ))}
@@ -141,30 +140,25 @@ function ImageGrid({ items }) {
       <h4 className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">
         Per-Image Results
       </h4>
-      <div className="grid grid-cols-10 gap-1">
+      <div className="grid grid-cols-5 sm:grid-cols-10 gap-1">
         {items.map((item) => (
           <div
             key={item.index}
             onClick={() => setSelected(item)}
-            className="relative aspect-square rounded-md overflow-hidden border-2 transition-transform hover:scale-110 hover:z-10 cursor-pointer"
+            className="rounded cursor-pointer hover:brightness-125 px-1 py-1.5 flex flex-col items-center gap-0.5"
             style={{
-              borderColor: item.correct
-                ? "var(--color-correct)"
-                : "var(--color-incorrect)",
+              background: item.correct
+                ? "color-mix(in srgb, var(--color-correct) 20%, transparent)"
+                : "color-mix(in srgb, var(--color-incorrect) 20%, transparent)",
+              border: `1px solid ${item.correct ? "var(--color-correct)" : "var(--color-incorrect)"}`,
+              borderLeftWidth: 2,
             }}
             title={`#${item.index}: truth=${item.truth}, pred=${item.pred}${item.correct ? " ✓" : " ✗"}`}
           >
-            <img
-              src={`/imgs/${item.index}.png`}
-              alt={`Image ${item.index}`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-              <span className="text-[10px] text-white font-bold tabular-nums">
-                {item.pred}/{item.truth}
-              </span>
-            </div>
+            <span className="text-[8px] text-text-muted leading-none">#{item.index}</span>
+            <span className="text-[10px] font-bold tabular-nums leading-none" style={{ color: item.correct ? "var(--color-correct)" : "var(--color-incorrect)" }}>
+              {item.pred}<span className="text-text-muted font-normal">/{item.truth}</span>
+            </span>
           </div>
         ))}
       </div>
@@ -175,88 +169,112 @@ function ImageGrid({ items }) {
         <span className="flex items-center gap-1">
           <span className="w-3 h-1.5 rounded-sm bg-incorrect" /> Incorrect
         </span>
+        <span className="ml-auto text-text-muted/60">pred/truth — click to view</span>
       </div>
 
-      <AnimatePresence>
-        {selected && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelected(null)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[60]"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ type: "spring", damping: 28, stiffness: 300 }}
-              className="fixed inset-0 z-[70] flex items-center justify-center p-8"
-              onClick={() => setSelected(null)}
+      {selected && (
+        <>
+          <div
+            onClick={() => setSelected(null)}
+            className="fixed inset-0 bg-black/70 z-[60]"
+          />
+          <div
+            className="fixed inset-0 z-[70] flex items-center justify-center p-8"
+            onClick={() => setSelected(null)}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-surface-raised border border-border rounded-2xl overflow-hidden max-w-lg w-full"
             >
-              <div
-                onClick={(e) => e.stopPropagation()}
-                className="bg-surface-raised border border-border rounded-2xl overflow-hidden max-w-lg w-full"
-              >
-                <img
-                  src={`/imgs/${selected.index}.png`}
-                  alt={`Image ${selected.index}`}
-                  className="w-full"
-                />
-                <div className="p-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold">Image #{selected.index}</p>
-                    <p className="text-sm text-text-secondary">
-                      Truth: <span className="font-bold text-text-primary tabular-nums">{selected.truth}</span>
-                      &nbsp;&middot;&nbsp;
-                      Predicted: <span className={`font-bold tabular-nums ${selected.correct ? "text-correct" : "text-incorrect"}`}>{selected.pred}</span>
-                    </p>
-                  </div>
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${selected.correct ? "bg-correct/15 text-correct" : "bg-incorrect/15 text-incorrect"}`}>
-                    {selected.correct ? "Correct" : "Wrong"}
-                  </span>
+              <img
+                src={`/imgs/${selected.index}.png`}
+                alt={`Image ${selected.index}`}
+                className="w-full"
+              />
+              <div className="p-4 flex items-center justify-between">
+                <div>
+                  <p className="font-semibold">Image #{selected.index}</p>
+                  <p className="text-sm text-text-secondary">
+                    Truth: <span className="font-bold text-text-primary tabular-nums">{selected.truth}</span>
+                    &nbsp;&middot;&nbsp;
+                    Predicted: <span className={`font-bold tabular-nums ${selected.correct ? "text-correct" : "text-incorrect"}`}>{selected.pred}</span>
+                  </p>
                 </div>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${selected.correct ? "bg-correct/15 text-correct" : "bg-incorrect/15 text-incorrect"}`}>
+                  {selected.correct ? "Correct" : "Wrong"}
+                </span>
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
 
 export default function ModelDetailPanel({ run, onClose }) {
-  const providerColor = getProviderColor(run.provider);
+  const [visible, setVisible] = useState(false);
+  const [shouldRenderContent, setShouldRenderContent] = useState(false);
+  const prevRunRef = useRef(null);
+  const isOpen = run != null;
 
-  const costPerImage = run.cost / (run.items?.length || 100);
+  useEffect(() => {
+    if (isOpen) {
+      prevRunRef.current = run;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setVisible(true));
+      });
+      const timer = setTimeout(() => setShouldRenderContent(true), 300);
+      return () => clearTimeout(timer);
+    } else {
+      setVisible(false);
+      setShouldRenderContent(false);
+    }
+  }, [isOpen, run]);
+
+  const displayRun = run ?? prevRunRef.current;
+  if (!displayRun) return null;
+
+  const providerColor = getProviderColor(displayRun.provider);
+  const costPerImage = displayRun.cost / (displayRun.items?.length || 100);
+
+  function handleTransitionEnd(e) {
+    if (e.target === e.currentTarget && !visible) {
+      prevRunRef.current = null;
+    }
+  }
+
+  const showPanel = isOpen || visible;
+  if (!showPanel && !prevRunRef.current) return null;
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }}
+      <div
         onClick={onClose}
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+        className="fixed inset-0 bg-black/60 z-40"
+        style={{
+          opacity: visible ? 1 : 0,
+          transition: "opacity 0.2s ease-out",
+          pointerEvents: visible ? "auto" : "none",
+        }}
       />
 
-      <motion.aside
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="fixed top-0 right-0 h-full w-full max-w-2xl bg-surface-raised border-l border-border z-50 overflow-y-auto scrollbar-thin"
+      <aside
+        onTransitionEnd={handleTransitionEnd}
+        className="fixed top-0 right-0 h-full w-full max-w-2xl bg-surface-raised border-l border-border z-50 overflow-y-auto scrollbar-thin will-change-transform"
+        style={{
+          transform: visible ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 0.25s ease-out",
+        }}
       >
         <div className="h-1 w-full" style={{ background: providerColor }} />
-        <div className="sticky top-0 bg-surface-raised/90 backdrop-blur-xl border-b border-border-subtle px-8 py-5 flex items-center justify-between z-10">
+        <div className="sticky top-0 bg-surface-raised border-b border-border-subtle px-8 py-5 flex items-center justify-between z-10">
           <div>
             <div className="flex items-center gap-3">
-              <ProviderLogo provider={run.provider} size={24} />
+              <ProviderLogo provider={displayRun.provider} size={24} />
               <h2 className="text-xl font-bold">
-                {run.model}
-                {!run.reasoning && <span className="text-text-muted ml-0.5">*</span>}
+                {displayRun.model}
+                {!displayRun.reasoning && <span className="text-text-muted ml-0.5">*</span>}
               </h2>
             </div>
           </div>
@@ -273,36 +291,40 @@ export default function ModelDetailPanel({ run, onClose }) {
 
         <div className="p-8 space-y-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <StatCard label="Accuracy" value={`${run.accuracy}%`} sub={`${run.numCorrect}/100 correct`} accent={providerColor} />
-            <StatCard label="MAE" value={run.mae.toFixed(2)} accent={providerColor} />
-            <StatCard label="Avg Latency" value={`${run.latencyAvg < 60 ? run.latencyAvg.toFixed(1) + "s" : (run.latencyAvg / 60).toFixed(1) + "m"}`} sub={`P95: ${run.latencyP95 < 60 ? run.latencyP95.toFixed(1) + "s" : (run.latencyP95 / 60).toFixed(1) + "m"}`} accent={providerColor} />
-            <StatCard label="Total Cost" value={`$${run.cost < 1 ? run.cost.toFixed(2) : run.cost.toFixed(0)}`} sub={`$${costPerImage.toFixed(4)}/img`} accent={providerColor} />
+            <StatCard label="Accuracy" value={`${displayRun.accuracy}%`} sub={`${displayRun.numCorrect}/100 correct`} accent={providerColor} />
+            <StatCard label="MAE" value={displayRun.mae.toFixed(2)} accent={providerColor} />
+            <StatCard label="Avg Latency" value={`${displayRun.latencyAvg < 60 ? displayRun.latencyAvg.toFixed(1) + "s" : (displayRun.latencyAvg / 60).toFixed(1) + "m"}`} sub={`P95: ${displayRun.latencyP95 < 60 ? displayRun.latencyP95.toFixed(1) + "s" : (displayRun.latencyP95 / 60).toFixed(1) + "m"}`} accent={providerColor} />
+            <StatCard label="Total Cost" value={`$${displayRun.cost < 1 ? displayRun.cost.toFixed(2) : displayRun.cost.toFixed(0)}`} sub={`$${costPerImage.toFixed(4)}/img`} accent={providerColor} />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <StatCard label="Total Time" value={`${(run.totalTime / 60).toFixed(0)}m`} />
-            <StatCard label="Failures" value={run.failures} />
+            <StatCard label="Total Time" value={`${(displayRun.totalTime / 60).toFixed(0)}m`} />
+            <StatCard label="Failures" value={displayRun.failures} />
           </div>
 
-          <TokenBreakdown tokens={run.tokens} providerColor={providerColor} />
+          <TokenBreakdown tokens={displayRun.tokens} providerColor={providerColor} />
 
-          <LatencyHistogram items={run.items || []} />
+          {shouldRenderContent ? (
+            <LatencyHistogram items={displayRun.items || []} />
+          ) : (
+            <div className="h-[152px]" />
+          )}
 
-          {run.items && run.items.length > 0 && (
-            <ImageGrid items={run.items} />
+          {shouldRenderContent && displayRun.items && displayRun.items.length > 0 && (
+            <ImageGrid items={displayRun.items} />
           )}
 
           <div className="text-xs text-text-muted pt-4 border-t border-border-subtle">
             <p>
-              Run: <code className="font-mono text-text-secondary">{run.slug}</code>
+              Run: <code className="font-mono text-text-secondary">{displayRun.slug}</code>
             </p>
-            <p>Timestamp: {new Date(run.timestamp).toLocaleString()}</p>
+            <p>Timestamp: {new Date(displayRun.timestamp).toLocaleString()}</p>
             <p>
-              Pricing: ${run.price?.inputPerMillion}/M in, ${run.price?.outputPerMillion}/M out
+              Pricing: ${displayRun.price?.inputPerMillion}/M in, ${displayRun.price?.outputPerMillion}/M out
             </p>
           </div>
         </div>
-      </motion.aside>
+      </aside>
     </>
   );
 }

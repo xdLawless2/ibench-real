@@ -162,6 +162,12 @@ function TooltipContent({ point }) {
               <span className="font-medium text-text-primary">{(point.totalTime / 60).toFixed(0)}m</span>
             </div>
           )}
+          {point.releaseDate && (
+            <div className="flex justify-between gap-4">
+              <span>Released</span>
+              <span className="font-medium text-text-primary">{point.releaseDate}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -440,9 +446,167 @@ function ReasoningTimeScatter({ runs, enabledProviders, theme }) {
   );
 }
 
+function ReleaseDateScatter({ runs, enabledProviders, theme }) {
+  const [hovered, setHovered] = useState(null);
+  const containerRef = useRef(null);
+  const tooltipRef = useRef(null);
+  const hoveredPosRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    if (tooltipRef.current && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      tooltipRef.current.style.left = `${e.clientX - rect.left + 16}px`;
+      tooltipRef.current.style.top = `${e.clientY - rect.top - 10}px`;
+    }
+    if (hoveredPosRef.current) {
+      const svgEl = containerRef.current?.querySelector("svg");
+      if (svgEl) {
+        const sr = svgEl.getBoundingClientRect();
+        const dx = (e.clientX - sr.left) - hoveredPosRef.current.cx;
+        const dy = (e.clientY - sr.top) - hoveredPosRef.current.cy;
+        if (dx * dx + dy * dy > 900) {
+          hoveredPosRef.current = null;
+          setHovered(null);
+        }
+      }
+    }
+  }, []);
+
+  const handleHover = useCallback((payload, cx, cy) => {
+    hoveredPosRef.current = { cx, cy };
+    setHovered(payload);
+  }, []);
+
+  const clearHovered = useCallback(() => {
+    hoveredPosRef.current = null;
+    setHovered(null);
+  }, []);
+
+  const isDark = theme !== "light";
+
+  const renderShape = useCallback((props) => (
+    <LogoShape {...props} isDark={isDark} onHover={handleHover} onLeave={clearHovered} />
+  ), [isDark, handleHover, clearHovered]);
+
+  const visibleProviders = useMemo(
+    () => [...new Set(runs.map((r) => r.provider))].filter((p) => enabledProviders.has(p)),
+    [runs, enabledProviders]
+  );
+
+  const dataByProvider = useMemo(() => {
+    const map = {};
+    for (const r of runs) {
+      if (!r.releaseDate || !enabledProviders.has(r.provider)) continue;
+      if (!map[r.provider]) map[r.provider] = [];
+      map[r.provider].push({
+        x: new Date(r.releaseDate).getTime(),
+        y: r.accuracy,
+        model: r.model,
+        provider: r.provider,
+        reasoning: r.reasoning,
+        cost: r.cost,
+        accuracy: r.accuracy,
+        releaseDate: r.releaseDate,
+      });
+    }
+    return map;
+  }, [runs, enabledProviders]);
+
+  const { domainMin, domainMax, ticks } = useMemo(() => {
+    const allDates = runs
+      .filter((r) => r.releaseDate && enabledProviders.has(r.provider))
+      .map((r) => new Date(r.releaseDate).getTime());
+    if (allDates.length === 0) return { domainMin: 0, domainMax: 1, ticks: [] };
+    const min = Math.min(...allDates);
+    const max = Math.max(...allDates);
+    const pad = (max - min) * 0.05 || 86400000;
+
+    const minDate = new Date(min);
+    const maxDate = new Date(max);
+    const tickDates = [];
+    let y = minDate.getFullYear(), m = minDate.getMonth();
+    while (true) {
+      const ts = new Date(y, m, 1).getTime();
+      if (ts > max + pad) break;
+      tickDates.push(ts);
+      m++;
+      if (m > 11) { m = 0; y++; }
+    }
+    return { domainMin: min - pad, domainMax: max + pad, ticks: tickDates };
+  }, [runs, enabledProviders]);
+
+  const formatDate = useCallback((ts) => {
+    const d = new Date(ts);
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return `${months[d.getMonth()]} '${String(d.getFullYear()).slice(2)}`;
+  }, []);
+
+  const chart = useMemo(() => (
+    <ResponsiveContainer width="100%" height={560}>
+      <ScatterChart margin={{ top: 24, right: 30, bottom: 24, left: 20 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" />
+        <XAxis
+          type="number"
+          dataKey="x"
+          name="Release Date"
+          domain={[domainMin, domainMax]}
+          ticks={ticks}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={formatDate}
+          label={{
+            value: "Model Release Date",
+            position: "bottom",
+            offset: -5,
+            style: { fontSize: 11, fill: "var(--color-text-muted)" },
+          }}
+        />
+        <YAxis
+          type="number"
+          dataKey="y"
+          name="Accuracy (%)"
+          domain={[0, 100]}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(v) => `${v}%`}
+          label={{
+            value: "Accuracy (%)",
+            angle: -90,
+            position: "insideLeft",
+            offset: 10,
+            style: { fontSize: 11, fill: "var(--color-text-muted)" },
+          }}
+        />
+        <ZAxis range={[60, 60]} />
+        <Customized component={InvertFilterDef} />
+        <Customized component={(props) => (
+          <FamilyLines {...props} points={visibleProviders.flatMap((p) => dataByProvider[p] || [])} />
+        )} />
+        {visibleProviders.map((p) =>
+          dataByProvider[p] ? (
+            <Scatter key={p} name={p} data={dataByProvider[p]} shape={renderShape} />
+          ) : null
+        )}
+      </ScatterChart>
+    </ResponsiveContainer>
+  ), [visibleProviders, dataByProvider, renderShape, domainMin, domainMax, ticks, formatDate]);
+
+  return (
+    <div ref={containerRef} className="relative" onMouseMove={handleMouseMove} onMouseLeave={clearHovered}>
+      {chart}
+      <div ref={tooltipRef} className="absolute z-50 pointer-events-none" style={{ transform: "translateY(-100%)" }}>
+        <TooltipContent point={hovered} />
+      </div>
+    </div>
+  );
+}
+
 export default function Charts({ runs, theme }) {
-  const [activeChart, setActiveChart] = useState("cost");
+  const [activeChart, setActiveChart] = useState("release");
   const charts = [
+    { key: "release", label: "Release Date" },
     { key: "cost", label: "Cost vs Accuracy" },
     { key: "time", label: "Time vs Accuracy" },
   ];
@@ -471,7 +635,7 @@ export default function Charts({ runs, theme }) {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-        <h2 className="text-2xl font-semibold">Efficiency</h2>
+        <h2 className="text-2xl font-semibold">Charts</h2>
         <div className="flex gap-2">
           {charts.map((c) => (
             <button
@@ -489,6 +653,11 @@ export default function Charts({ runs, theme }) {
         </div>
       </div>
 
+      {activeChart === "release" && (
+        <ChartCard title="Accuracy Over Time">
+          <ReleaseDateScatter runs={runs} enabledProviders={enabledProviders} theme={theme} />
+        </ChartCard>
+      )}
       {activeChart === "cost" && (
         <ChartCard title="Cost vs Accuracy">
           <CostVsAccuracyScatter runs={runs} enabledProviders={enabledProviders} theme={theme} />

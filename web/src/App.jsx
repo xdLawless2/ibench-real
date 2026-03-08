@@ -1,5 +1,4 @@
 import { useState, useMemo, useCallback, useEffect, lazy, Suspense } from "react";
-import { AnimatePresence } from "framer-motion";
 import { useTheme } from "./hooks/useTheme";
 import Header from "./components/Header";
 import ThemeToggle from "./components/ThemeToggle";
@@ -10,7 +9,7 @@ import Footer from "./components/Footer";
 const Charts = lazy(() => import("./components/Charts"));
 const ImageViewer = lazy(() => import("./components/ImageViewer"));
 
-const SECTIONS = ["leaderboard", "efficiency", "images"];
+const SECTIONS = ["leaderboard", "charts", "images", "methodology"];
 
 function SectionSpinner() {
   return (
@@ -71,7 +70,7 @@ export default function App() {
                   : "text-text-secondary hover:text-text-primary hover:bg-surface-overlay"
               }`}
             >
-              {s === "images" ? "Image Viewer" : s === "efficiency" ? "Efficiency" : s}
+              {s === "images" ? "Image Viewer" : s === "charts" ? "Charts" : s === "methodology" ? "Methodology" : s}
             </button>
           ))}
         </div>
@@ -81,7 +80,7 @@ export default function App() {
         {activeSection === "leaderboard" && (
           <Leaderboard runs={runs} onSelectModel={handleSelectModel} />
         )}
-        {activeSection === "efficiency" && (
+        {activeSection === "charts" && (
           <Suspense fallback={<SectionSpinner />}>
             <Charts runs={runs} theme={theme} />
           </Suspense>
@@ -91,13 +90,64 @@ export default function App() {
             <ImageViewer runs={runs} truth={truth} />
           </Suspense>
         )}
+        {activeSection === "methodology" && (
+          <div>
+            <h2 className="text-2xl font-semibold mb-8">Methodology</h2>
+            <div className="glass-panel p-8 space-y-8 max-w-3xl">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">Task</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  Each model receives 100 synthetic images containing randomly placed geometric shapes — circles, triangles, and parallelograms. The task is to count the <strong className="text-text-primary">exact number of distinct intersection points</strong> between different shapes in each image.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">Dataset Generation</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  Images are generated programmatically with controlled parameters: shape count, size ranges, spacing constraints, and angle thresholds. Ground-truth intersection counts are computed analytically using segment–segment, segment–circle, and circle–circle intersection math.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">Evaluation</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  All models are queried through the <a href="https://openrouter.ai" target="_blank" rel="noreferrer" className="text-text-primary border-b border-border hover:border-text-primary transition-colors">OpenRouter</a> API with identical prompts and image inputs. Each model sees the same 100 images in the same order. The parser looks for structured answers first (plain numbers, JSON), then scans for "final answer" / "total" patterns near the end of the response, falling back to the last integer found.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">Metrics</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-surface-overlay/50 rounded-lg p-4">
+                    <p className="text-sm font-medium mb-1">Accuracy</p>
+                    <p className="text-xs text-text-muted">Percentage of images where the model's prediction exactly matches the ground truth.</p>
+                  </div>
+                  <div className="bg-surface-overlay/50 rounded-lg p-4">
+                    <p className="text-sm font-medium mb-1">MAE</p>
+                    <p className="text-xs text-text-muted">Mean Absolute Error — average distance between prediction and truth across all images.</p>
+                  </div>
+                  <div className="bg-surface-overlay/50 rounded-lg p-4">
+                    <p className="text-sm font-medium mb-1">Latency</p>
+                    <p className="text-xs text-text-muted">Average and P95 response time per image, measured end-to-end including network.</p>
+                  </div>
+                  <div className="bg-surface-overlay/50 rounded-lg p-4">
+                    <p className="text-sm font-medium mb-1">Cost</p>
+                    <p className="text-xs text-text-muted">Estimated total cost based on token usage and per-model pricing at time of testing.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">Reasoning Modes</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  Models marked without an asterisk (*) were tested with reasoning enabled (effort level: medium). Models with * were tested in base/non-reasoning mode.                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
-      <AnimatePresence>
-        {selectedRun && (
-          <ModelDetailPanel run={selectedRun} onClose={handleCloseDetail} />
-        )}
-      </AnimatePresence>
+      <ModelDetailPanel run={selectedRun} onClose={handleCloseDetail} />
 
       <Footer />
     </div>

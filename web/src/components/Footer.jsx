@@ -22,17 +22,6 @@ export default memo(function Footer() {
             . Pricing estimates based on token usage at time of testing.
           </p>
 
-          <div className="mt-10 p-6 bg-surface-raised rounded-xl border border-border-subtle text-left">
-            <h3 className="text-sm font-semibold mb-3">Methodology</h3>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              Each model receives 100 synthetic images containing randomly placed
-              shapes (circles, triangles, parallelograms, lines). The task: count
-              the exact number of intersection points between different shapes.
-              Models are queried via the OpenRouter API with identical prompts.
-              Accuracy measures exact match rate; MAE shows average prediction
-              deviation.
-            </p>
-          </div>
         </div>
       </div>
     </footer>
