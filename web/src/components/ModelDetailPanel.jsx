@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import {
   BarChart,
   Bar,
@@ -217,13 +218,14 @@ function ImageGrid({ items }) {
         <span className="ml-auto text-text-muted/60">pred/truth — click to view</span>
       </div>
 
-      {selectedIdx != null && (
+      {selectedIdx != null && createPortal(
         <ImageGridModal
           items={items}
           selectedIdx={selectedIdx}
           onSelect={setSelectedIdx}
           onClose={() => setSelectedIdx(null)}
-        />
+        />,
+        document.body
       )}
     </div>
   );
