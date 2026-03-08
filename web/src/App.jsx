@@ -55,7 +55,7 @@ export default function App() {
             onSelectModel={(slug) => setSelectedModel(slug)}
           />
         )}
-        {activeSection === "efficiency" && <Charts runs={runs} />}
+        {activeSection === "efficiency" && <Charts runs={runs} theme={theme} />}
         {activeSection === "images" && (
           <ImageViewer runs={runs} truth={truth} />
         )}

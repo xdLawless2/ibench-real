@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   XAxis,
@@ -82,49 +82,65 @@ function ChartCard({ title, children }) {
   );
 }
 
-function LogoShape({ cx, cy, payload }) {
-  const provider = payload?.provider;
-  const src = LOGO_MAP[provider];
-  const size = 18;
-  if (!src) {
-    return (
-      <circle cx={cx} cy={cy} r={5} fill={getProviderColor(provider)} style={{ cursor: "pointer" }} />
-    );
-  }
-  const needsInvert = INVERT_ON_DARK.has(provider);
+function InvertFilterDef() {
   return (
-    <image
-      href={src}
-      x={cx - size / 2}
-      y={cy - size / 2}
-      width={size}
-      height={size}
-      className={needsInvert ? "dark-invert" : ""}
-      style={{ cursor: "pointer", pointerEvents: "all" }}
-    />
+    <defs>
+      <filter id="svg-invert">
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="1 0" />
+          <feFuncG type="table" tableValues="1 0" />
+          <feFuncB type="table" tableValues="1 0" />
+        </feComponentTransfer>
+      </filter>
+    </defs>
   );
 }
 
-function FloatingTooltip({ hoveredPoint, mousePos, containerRef }) {
-  if (!hoveredPoint || !containerRef?.current) return null;
-
-  const rect = containerRef.current.getBoundingClientRect();
-  const left = mousePos.x - rect.left + 16;
-  const top = mousePos.y - rect.top - 10;
-
+function LogoShape({ cx, cy, payload, isDark, onHover, onLeave }) {
+  const provider = payload?.provider;
+  const src = LOGO_MAP[provider];
+  const size = 18;
+  const hitSize = size + 10;
+  if (!src) {
+    return (
+      <g onMouseEnter={() => onHover?.(payload, cx, cy)} onMouseLeave={() => onLeave?.()}>
+        <circle cx={cx} cy={cy} r={hitSize / 2} fill="transparent" />
+        <circle cx={cx} cy={cy} r={5} fill={getProviderColor(provider)} style={{ cursor: "pointer" }} />
+      </g>
+    );
+  }
+  const needsInvert = INVERT_ON_DARK.has(provider) && isDark;
   return (
-    <div
-      className="absolute z-50 pointer-events-none"
-      style={{ left, top, transform: "translateY(-100%)" }}
-    >
-      <div className="bg-surface-raised border border-border rounded-xl overflow-hidden min-w-[160px]">
-        <div className="h-0.5 w-full" style={{ background: getProviderColor(hoveredPoint.provider) }} />
-        <div className="p-3">
+    <g onMouseEnter={() => onHover?.(payload, cx, cy)} onMouseLeave={() => onLeave?.()}>
+      <rect
+        x={cx - hitSize / 2} y={cy - hitSize / 2}
+        width={hitSize} height={hitSize}
+        fill="transparent"
+      />
+      <image
+        href={src}
+        x={cx - size / 2}
+        y={cy - size / 2}
+        width={size}
+        height={size}
+        filter={needsInvert ? "url(#svg-invert)" : undefined}
+        style={{ cursor: "pointer" }}
+      />
+    </g>
+  );
+}
+
+function TooltipContent({ point }) {
+  if (!point) return null;
+  return (
+    <div className="bg-surface-raised border border-border rounded-xl overflow-hidden min-w-[160px]">
+      <div className="h-0.5 w-full" style={{ background: getProviderColor(point.provider) }} />
+      <div className="p-3">
         <div className="flex items-center gap-2 mb-2">
-          <ProviderLogo provider={hoveredPoint.provider} size={16} />
+          <ProviderLogo provider={point.provider} size={16} />
           <span className="font-semibold text-sm">
-            {hoveredPoint.model}
-            {!hoveredPoint.reasoning && (
+            {point.model}
+            {!point.reasoning && (
               <span className="text-text-muted ml-0.5">*</span>
             )}
           </span>
@@ -132,21 +148,20 @@ function FloatingTooltip({ hoveredPoint, mousePos, containerRef }) {
         <div className="space-y-1 text-xs text-text-secondary">
           <div className="flex justify-between gap-4">
             <span>Accuracy</span>
-            <span className="font-medium text-text-primary">{hoveredPoint.accuracy}%</span>
+            <span className="font-medium text-text-primary">{point.accuracy}%</span>
           </div>
-          {hoveredPoint.cost != null && (
+          {point.cost != null && (
             <div className="flex justify-between gap-4">
               <span>Cost</span>
-              <span className="font-medium text-text-primary">${hoveredPoint.cost.toFixed(2)}</span>
+              <span className="font-medium text-text-primary">${point.cost.toFixed(2)}</span>
             </div>
           )}
-          {hoveredPoint.totalTime != null && (
+          {point.totalTime != null && (
             <div className="flex justify-between gap-4">
               <span>Time</span>
-              <span className="font-medium text-text-primary">{(hoveredPoint.totalTime / 60).toFixed(0)}m</span>
+              <span className="font-medium text-text-primary">{(point.totalTime / 60).toFixed(0)}m</span>
             </div>
           )}
-        </div>
         </div>
       </div>
     </div>
@@ -177,14 +192,47 @@ function ProviderFilter({ providers, enabled, onToggle }) {
   );
 }
 
-function CostVsAccuracyScatter({ runs, enabledProviders }) {
+function CostVsAccuracyScatter({ runs, enabledProviders, theme }) {
   const [hovered, setHovered] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [containerRef, setContainerRef] = useState({ current: null });
+  const containerRef = useRef(null);
+  const tooltipRef = useRef(null);
+  const hoveredPosRef = useRef(null);
 
-  const refCallback = useCallback((node) => {
-    setContainerRef({ current: node });
+  const handleMouseMove = useCallback((e) => {
+    if (tooltipRef.current && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      tooltipRef.current.style.left = `${e.clientX - rect.left + 16}px`;
+      tooltipRef.current.style.top = `${e.clientY - rect.top - 10}px`;
+    }
+    if (hoveredPosRef.current) {
+      const svgEl = containerRef.current?.querySelector("svg");
+      if (svgEl) {
+        const sr = svgEl.getBoundingClientRect();
+        const dx = (e.clientX - sr.left) - hoveredPosRef.current.cx;
+        const dy = (e.clientY - sr.top) - hoveredPosRef.current.cy;
+        if (dx * dx + dy * dy > 900) {
+          hoveredPosRef.current = null;
+          setHovered(null);
+        }
+      }
+    }
   }, []);
+
+  const handleHover = useCallback((payload, cx, cy) => {
+    hoveredPosRef.current = { cx, cy };
+    setHovered(payload);
+  }, []);
+
+  const clearHovered = useCallback(() => {
+    hoveredPosRef.current = null;
+    setHovered(null);
+  }, []);
+
+  const isDark = theme !== "light";
+
+  const renderShape = useCallback((props) => (
+    <LogoShape {...props} isDark={isDark} onHover={handleHover} onLeave={clearHovered} />
+  ), [isDark, handleHover, clearHovered]);
 
   const visibleProviders = useMemo(
     () => [...new Set(runs.map((r) => r.provider))].filter((p) => enabledProviders.has(p)),
@@ -209,76 +257,109 @@ function CostVsAccuracyScatter({ runs, enabledProviders }) {
     return map;
   }, [runs, enabledProviders]);
 
+  const chart = useMemo(() => (
+    <ResponsiveContainer width="100%" height={560}>
+      <ScatterChart margin={{ top: 24, right: 30, bottom: 24, left: 20 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" />
+        <XAxis
+          type="number"
+          dataKey="x"
+          name="Cost ($)"
+          scale="log"
+          domain={["auto", "auto"]}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(v) => `$${v < 1 ? v.toFixed(2) : v.toFixed(0)}`}
+          label={{
+            value: "Estimated Cost ($, log scale)",
+            position: "bottom",
+            offset: -5,
+            style: { fontSize: 11, fill: "var(--color-text-muted)" },
+          }}
+        />
+        <YAxis
+          type="number"
+          dataKey="y"
+          name="Accuracy (%)"
+          domain={[0, 100]}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(v) => `${v}%`}
+          label={{
+            value: "Accuracy (%)",
+            angle: -90,
+            position: "insideLeft",
+            offset: 10,
+            style: { fontSize: 11, fill: "var(--color-text-muted)" },
+          }}
+        />
+        <ZAxis range={[60, 60]} />
+        <Customized component={InvertFilterDef} />
+        <Customized component={(props) => (
+          <FamilyLines {...props} points={visibleProviders.flatMap((p) => dataByProvider[p] || [])} />
+        )} />
+        {visibleProviders.map((p) =>
+          dataByProvider[p] ? (
+            <Scatter key={p} name={p} data={dataByProvider[p]} shape={renderShape} />
+          ) : null
+        )}
+      </ScatterChart>
+    </ResponsiveContainer>
+  ), [visibleProviders, dataByProvider, renderShape]);
+
   return (
-    <div ref={refCallback} className="relative" onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}>
-      <ResponsiveContainer width="100%" height={560}>
-        <ScatterChart margin={{ top: 24, right: 30, bottom: 24, left: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" />
-          <XAxis
-            type="number"
-            dataKey="x"
-            name="Cost ($)"
-            scale="log"
-            domain={["auto", "auto"]}
-            tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(v) => `$${v < 1 ? v.toFixed(2) : v.toFixed(0)}`}
-            label={{
-              value: "Estimated Cost ($, log scale)",
-              position: "bottom",
-              offset: -5,
-              style: { fontSize: 11, fill: "var(--color-text-muted)" },
-            }}
-          />
-          <YAxis
-            type="number"
-            dataKey="y"
-            name="Accuracy (%)"
-            domain={[0, 100]}
-            tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(v) => `${v}%`}
-            label={{
-              value: "Accuracy (%)",
-              angle: -90,
-              position: "insideLeft",
-              offset: 10,
-              style: { fontSize: 11, fill: "var(--color-text-muted)" },
-            }}
-          />
-          <ZAxis range={[60, 60]} />
-          <Customized component={(props) => (
-            <FamilyLines {...props} points={visibleProviders.flatMap((p) => dataByProvider[p] || [])} />
-          )} />
-          {visibleProviders.map((p) =>
-            dataByProvider[p] ? (
-              <Scatter
-                key={p}
-                name={p}
-                data={dataByProvider[p]}
-                shape={<LogoShape />}
-                onMouseEnter={(entry) => setHovered(entry)}
-                onMouseLeave={() => setHovered(null)}
-              />
-            ) : null
-          )}
-        </ScatterChart>
-      </ResponsiveContainer>
-      <FloatingTooltip hoveredPoint={hovered} mousePos={mousePos} containerRef={containerRef} />
+    <div ref={containerRef} className="relative" onMouseMove={handleMouseMove} onMouseLeave={clearHovered}>
+      {chart}
+      <div ref={tooltipRef} className="absolute z-50 pointer-events-none" style={{ transform: "translateY(-100%)" }}>
+        <TooltipContent point={hovered} />
+      </div>
     </div>
   );
 }
 
-function ReasoningTimeScatter({ runs, enabledProviders }) {
+function ReasoningTimeScatter({ runs, enabledProviders, theme }) {
   const [hovered, setHovered] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [containerRef, setContainerRef] = useState({ current: null });
+  const containerRef = useRef(null);
+  const tooltipRef = useRef(null);
+  const hoveredPosRef = useRef(null);
 
-  const refCallback = useCallback((node) => {
-    setContainerRef({ current: node });
+  const handleMouseMove = useCallback((e) => {
+    if (tooltipRef.current && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      tooltipRef.current.style.left = `${e.clientX - rect.left + 16}px`;
+      tooltipRef.current.style.top = `${e.clientY - rect.top - 10}px`;
+    }
+    if (hoveredPosRef.current) {
+      const svgEl = containerRef.current?.querySelector("svg");
+      if (svgEl) {
+        const sr = svgEl.getBoundingClientRect();
+        const dx = (e.clientX - sr.left) - hoveredPosRef.current.cx;
+        const dy = (e.clientY - sr.top) - hoveredPosRef.current.cy;
+        if (dx * dx + dy * dy > 900) {
+          hoveredPosRef.current = null;
+          setHovered(null);
+        }
+      }
+    }
   }, []);
+
+  const handleHover = useCallback((payload, cx, cy) => {
+    hoveredPosRef.current = { cx, cy };
+    setHovered(payload);
+  }, []);
+
+  const clearHovered = useCallback(() => {
+    hoveredPosRef.current = null;
+    setHovered(null);
+  }, []);
+
+  const isDark = theme !== "light";
+
+  const renderShape = useCallback((props) => (
+    <LogoShape {...props} isDark={isDark} onHover={handleHover} onLeave={clearHovered} />
+  ), [isDark, handleHover, clearHovered]);
 
   const visibleProviders = useMemo(
     () => [...new Set(runs.filter((r) => r.reasoning).map((r) => r.provider))].filter((p) => enabledProviders.has(p)),
@@ -304,62 +385,62 @@ function ReasoningTimeScatter({ runs, enabledProviders }) {
     return map;
   }, [runs, enabledProviders]);
 
+  const chart = useMemo(() => (
+    <ResponsiveContainer width="100%" height={560}>
+      <ScatterChart margin={{ top: 24, right: 30, bottom: 24, left: 20 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" />
+        <XAxis
+          type="number"
+          dataKey="x"
+          name="Time (min)"
+          scale="log"
+          domain={["auto", "auto"]}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(v) => `${v < 1 ? v.toFixed(1) : v.toFixed(0)}m`}
+          label={{
+            value: "Total Run Time (minutes, log scale)",
+            position: "bottom",
+            offset: -5,
+            style: { fontSize: 11, fill: "var(--color-text-muted)" },
+          }}
+        />
+        <YAxis
+          type="number"
+          dataKey="y"
+          name="Accuracy (%)"
+          domain={[0, 100]}
+          tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(v) => `${v}%`}
+        />
+        <ZAxis range={[60, 60]} />
+        <Customized component={InvertFilterDef} />
+        <Customized component={(props) => (
+          <FamilyLines {...props} points={visibleProviders.flatMap((p) => dataByProvider[p] || [])} />
+        )} />
+        {visibleProviders.map((p) =>
+          dataByProvider[p] ? (
+            <Scatter key={p} name={p} data={dataByProvider[p]} shape={renderShape} />
+          ) : null
+        )}
+      </ScatterChart>
+    </ResponsiveContainer>
+  ), [visibleProviders, dataByProvider, renderShape]);
+
   return (
-    <div ref={refCallback} className="relative" onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}>
-      <ResponsiveContainer width="100%" height={560}>
-        <ScatterChart margin={{ top: 24, right: 30, bottom: 24, left: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" />
-          <XAxis
-            type="number"
-            dataKey="x"
-            name="Time (min)"
-            scale="log"
-            domain={["auto", "auto"]}
-            tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(v) => `${v < 1 ? v.toFixed(1) : v.toFixed(0)}m`}
-            label={{
-              value: "Total Run Time (minutes, log scale)",
-              position: "bottom",
-              offset: -5,
-              style: { fontSize: 11, fill: "var(--color-text-muted)" },
-            }}
-          />
-          <YAxis
-            type="number"
-            dataKey="y"
-            name="Accuracy (%)"
-            domain={[0, 100]}
-            tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(v) => `${v}%`}
-          />
-          <ZAxis range={[60, 60]} />
-          <Customized component={(props) => (
-            <FamilyLines {...props} points={visibleProviders.flatMap((p) => dataByProvider[p] || [])} />
-          )} />
-          {visibleProviders.map((p) =>
-            dataByProvider[p] ? (
-              <Scatter
-                key={p}
-                name={p}
-                data={dataByProvider[p]}
-                shape={<LogoShape />}
-                onMouseEnter={(entry) => setHovered(entry)}
-                onMouseLeave={() => setHovered(null)}
-              />
-            ) : null
-          )}
-        </ScatterChart>
-      </ResponsiveContainer>
-      <FloatingTooltip hoveredPoint={hovered} mousePos={mousePos} containerRef={containerRef} />
+    <div ref={containerRef} className="relative" onMouseMove={handleMouseMove} onMouseLeave={clearHovered}>
+      {chart}
+      <div ref={tooltipRef} className="absolute z-50 pointer-events-none" style={{ transform: "translateY(-100%)" }}>
+        <TooltipContent point={hovered} />
+      </div>
     </div>
   );
 }
 
-export default function Charts({ runs }) {
+export default function Charts({ runs, theme }) {
   const [activeChart, setActiveChart] = useState("cost");
   const charts = [
     { key: "cost", label: "Cost vs Accuracy" },
@@ -410,12 +491,12 @@ export default function Charts({ runs }) {
 
       {activeChart === "cost" && (
         <ChartCard title="Cost vs Accuracy">
-          <CostVsAccuracyScatter runs={runs} enabledProviders={enabledProviders} />
+          <CostVsAccuracyScatter runs={runs} enabledProviders={enabledProviders} theme={theme} />
         </ChartCard>
       )}
       {activeChart === "time" && (
         <ChartCard title="Reasoning Time vs Accuracy">
-          <ReasoningTimeScatter runs={runs} enabledProviders={enabledProviders} />
+          <ReasoningTimeScatter runs={runs} enabledProviders={enabledProviders} theme={theme} />
         </ChartCard>
       )}
 
