@@ -582,7 +582,7 @@ def main() -> None:
     overall_cost_output = base_dir / "overall_cost_vs_accuracy.jpg"
     time_output = base_dir / "reasoning_time_vs_performance.jpg"
 
-    data = prune_superseded_unset_reasoning_runs(load_run_metrics(runs_dir))
+    data = load_run_metrics(runs_dir)
     current_slugs = {m.slug for m in data}
     state_path = Path(args.state).resolve() if args.state else (base_dir / ".graph-maker-state.json")
     prev_slugs = load_seen_slugs(state_path)
