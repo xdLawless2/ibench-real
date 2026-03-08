@@ -18,11 +18,7 @@ export default function Header({ meta }) {
 
   return (
     <header className="relative">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-openai/5 rounded-full blur-[120px]" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
