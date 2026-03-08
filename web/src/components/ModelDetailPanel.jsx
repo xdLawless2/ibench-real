@@ -132,8 +132,53 @@ function LatencyHistogram({ items }) {
   );
 }
 
+function ImageGridModal({ items, selectedIdx, onSelect, onClose }) {
+  const item = items[selectedIdx];
+
+  useEffect(() => {
+    function handleKey(e) {
+      if (e.key === "ArrowLeft") onSelect(selectedIdx > 0 ? selectedIdx - 1 : items.length - 1);
+      else if (e.key === "ArrowRight") onSelect(selectedIdx < items.length - 1 ? selectedIdx + 1 : 0);
+      else if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [selectedIdx, items.length, onSelect, onClose]);
+
+  if (!item) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-8" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative bg-surface-raised border border-border rounded-2xl overflow-hidden max-w-lg w-full"
+      >
+        <img
+          src={`/imgs/${item.index}.png`}
+          alt={`Image ${item.index}`}
+          className="w-full"
+        />
+        <div className="p-4 flex items-center justify-between">
+          <div>
+            <p className="font-semibold">Image #{item.index}</p>
+            <p className="text-sm text-text-secondary">
+              Truth: <span className="font-bold text-text-primary tabular-nums">{item.truth}</span>
+              &nbsp;&middot;&nbsp;
+              Predicted: <span className={`font-bold tabular-nums ${item.correct ? "text-correct" : "text-incorrect"}`}>{item.pred}</span>
+            </p>
+          </div>
+          <span className={`text-xs font-bold px-3 py-1 rounded-full ${item.correct ? "bg-correct/15 text-correct" : "bg-incorrect/15 text-incorrect"}`}>
+            {item.correct ? "Correct" : "Wrong"}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ImageGrid({ items }) {
-  const [selected, setSelected] = useState(null);
+  const [selectedIdx, setSelectedIdx] = useState(null);
 
   return (
     <div>
@@ -141,10 +186,10 @@ function ImageGrid({ items }) {
         Per-Image Results
       </h4>
       <div className="grid grid-cols-5 sm:grid-cols-10 gap-1">
-        {items.map((item) => (
+        {items.map((item, i) => (
           <div
             key={item.index}
-            onClick={() => setSelected(item)}
+            onClick={() => setSelectedIdx(i)}
             className="rounded cursor-pointer hover:brightness-125 px-1 py-1.5 flex flex-col items-center gap-0.5"
             style={{
               background: item.correct
@@ -172,41 +217,13 @@ function ImageGrid({ items }) {
         <span className="ml-auto text-text-muted/60">pred/truth — click to view</span>
       </div>
 
-      {selected && (
-        <>
-          <div
-            onClick={() => setSelected(null)}
-            className="fixed inset-0 bg-black/70 z-[60]"
-          />
-          <div
-            className="fixed inset-0 z-[70] flex items-center justify-center p-8"
-            onClick={() => setSelected(null)}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="bg-surface-raised border border-border rounded-2xl overflow-hidden max-w-lg w-full"
-            >
-              <img
-                src={`/imgs/${selected.index}.png`}
-                alt={`Image ${selected.index}`}
-                className="w-full"
-              />
-              <div className="p-4 flex items-center justify-between">
-                <div>
-                  <p className="font-semibold">Image #{selected.index}</p>
-                  <p className="text-sm text-text-secondary">
-                    Truth: <span className="font-bold text-text-primary tabular-nums">{selected.truth}</span>
-                    &nbsp;&middot;&nbsp;
-                    Predicted: <span className={`font-bold tabular-nums ${selected.correct ? "text-correct" : "text-incorrect"}`}>{selected.pred}</span>
-                  </p>
-                </div>
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${selected.correct ? "bg-correct/15 text-correct" : "bg-incorrect/15 text-incorrect"}`}>
-                  {selected.correct ? "Correct" : "Wrong"}
-                </span>
-              </div>
-            </div>
-          </div>
-        </>
+      {selectedIdx != null && (
+        <ImageGridModal
+          items={items}
+          selectedIdx={selectedIdx}
+          onSelect={setSelectedIdx}
+          onClose={() => setSelectedIdx(null)}
+        />
       )}
     </div>
   );
