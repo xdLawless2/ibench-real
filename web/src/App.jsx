@@ -58,7 +58,7 @@ export default function App() {
 
       <Header meta={meta} />
 
-      <nav className="sticky top-0 z-30 bg-surface/80 backdrop-blur-xl border-b border-border-subtle">
+      <nav className="sticky top-0 z-30 bg-surface/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 flex gap-1 py-2">
           {SECTIONS.map((s) => (
             <button

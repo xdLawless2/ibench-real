@@ -63,7 +63,6 @@ export default function Header({ meta }) {
         </div>
       </div>
 
-      <div className="border-b border-border-subtle" />
     </header>
   );
 }
