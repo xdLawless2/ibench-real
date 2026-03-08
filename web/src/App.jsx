@@ -1,28 +1,57 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
-import benchmarkData from "./data/benchmark-data.json";
 import { useTheme } from "./hooks/useTheme";
 import Header from "./components/Header";
 import ThemeToggle from "./components/ThemeToggle";
 import Leaderboard from "./components/Leaderboard";
 import ModelDetailPanel from "./components/ModelDetailPanel";
-import Charts from "./components/Charts";
-import ImageViewer from "./components/ImageViewer";
 import Footer from "./components/Footer";
 
+const Charts = lazy(() => import("./components/Charts"));
+const ImageViewer = lazy(() => import("./components/ImageViewer"));
+
 const SECTIONS = ["leaderboard", "efficiency", "images"];
+
+function SectionSpinner() {
+  return (
+    <div className="flex items-center justify-center py-32">
+      <div className="w-6 h-6 border-2 border-text-muted border-t-text-primary rounded-full animate-spin" />
+    </div>
+  );
+}
 
 export default function App() {
   const { theme, toggle } = useTheme();
   const [selectedModel, setSelectedModel] = useState(null);
   const [activeSection, setActiveSection] = useState("leaderboard");
+  const [data, setData] = useState(null);
 
-  const { meta, runs, truth } = benchmarkData;
+  useEffect(() => {
+    import("./data/benchmark-data.json").then((mod) => setData(mod.default));
+  }, []);
+
+  const handleSelectModel = useCallback((slug) => setSelectedModel(slug), []);
+  const handleCloseDetail = useCallback(() => setSelectedModel(null), []);
+
+  const meta = data?.meta;
+  const runs = data?.runs;
+  const truth = data?.truth;
 
   const selectedRun = useMemo(
-    () => runs.find((r) => r.slug === selectedModel) ?? null,
+    () => runs?.find((r) => r.slug === selectedModel) ?? null,
     [runs, selectedModel]
   );
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-surface text-text-primary flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <div className="w-8 h-8 border-2 border-text-muted border-t-text-primary rounded-full animate-spin mx-auto" />
+          <p className="text-sm text-text-muted">Loading benchmark data…</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-surface text-text-primary">
@@ -50,23 +79,23 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-6 py-10">
         {activeSection === "leaderboard" && (
-          <Leaderboard
-            runs={runs}
-            onSelectModel={(slug) => setSelectedModel(slug)}
-          />
+          <Leaderboard runs={runs} onSelectModel={handleSelectModel} />
         )}
-        {activeSection === "efficiency" && <Charts runs={runs} theme={theme} />}
+        {activeSection === "efficiency" && (
+          <Suspense fallback={<SectionSpinner />}>
+            <Charts runs={runs} theme={theme} />
+          </Suspense>
+        )}
         {activeSection === "images" && (
-          <ImageViewer runs={runs} truth={truth} />
+          <Suspense fallback={<SectionSpinner />}>
+            <ImageViewer runs={runs} truth={truth} />
+          </Suspense>
         )}
       </main>
 
       <AnimatePresence>
         {selectedRun && (
-          <ModelDetailPanel
-            run={selectedRun}
-            onClose={() => setSelectedModel(null)}
-          />
+          <ModelDetailPanel run={selectedRun} onClose={handleCloseDetail} />
         )}
       </AnimatePresence>
 

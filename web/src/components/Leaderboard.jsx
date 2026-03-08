@@ -1,5 +1,4 @@
-import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo, memo } from "react";
 import ProviderLogo from "./ProviderLogo";
 import { getProviderColor } from "../providerColors";
 
@@ -33,7 +32,7 @@ function formatCost(c) {
   return "$" + c.toFixed(0);
 }
 
-export default function Leaderboard({ runs, onSelectModel }) {
+export default memo(function Leaderboard({ runs, onSelectModel }) {
   const [filter, setFilter] = useState("all");
   const [sortKey, setSortKey] = useState("accuracy");
   const [sortAsc, setSortAsc] = useState(false);
@@ -70,18 +69,21 @@ export default function Leaderboard({ runs, onSelectModel }) {
     }
   }
 
-  function getRank(index) {
-    if (index === 0) return { rank: 1, cls: "text-amber-400" };
-    const prev = sorted[index - 1];
-    const curr = sorted[index];
-    const same = Math.abs((prev[sortKey] ?? 0) - (curr[sortKey] ?? 0)) < 1e-9;
-    const prevRank = index;
-    const rank = same ? prevRank : index + 1;
-    if (rank === 1) return { rank, cls: "text-amber-400" };
-    if (rank === 2) return { rank, cls: "text-sky-300" };
-    if (rank === 3) return { rank, cls: "text-orange-400" };
-    return { rank, cls: "text-text-muted" };
-  }
+  const ranks = useMemo(() => {
+    function cls(rank) {
+      if (rank === 1) return "text-amber-400";
+      if (rank === 2) return "text-sky-300";
+      if (rank === 3) return "text-orange-400";
+      return "text-text-muted";
+    }
+    return sorted.map((curr, i) => {
+      if (i === 0) return { rank: 1, cls: cls(1) };
+      const prev = sorted[i - 1];
+      const same = Math.abs((prev[sortKey] ?? 0) - (curr[sortKey] ?? 0)) < 1e-9;
+      const rank = same ? i : i + 1;
+      return { rank, cls: cls(rank) };
+    });
+  }, [sorted, sortKey]);
 
   return (
     <div>
@@ -131,16 +133,14 @@ export default function Leaderboard({ runs, onSelectModel }) {
             </thead>
             <tbody>
               {sorted.map((run, i) => {
-                const { rank, cls } = getRank(i);
+                const { rank, cls } = ranks[i];
+                const delay = Math.min(i * 0.02, 0.6);
                 return (
-                  <motion.tr
+                  <tr
                     key={run.slug}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25, delay: Math.min(i * 0.02, 0.6) }}
                     onClick={() => onSelectModel(run.slug)}
                     className="border-t border-border-subtle hover:bg-surface-overlay/40 cursor-pointer transition-colors group leaderboard-row"
-                    style={{ "--row-accent": getProviderColor(run.provider) }}
+                    style={{ "--row-accent": getProviderColor(run.provider), "--row-delay": `${delay}s` }}
                   >
                     <td className={`px-5 py-4 font-semibold text-sm tabular-nums ${cls}`}>
                       {rank}
@@ -162,12 +162,13 @@ export default function Leaderboard({ runs, onSelectModel }) {
                           {run.accuracy}%
                         </span>
                         <div className="flex-1 h-1.5 bg-border-subtle rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full rounded-full"
-                            style={{ background: getProviderColor(run.provider) }}
-                            initial={{ width: 0 }}
-                            animate={{ width: `${run.accuracy}%` }}
-                            transition={{ duration: 0.6, delay: Math.min(i * 0.02, 0.6) + 0.2, ease: "easeOut" }}
+                          <div
+                            className="h-full rounded-full accuracy-bar"
+                            style={{
+                              background: getProviderColor(run.provider),
+                              width: `${run.accuracy}%`,
+                              "--bar-delay": `${delay + 0.2}s`,
+                            }}
                           />
                         </div>
                       </div>
@@ -181,7 +182,7 @@ export default function Leaderboard({ runs, onSelectModel }) {
                     <td className="px-5 py-4 text-sm tabular-nums text-text-secondary">
                       {formatCost(run.cost)}
                     </td>
-                  </motion.tr>
+                  </tr>
                 );
               })}
             </tbody>
@@ -194,4 +195,4 @@ export default function Leaderboard({ runs, onSelectModel }) {
       </p>
     </div>
   );
-}
+});

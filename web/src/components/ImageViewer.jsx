@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo, memo } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import ProviderLogo from "./ProviderLogo";
 import { getProviderColor } from "../providerColors";
 
@@ -126,7 +126,7 @@ const SORT_OPTIONS = [
   { key: "easiest", label: "Most Solved" },
 ];
 
-export default function ImageViewer({ runs, truth }) {
+export default memo(function ImageViewer({ runs, truth }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [sortBy, setSortBy] = useState("default");
 
@@ -178,12 +178,10 @@ export default function ImageViewer({ runs, truth }) {
         {sortedImages.map((img) => {
           const hue = img.ratio * 120;
           return (
-            <motion.button
+            <button
               key={img.index}
-              whileHover={{ scale: 1.08, zIndex: 10 }}
-              whileTap={{ scale: 0.96 }}
               onClick={() => setSelectedImage(img.index)}
-              className="relative aspect-square rounded-lg overflow-hidden border-2 transition-colors cursor-pointer group"
+              className="relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer group img-tile"
               style={{
                 borderColor: `hsl(${hue}, 60%, 50%)`,
               }}
@@ -206,7 +204,7 @@ export default function ImageViewer({ runs, truth }) {
                   background: `hsl(${hue}, 60%, 50%)`,
                 }}
               />
-            </motion.button>
+            </button>
           );
         })}
       </div>
@@ -238,4 +236,4 @@ export default function ImageViewer({ runs, truth }) {
       </AnimatePresence>
     </div>
   );
-}
+});

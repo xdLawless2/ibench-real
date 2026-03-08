@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "framer-motion": ["framer-motion"],
+          recharts: ["recharts"],
+        },
+      },
+    },
   },
 });

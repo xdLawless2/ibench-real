@@ -456,7 +456,7 @@ export default function Charts({ runs, theme }) {
     () => new Set(allProviders)
   );
 
-  function toggleProvider(p) {
+  const toggleProvider = useCallback((p) => {
     setEnabledProviders((prev) => {
       const next = new Set(prev);
       if (next.has(p)) {
@@ -466,7 +466,7 @@ export default function Charts({ runs, theme }) {
       }
       return next;
     });
-  }
+  }, []);
 
   return (
     <div>
