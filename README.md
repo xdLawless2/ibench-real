@@ -3,6 +3,8 @@
 Micro-benchmark for evaluating vision models on one task:
 counting line intersections in synthetic images.
 
+![Benchmark Leaderboard](graphs/benchmark.jpg)
+
 The runner uses OpenRouter-compatible chat completions and writes one run
 summary per model to `runs/<run_slug>/summary.json`.
 
