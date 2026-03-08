@@ -1,9 +1,18 @@
-import { useState, useMemo, memo } from "react";
+import { useState, useMemo, memo, useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProviderLogo from "./ProviderLogo";
 import { getProviderColor } from "../providerColors";
 
-function ImageModal({ imageIndex, truth, runs, onClose }) {
+function ImageModal({ imageIndex, truth, runs, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    function handleKey(e) {
+      if (e.key === "ArrowLeft") onPrev();
+      else if (e.key === "ArrowRight") onNext();
+      else if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onPrev, onNext, onClose]);
   const predictions = useMemo(() => {
     return runs
       .map((r) => {
@@ -231,6 +240,16 @@ export default memo(function ImageViewer({ runs, truth }) {
             truth={truth[selectedImage - 1]}
             runs={runs}
             onClose={() => setSelectedImage(null)}
+            onPrev={() => {
+              const idx = sortedImages.findIndex((img) => img.index === selectedImage);
+              if (idx > 0) setSelectedImage(sortedImages[idx - 1].index);
+              else setSelectedImage(sortedImages[sortedImages.length - 1].index);
+            }}
+            onNext={() => {
+              const idx = sortedImages.findIndex((img) => img.index === selectedImage);
+              if (idx < sortedImages.length - 1) setSelectedImage(sortedImages[idx + 1].index);
+              else setSelectedImage(sortedImages[0].index);
+            }}
           />
         )}
       </AnimatePresence>
