@@ -17,7 +17,7 @@
     "total_time_s": 2619.3566377079987,
     "throughput_ips": 0.038177313680928325,
     "accuracy_exact": 0.09,
-    "mae": 5.29,
+    "mae": 5.28,
     "latency_avg_s": 103.36145160875982,
     "latency_p50_s": 102.86228129149822,
     "latency_p95_s": 152.2598032732596,
@@ -240,7 +240,7 @@
     },
     {
       "index": 23,
-      "truth": 20,
+      "truth": 21,
       "pred": 31,
       "correct": false,
       "latency_s": 136.75380920799216,
